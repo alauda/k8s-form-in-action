@@ -1,0 +1,12 @@
+form {
+  display: flex;
+}
+
+ng-monaco-editor {
+  height: calc(100vh - 100px);
+}
+
+x-deployment, ng-monaco-editor {
+  flex: 1;
+  border: 1px solid grey;
+}

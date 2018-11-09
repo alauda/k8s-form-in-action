@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+  <x-deployment formControlName="ui"></x-deployment>
+  <ng-monaco-editor
+    [options]="{ language: 'yaml' }"
+    formControlName="yaml"
+  ></ng-monaco-editor>
+</form>
