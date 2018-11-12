@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ContentChild,
   HostBinding,
@@ -10,6 +11,7 @@ import {
 import {
   AbstractControlDirective,
   ControlContainer,
+  FormGroupDirective,
   NgControl,
 } from '@angular/forms';
 
@@ -19,6 +21,7 @@ import { PathProviderService } from '../path.service';
   selector: 'x-form-section',
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class FormSectionComponent {
   @ContentChild(NgControl) nc: NgControl;
@@ -40,11 +43,12 @@ export class FormSectionComponent {
   @HostBinding('attr.status')
   get status() {
     if (this.control) {
-      return [
-        this.control.status,
+      const partials = [
         this.control.dirty ? 'dirty' : 'pristine',
         this.control.touched ? 'touched' : 'untouched',
-      ].join(', ');
+        this.formGroupDirective.submitted ? 'submitted' : '',
+      ];
+      return partials.filter(s => !!s).join(', ');
     }
     return this.control && this.control.status;
   }
@@ -61,7 +65,7 @@ export class FormSectionComponent {
   }
 
   get path(): string[] {
-    // Strips off the top form, since we don't want to use UI here:
+    // Strips off the root form, since we don't want to use 'UI' here:
     return this.parent ? [...this.parent.path, this.label] : [];
   }
 
@@ -69,9 +73,14 @@ export class FormSectionComponent {
     return this.cc || this.nc;
   }
 
+  get formGroupDirective(): FormGroupDirective {
+    return this.fgd || (this.parent && this.parent.formGroupDirective);
+  }
+
   constructor(
     @Optional() @SkipSelf() public parent: FormSectionComponent,
     @Optional() @Self() public cc: ControlContainer,
+    @Optional() public fgd: FormGroupDirective,
     public pathProvider: PathProviderService,
   ) {}
 }

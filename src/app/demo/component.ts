@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { safeDump, safeLoadAll } from 'js-yaml';
 import { MonacoProviderService } from 'ng-monaco-editor';
@@ -17,6 +17,7 @@ function defer(timeout: number) {
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
   providers: [PathProviderService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoComponent implements OnInit {
   form: FormGroup;

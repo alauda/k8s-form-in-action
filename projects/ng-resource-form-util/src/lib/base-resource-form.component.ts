@@ -17,7 +17,6 @@ import {
   FormControl,
   FormGroup,
   FormGroupDirective,
-  NgForm,
   ValidationErrors,
   Validator,
 } from '@angular/forms';
@@ -49,9 +48,6 @@ export abstract class BaseResourceFormComponent<
 
   @Output()
   blur = new EventEmitter();
-
-  @ViewChild(NgForm)
-  ngFormDir: NgForm;
 
   @ViewChild(FormGroupDirective)
   ngFormGroupDirective: FormGroupDirective;
@@ -195,16 +191,16 @@ export abstract class BaseResourceFormComponent<
   }
 
   ngAfterViewInit() {
-    const parentForm: NgForm | FormGroupDirective =
-      this.getInjectable(NgForm) || this.getInjectable(FormGroupDirective);
+    const parentForm: FormGroupDirective = this.getInjectable(
+      FormGroupDirective,
+    );
     if (parentForm) {
       this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
-        if (this.ngFormDir) {
-          this.ngFormDir.onSubmit(event);
-        } else if (this.ngFormGroupDirective) {
+        if (this.ngFormGroupDirective) {
           this.ngFormGroupDirective.onSubmit(event);
         }
         this.form.updateValueAndValidity();
+        this.cdr.markForCheck();
       });
     }
   }
