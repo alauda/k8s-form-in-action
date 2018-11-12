@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "yarn build:lib && yarn build:demo",
+    "build:demo": "ng build --prod --base-href /demo/ --deploy-url /demo/",
+    "build:lib": "ng build ng-resource-form-util",
+    "prepublish": "yarn build && cp -r dist/k8s-form-in-action demo",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
