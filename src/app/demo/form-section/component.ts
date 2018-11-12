@@ -2,14 +2,18 @@ import {
   Component,
   ContentChild,
   HostBinding,
+  HostListener,
   Optional,
   Self,
+  SkipSelf,
 } from '@angular/core';
 import {
   AbstractControlDirective,
   ControlContainer,
   NgControl,
 } from '@angular/forms';
+
+import { PathProviderService } from '../path.service';
 
 @Component({
   selector: 'x-form-section',
@@ -45,9 +49,28 @@ export class FormSectionComponent {
     return this.control && this.control.status;
   }
 
+  @HostBinding('attr.title')
+  get title() {
+    return `[${this.path.join(', ')}]`;
+  }
+
+  @HostListener('click', ['$event'])
+  onClick(event: Event) {
+    event.stopPropagation();
+    this.pathProvider.subject.next(this.path);
+  }
+
+  get path(): string[] {
+    return this.parent ? [...this.parent.path, this.label] : [this.label];
+  }
+
   get control(): AbstractControlDirective {
     return this.cc || this.nc;
   }
 
-  constructor(@Optional() @Self() public cc: ControlContainer) {}
+  constructor(
+    @Optional() @SkipSelf() public parent: FormSectionComponent,
+    @Optional() @Self() public cc: ControlContainer,
+    public pathProvider: PathProviderService,
+  ) {}
 }

@@ -60,6 +60,7 @@ export class DeploymentFormComponent extends BaseResourceFormGroupComponent<
           labels: [{}],
         }),
       }),
+      revisionHistoryLimit: [],
     });
 
     return this.fb.group({

@@ -1,5 +1,7 @@
 form {
   display: flex;
+  overflow: auto;
+  height: calc(100vh - 120px);
 }
 
 x-deployment, ng-monaco-editor {
@@ -11,3 +13,11 @@ x-deployment, ng-monaco-editor {
   box-sizing: border-box;
 }
 
+ng-monaco-editor {
+  max-height: 100%;
+}
+
+x-deployment {
+  max-height: 100%;
+  overflow: auto;
+}

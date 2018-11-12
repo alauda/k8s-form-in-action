@@ -1,6 +1,7 @@
 <form [formGroup]="form">
   <x-deployment formControlName="ui"></x-deployment>
   <ng-monaco-editor
+    (monacoEditorChanged)="editorChanged($event)"
     [options]="{ language: 'yaml' }"
     formControlName="yaml"
   ></ng-monaco-editor>

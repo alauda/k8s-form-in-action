@@ -1,5 +1,5 @@
 <form>
-  <div
+  <x-form-section
     *ngFor="let row of controls; let last = last; let index = index"
     [formGroup]="row"
   >
@@ -7,5 +7,5 @@
     <input formControlName="1" (blur)="onBlur()" />
     <button *ngIf="last" (click)="add()">+</button>
     <button (click)="remove(index)">-</button>
-  </div>
+  </x-form-section>
 </form>

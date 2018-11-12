@@ -3,14 +3,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { MonacoEditorModule } from 'ng-monaco-editor';
+import { MonacoEditorModule, MonacoProviderService } from 'ng-monaco-editor';
 
 import { AppComponent } from './app.component';
+import { CustomMonacoProviderService } from './monaco-provider.service';
 
 const DEFAULT_MONACO_OPTIONS: monaco.editor.IEditorConstructionOptions = {
   fontSize: 12,
   folding: true,
-  scrollBeyondLastLine: false,
+  scrollBeyondLastLine: true,
   minimap: { enabled: false },
   mouseWheelZoom: true,
   scrollbar: {
@@ -37,7 +38,12 @@ const DEFAULT_MONACO_OPTIONS: monaco.editor.IEditorConstructionOptions = {
       },
     ]),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MonacoProviderService,
+      useClass: CustomMonacoProviderService,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

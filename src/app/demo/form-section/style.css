@@ -1,9 +1,12 @@
 :host {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 40%;
   border: 1px dashed grey;
   padding: 1.5em 0.5em 1.5em 1em;
   position: relative;
   transition: all 0.2s;
+  margin: 0.2em;
 }
 
 :host::before {

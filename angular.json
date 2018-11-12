@@ -30,6 +30,11 @@
                 "glob": "**/*",
                 "input": "node_modules/monaco-languages/release/min",
                 "output": "/lib/v1.1/vs/basic-languages"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-yaml/min",
+                "output": "/lib/v1.1/vs/language/yaml"
               }
             ],
             "styles": ["src/styles.css"],
