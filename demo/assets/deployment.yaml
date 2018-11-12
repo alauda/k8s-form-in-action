@@ -1,0 +1,72 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: cephfs-provisioner
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/cephfs-provisioner
+  uid: e34528d0-a1fd-11e8-aafa-5254004c757f
+  resourceVersion: '16781445'
+  generation: 3
+  creationTimestamp: '2018-08-17T09:14:04Z'
+  labels:
+    app: cephfs-provisioner
+  annotations:
+    deployment.kubernetes.io/revision: '3'
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"annotations":{},"name":"cephfs-provisioner","namespace":"default"},"spec":{"replicas":1,"strategy":{"type":"Recreate"},"template":{"metadata":{"labels":{"app":"cephfs-provisioner"}},"spec":{"containers":[{"args":["-id=cephfs-provisioner-1"],"command":["/usr/local/bin/cephfs-provisioner"],"env":[{"name":"PROVISIONER_NAME","value":"ceph.com/cephfs"}],"image":"quay.io/external_storage/cephfs-provisioner:latest","name":"cephfs-provisioner"}],"serviceAccount":"cephfs-provisioner"}}}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cephfs-provisioner
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cephfs-provisioner
+    spec:
+      containers:
+        - name: cephfs-provisioner
+          image: 'quay.io/external_storage/cephfs-provisioner:latest'
+          command:
+            - /usr/local/bin/cephfs-provisioner
+          args:
+            - '-id=cephfs-provisioner-1'
+            - '-disable-ceph-namespace-isolation=true'
+          env:
+            - name: PROVISIONER_NAME
+              value: ceph.com/cephfs
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      serviceAccountName: cephfs-provisioner
+      serviceAccount: cephfs-provisioner
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 3
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2018-09-04T11:50:01Z'
+      lastTransitionTime: '2018-09-03T07:40:05Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "cephfs-provisioner-85bf964c47" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2018-09-18T20:57:49Z'
+      lastTransitionTime: '2018-09-18T20:57:49Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.

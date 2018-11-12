@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>响应式表单</title>
+  <meta charset="utf-8">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    @page {
+      size: 1210px 681px;
+      margin: 0;
+    }
+
+    @media print {
+      .remark-slide-scaler {
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(1) !important;
+        top: 0 !important;
+        left: 0 !important;
+      }
+    }
+
+    body {
+      font-family: 'Noto Sans';
+    }
+
+    .remark-code,
+    .remark-inline-code {
+      font-family: 'Ubuntu Mono';
+    }
+
+    .remark-code-line {
+      line-height: 1.1;
+    }
+
+    ol,
+    ul {
+      font-size: 24px;
+    }
+
+    ol li,
+    ul li {
+      margin-bottom: 0.5em;
+    }
+
+    ol ul,
+    ul ol,
+    ul ul,
+    ol ol {
+      margin-top: 0.2em;
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+    }
+
+    blockquote p {
+      display: inline;
+      line-height: 1.8;
+    }
+
+    .remark-slide-content.split {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .remark-slide-content.split h1,
+    .remark-slide-content.split h2,
+    .remark-slide-content.split h3,
+    .remark-slide-content.split h4,
+    .remark-slide-content.split h5 {
+      flex-shrink: 0;
+      flex-basis: 100%;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .column:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    pre {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source"></textarea>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+  </script>
+  <script>
+    var slideshow = remark.create({ ratio: "16:9", sourceUrl: './contents.md' });
+  </script>
+</body>
+
+</html>
