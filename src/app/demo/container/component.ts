@@ -4,7 +4,7 @@ import {
   Injector,
   forwardRef,
 } from '@angular/core';
-import { NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
 import { Container } from '../types';
@@ -41,7 +41,13 @@ export class ContainerFormComponent extends BaseResourceFormGroupComponent<
 
   createForm() {
     return this.fb.group({
-      name: [],
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[a-z0-9][a-z0-9-]*[a-z0-9]$/),
+        ],
+      ],
       image: [],
     });
   }

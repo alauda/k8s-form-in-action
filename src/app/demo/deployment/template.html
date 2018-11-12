@@ -1,39 +1,41 @@
 <form [formGroup]="form">
-  <x-form-section formGroupName="metadata" label="metadata">
-    <x-form-section label="name">
+  <x-form-section formGroupName="metadata">
+    <x-form-section>
       <input (blur)="onBlur()" formControlName="name" />
     </x-form-section>
-    <x-form-section label="Namespace">
+    <x-form-section>
       <input (blur)="onBlur()" formControlName="namespace" />
     </x-form-section>
-    <x-form-section label="Labels">
+    <x-form-section>
       <x-key-value-form (blur)="onBlur()" formControlName="labels">
       </x-key-value-form>
     </x-form-section>
-    <x-form-section label="Annotations">
+    <x-form-section>
       <x-key-value-form (blur)="onBlur()" formControlName="annotations">
       </x-key-value-form>
     </x-form-section>
   </x-form-section>
 
-  <x-form-section label="spec" formGroupName="spec">
-    <x-form-section label="replicas">
+  <x-form-section formGroupName="spec">
+    <x-form-section>
       <input (blur)="onBlur()" type="number" formControlName="replicas" />
     </x-form-section>
 
-    <x-form-section label="selector.matchLabels" formGroupName="selector">
-      <x-key-value-form (blur)="onBlur()" formControlName="matchLabels">
-      </x-key-value-form>
+    <x-form-section formGroupName="selector">
+      <x-form-section>
+        <x-key-value-form (blur)="onBlur()" formControlName="matchLabels">
+        </x-key-value-form>
+      </x-form-section>
     </x-form-section>
 
-    <x-form-section label="template" formGroupName="template">
-      <x-form-section label="metadata" formGroupName="metadata">
-        <x-form-section label="Labels">
+    <x-form-section formGroupName="template">
+      <x-form-section formGroupName="metadata">
+        <x-form-section>
           <x-key-value-form (blur)="onBlur()" formControlName="labels">
           </x-key-value-form>
         </x-form-section>
       </x-form-section>
-      <x-form-section label="spec">
+      <x-form-section>
         <x-pod-spec-form formControlName="spec"></x-pod-spec-form>
       </x-form-section>
     </x-form-section>

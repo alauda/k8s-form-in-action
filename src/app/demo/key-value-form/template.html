@@ -1,7 +1,10 @@
 <form>
-  <div *ngFor="let row of controls; let last = last; let index = index">
-    <input [formControl]="row.controls[0]" />
-    <input [formControl]="row.controls[1]" />
+  <div
+    *ngFor="let row of controls; let last = last; let index = index"
+    [formGroup]="row"
+  >
+    <input formControlName="0" (blur)="onBlur()" />:
+    <input formControlName="1" (blur)="onBlur()" />
     <button *ngIf="last" (click)="add()">+</button>
     <button (click)="remove(index)">-</button>
   </div>
