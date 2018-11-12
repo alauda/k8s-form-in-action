@@ -1,0 +1,7 @@
+:host {
+  flex: 1;
+}
+
+x-container-form {
+  flex: 1;
+}

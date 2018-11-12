@@ -1,23 +1,23 @@
 form {
   display: flex;
-  overflow: auto;
   height: calc(100vh - 120px);
 }
 
-x-deployment, ng-monaco-editor {
+x-form-section, ng-monaco-editor {
   flex: 1;
   border: 1px solid grey;
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
 }
 
-ng-monaco-editor {
-  max-height: 100%;
+x-form-section {
+  height: 100%;
 }
 
 x-deployment {
-  max-height: 100%;
   overflow: auto;
+  height: 100%;
 }

@@ -8,6 +8,10 @@ import { filter, map, startWith } from 'rxjs/operators';
 
 import { PathProviderService } from './path.service';
 
+function defer(timeout: number) {
+  return new Promise(res => setTimeout(res, timeout));
+}
+
 @Component({
   selector: 'x-demo',
   templateUrl: './template.html',
@@ -82,10 +86,73 @@ export class DemoComponent implements OnInit {
       'vs/editor/contrib/quickOpen/quickOpen',
     ]);
 
+    await this.monacoProvider.initMonaco();
+
+    // Make sure the yaml language service is online:
+    await defer(500);
     this.monacoReadyRes([editor, quickOpen]);
+
+    editor.onDidChangeCursorSelection(async ({ selection }) => {
+      const model = editor.getModel();
+      const position = selection.getPosition();
+      const symbols = await _getSymbolsForPosition(model, position);
+      console.log(symbols);
+      if (editor.hasTextFocus()) {
+        this.highlightSymbol([]);
+      }
+    });
+
+    async function _getSymbolsForPosition(
+      model: monaco.editor.IModel,
+      position: monaco.IPosition,
+    ) {
+      let symbols = await quickOpen.getDocumentSymbols(model);
+      symbols = symbols.filter(symbol =>
+        symbol.range.containsPosition(position),
+      );
+      symbols = symbols.map(symbol => {
+        if (symbol.kind === 17) {
+          return `[]${symbol.name}`;
+        } else if (symbol.kind === 18 || symbol.kind === 1) {
+          return `{}${symbol.name}`;
+        } else {
+          return symbol.name;
+        }
+      });
+      return symbols;
+    }
   }
 
   async highlightSymbol(path: string[]) {
+    const [editor] = await this.monacoReady;
+    const range = await this.getYamlRangeForPath(path);
+
+    let decoration: any;
+    if (range) {
+      editor.revealPositionInCenter(
+        {
+          column: range.startColumn,
+          lineNumber: range.startLineNumber,
+        },
+        monaco.editor.ScrollType.Smooth,
+      );
+
+      decoration = {
+        range,
+        options: {
+          isWholeLine: true,
+          className: 'x-highlight-range',
+        },
+      };
+    }
+
+    this.oldDecorations = editor.deltaDecorations(
+      this.oldDecorations,
+      decoration ? [decoration] : [],
+    );
+  }
+
+  private async getYamlRangeForPath(path: string[]): Promise<monaco.IRange> {
     const [editor, quickOpen] = await this.monacoReady;
     const symbols = await quickOpen.getDocumentSymbols(editor.getModel());
     const arrayIndeces = path.filter(p => Number.isInteger(+p));
@@ -112,20 +179,7 @@ export class DemoComponent implements OnInit {
       res = candidates[0];
     }
 
-    this.oldDecorations = editor.deltaDecorations(this.oldDecorations, [
-      {
-        range: res.range,
-        options: {
-          isWholeLine: true,
-          className: 'x-highlight-range',
-        },
-      },
-    ]);
-
-    editor.revealPositionInCenter({
-      column: res.range.startColumn,
-      lineNumber: res.range.startLineNumber,
-    });
+    return res && res.range;
   }
 
   private yamlToForm(yaml: string) {

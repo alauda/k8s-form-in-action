@@ -5,7 +5,9 @@
   >
     <input formControlName="0" (blur)="onBlur()" />:
     <input formControlName="1" (blur)="onBlur()" />
-    <button *ngIf="last" (click)="add()">+</button>
-    <button (click)="remove(index)">-</button>
+    <div>
+      <button *ngIf="last" (click)="add()">+</button>
+      <button (click)="remove(index)">-</button>
+    </div>
   </x-form-section>
 </form>

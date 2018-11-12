@@ -61,7 +61,8 @@ export class FormSectionComponent {
   }
 
   get path(): string[] {
-    return this.parent ? [...this.parent.path, this.label] : [this.label];
+    // Strips off the top form, since we don't want to use UI here:
+    return this.parent ? [...this.parent.path, this.label] : [];
   }
 
   get control(): AbstractControlDirective {
