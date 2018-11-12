@@ -1,0 +1,8 @@
+<form>
+  <div *ngFor="let row of controls; let last = last; let index = index">
+    <input [formControl]="row.controls[0]" />
+    <input [formControl]="row.controls[1]" />
+    <button *ngIf="last" (click)="add()">+</button>
+    <button (click)="remove(index)">-</button>
+  </div>
+</form>

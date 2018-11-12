@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+  <x-form-section label="name">
+    <input (blur)="onBlur()" formControlName="name" />
+  </x-form-section>
+  <x-form-section label="image">
+    <input (blur)="onBlur()" formControlName="image" />
+  </x-form-section>
+</form>

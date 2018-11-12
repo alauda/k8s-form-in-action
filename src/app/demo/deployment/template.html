@@ -1,5 +1,41 @@
 <form [formGroup]="form">
-  <div formGroupName="metadata">
-    <label><input (blur)="onBlur()" formControlName="name"/></label>
-  </div>
+  <x-form-section formGroupName="metadata" label="metadata">
+    <x-form-section label="name">
+      <input (blur)="onBlur()" formControlName="name" />
+    </x-form-section>
+    <x-form-section label="Namespace">
+      <input (blur)="onBlur()" formControlName="namespace" />
+    </x-form-section>
+    <x-form-section label="Labels">
+      <x-key-value-form (blur)="onBlur()" formControlName="labels">
+      </x-key-value-form>
+    </x-form-section>
+    <x-form-section label="Annotations">
+      <x-key-value-form (blur)="onBlur()" formControlName="annotations">
+      </x-key-value-form>
+    </x-form-section>
+  </x-form-section>
+
+  <x-form-section label="spec" formGroupName="spec">
+    <x-form-section label="replicas">
+      <input (blur)="onBlur()" type="number" formControlName="replicas" />
+    </x-form-section>
+
+    <x-form-section label="selector.matchLabels" formGroupName="selector">
+      <x-key-value-form (blur)="onBlur()" formControlName="matchLabels">
+      </x-key-value-form>
+    </x-form-section>
+
+    <x-form-section label="template" formGroupName="template">
+      <x-form-section label="metadata" formGroupName="metadata">
+        <x-form-section label="Labels">
+          <x-key-value-form (blur)="onBlur()" formControlName="labels">
+          </x-key-value-form>
+        </x-form-section>
+      </x-form-section>
+      <x-form-section label="spec">
+        <x-pod-spec-form formControlName="spec"></x-pod-spec-form>
+      </x-form-section>
+    </x-form-section>
+  </x-form-section>
 </form>

@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <x-form-section
+    *ngFor="
+      let control of form.get('containers').controls;
+      let last = last;
+      let index = index
+    "
+    [label]="'containers[' + index + ']'"
+  >
+    <x-container-form [formControl]="control"> </x-container-form>
+    <button *ngIf="last" (click)="addContainer()">+</button>
+    <button (click)="removeContainer(index)">-</button>
+  </x-form-section>
+</form>

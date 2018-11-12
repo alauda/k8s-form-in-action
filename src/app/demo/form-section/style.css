@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  border: 1px dashed grey;
+  padding: 1.5em 0.5em 0.5em 1em;
+  position: relative;
+}
+
+:host::before {
+  position: absolute;
+  display: block;
+  content: attr(label);
+  background: white;
+  top: 0;
+  left: 0.5em;
+}

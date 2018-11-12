@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { safeDump, safeLoadAll } from 'js-yaml';
-import { startWith } from 'rxjs/operators';
+import { filter, map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'x-demo',
@@ -22,13 +22,25 @@ export class DemoComponent implements OnInit {
     const uiCtrl = this.form.get('ui');
     const yamlCtrl = this.form.get('yaml');
 
-    uiCtrl.valueChanges.pipe(startWith(uiCtrl.value)).subscribe(value => {
-      yamlCtrl.setValue(this.formToYaml(value), { emitEvent: false });
-    });
+    uiCtrl.valueChanges
+      .pipe(
+        startWith(uiCtrl.value),
+        map(value => this.formToYaml(value)),
+        filter(v => !!v),
+      )
+      .subscribe(value => {
+        yamlCtrl.setValue(value, { emitEvent: false });
+      });
 
-    yamlCtrl.valueChanges.pipe(startWith(yamlCtrl.value)).subscribe(value => {
-      uiCtrl.setValue(this.yamlToForm(value), { emitEvent: false });
-    });
+    yamlCtrl.valueChanges
+      .pipe(
+        startWith(yamlCtrl.value),
+        map(value => this.yamlToForm(value)),
+        filter(v => !!v),
+      )
+      .subscribe(value => {
+        uiCtrl.setValue(value, { emitEvent: false });
+      });
 
     this.http
       .get('assets/deployment.yaml', {
@@ -40,21 +52,22 @@ export class DemoComponent implements OnInit {
   }
 
   private yamlToForm(yaml: string) {
-    const formModels = safeLoadAll(yaml).map(item =>
-      item === 'undefined' ? undefined : item,
-    );
-    let formModel = formModels[0];
+    try {
+      const formModels = safeLoadAll(yaml).map(item =>
+        item === 'undefined' ? undefined : item,
+      );
+      let formModel = formModels[0];
 
-    // For now we can only process a single deployment resource in the yaml.
-    if (formModels.length > 1) {
-      console.log('Can only convert a single resource at the moment');
-    }
+      // For now we can only process a single deployment resource in the yaml.
+      if (formModels.length > 1) {
+        console.log('Can only convert a single resource at the moment');
+      }
 
-    if (!formModel || formModel instanceof String) {
-      formModel = {};
-    }
-
-    return formModel;
+      if (!formModel || formModel instanceof String) {
+        formModel = {};
+      }
+      return formModel;
+    } catch (err) {}
   }
 
   private formToYaml(json: any) {

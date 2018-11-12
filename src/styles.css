@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+x-form-section + x-form-section {
+  margin-top: 0.5em;
+}
+
+input {
+  width: 200px;
+}
