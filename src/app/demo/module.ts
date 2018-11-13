@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MonacoEditorModule } from 'ng-monaco-editor';
 
+import { ButtonDirective } from './button.directive';
 import { DemoComponent } from './component';
 import { ContainerFormComponent } from './container/component';
 import { DeploymentFormComponent } from './deployment/component';
@@ -20,6 +21,7 @@ import { DemoRoutingModule } from './routing.module';
     FormSectionComponent,
     ContainerFormComponent,
     KeyValueFormComponent,
+    ButtonDirective,
   ],
   imports: [
     CommonModule,

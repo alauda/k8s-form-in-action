@@ -1,7 +1,12 @@
 :host {
   flex: 1;
+  min-width: 500px;
 }
 
 x-container-form {
   flex: 1;
+}
+
+button {
+  width: 100%;
 }

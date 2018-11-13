@@ -5,15 +5,15 @@
   border: 1px dashed grey;
   padding: 1.5em 0.5em 1.5em 1em;
   position: relative;
-  transition: all 0.2s;
+  transition: all 0.1s;
   margin: 0.2em;
+  align-items: flex-start;
 }
 
 :host::before {
   position: absolute;
   display: block;
   content: attr(label);
-  text-shadow: 1px 1px 1px #fff;
   top: 0;
   left: 0.5em;
 }
@@ -30,4 +30,8 @@
 
 :host.invalid {
   background: rgba(200, 0, 0, 0.2);
+}
+
+:host.active {
+  box-shadow: inset 0 0 2px #00a;
 }

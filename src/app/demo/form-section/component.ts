@@ -1,9 +1,12 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChild,
   HostBinding,
   HostListener,
+  OnDestroy,
+  OnInit,
   Optional,
   Self,
   SkipSelf,
@@ -14,6 +17,8 @@ import {
   FormGroupDirective,
   NgControl,
 } from '@angular/forms';
+import { isEqual } from 'lodash';
+import { Subscription } from 'rxjs';
 
 import { PathProviderService } from '../path.service';
 
@@ -23,16 +28,16 @@ import { PathProviderService } from '../path.service';
   styleUrls: ['./style.css'],
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class FormSectionComponent {
-  @ContentChild(NgControl) nc: NgControl;
-
-  @HostBinding('attr.label')
+export class FormSectionComponent implements OnInit, OnDestroy {
   get label() {
+    let label: string;
     if (this.cc) {
-      return this.cc.name;
+      label = this.cc.name;
     } else if (this.nc) {
-      return this.nc.name;
+      label = this.nc.name;
     }
+
+    return label;
   }
 
   @HostBinding('class.invalid')
@@ -58,12 +63,6 @@ export class FormSectionComponent {
     return `[${this.path.join(', ')}]`;
   }
 
-  @HostListener('click', ['$event'])
-  onClick(event: Event) {
-    event.stopPropagation();
-    this.pathProvider.subject.next(this.path);
-  }
-
   get path(): string[] {
     // Strips off the root form, since we don't want to use 'UI' here:
     return this.parent ? [...this.parent.path, this.label] : [];
@@ -81,6 +80,37 @@ export class FormSectionComponent {
     @Optional() @SkipSelf() public parent: FormSectionComponent,
     @Optional() @Self() public cc: ControlContainer,
     @Optional() public fgd: FormGroupDirective,
+    private cdr: ChangeDetectorRef,
     public pathProvider: PathProviderService,
   ) {}
+  private sub: Subscription;
+  @ContentChild(NgControl) nc: NgControl;
+
+  @HostBinding('class.active') active = false;
+
+  @HostBinding('attr.label')
+  get labelRendered() {
+    let label = this.label;
+    if (!isNaN(+label)) {
+      label = `[${label}]`;
+    }
+    return label;
+  }
+
+  @HostListener('click', ['$event'])
+  onClick(event: Event) {
+    event.stopPropagation();
+    this.pathProvider.subject.next(this.path);
+  }
+
+  ngOnInit() {
+    this.sub = this.pathProvider.subject.subscribe(path => {
+      this.active = isEqual(path, this.path);
+      this.cdr.markForCheck();
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

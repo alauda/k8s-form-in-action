@@ -1,11 +1,11 @@
-<form>
+<form [formGroup]="form">
   <x-form-section
     *ngFor="let row of controls; let index = index"
-    [formGroup]="row"
+    [formGroupName]="index"
   >
-    <input formControlName="0" (blur)="onBlur()" />:
+    <input formControlName="0" (blur)="onBlur()" />
     <input formControlName="1" (blur)="onBlur()" />
-    <button (click)="remove(index)">-</button>
+    <button (click)="remove(index)" class="x-remove">-</button>
   </x-form-section>
-  <button (click)="add()">+</button>
+  <button (click)="add()" class="x-add">+</button>
 </form>

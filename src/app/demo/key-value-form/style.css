@@ -1,4 +1,9 @@
 :host {
   display: inline-block;
   vertical-align: top;
+  flex: 1;
+}
+
+button {
+  width: 100%;
 }
