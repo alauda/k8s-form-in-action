@@ -2,6 +2,8 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   EventEmitter,
+  InjectFlags,
+  InjectionToken,
   Injector,
   Input,
   OnDestroy,
@@ -17,12 +19,12 @@ import {
   FormControl,
   FormGroup,
   FormGroupDirective,
-  ValidationErrors,
-  Validator,
+  NgControl,
+  Validators,
 } from '@angular/forms';
 import { cloneDeep, isEqual } from 'lodash';
 import { Observable, Subscription } from 'rxjs';
-import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
+import { distinctUntilChanged, first, map, startWith } from 'rxjs/operators';
 
 import {
   OnFormArrayResizeFn,
@@ -30,12 +32,18 @@ import {
   setResourceByForm,
 } from './util';
 
+/**
+ * Reports that a FormControl is pending, meaning that that async validation is occurring and
+ * errors are not yet available for the input value.
+ */
+export const PENDING = 'PENDING';
+
 // Base form component for Resources.
 // <T> refers the type of the resource.
 export abstract class BaseResourceFormComponent<
   R extends Object = any,
   F extends Object = R
-> implements OnInit, ControlValueAccessor, Validator, OnDestroy, AfterViewInit {
+> implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit {
   private formValueSub: Subscription;
   private parentFormSub: Subscription;
   private adaptedResource: F;
@@ -53,6 +61,7 @@ export abstract class BaseResourceFormComponent<
   ngFormGroupDirective: FormGroupDirective;
 
   disabled = false;
+  destroyed = false;
 
   // Based on scenarios, the form can be a single form control, array or a complex group.
   form: FormControl | FormGroup | FormArray;
@@ -171,17 +180,6 @@ export abstract class BaseResourceFormComponent<
     this.cdr.markForCheck();
   }
 
-  /**
-   * We skipped the form control, but checks the embedded form instead.
-   */
-  validate(_c: FormControl): ValidationErrors | null {
-    if (this.form && this.form.invalid) {
-      return { [this.constructor.name]: true };
-    }
-
-    return null;
-  }
-
   registerOnValidatorChange(fn: () => void) {
     this.onValidatorChange = fn;
   }
@@ -191,18 +189,8 @@ export abstract class BaseResourceFormComponent<
   }
 
   ngAfterViewInit() {
-    const parentForm: FormGroupDirective = this.getInjectable(
-      FormGroupDirective,
-    );
-    if (parentForm) {
-      this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
-        if (this.ngFormGroupDirective) {
-          this.ngFormGroupDirective.onSubmit(event);
-        }
-        this.form.updateValueAndValidity();
-        this.cdr.markForCheck();
-      });
-    }
+    this.setupSubmitEvent();
+    this.setupValidators();
   }
 
   ngOnDestroy() {
@@ -210,9 +198,12 @@ export abstract class BaseResourceFormComponent<
     if (this.parentFormSub) {
       this.parentFormSub.unsubscribe();
     }
+    this.destroyed = true;
   }
 
-  private getInjectable<Token>(token: Function & { prototype: Token }) {
+  private getInjectable<Token>(
+    token: Function & { prototype: Token } | InjectionToken<Token>,
+  ): Token {
     try {
       return this.injector.get(token);
     } catch {}
@@ -267,6 +258,52 @@ export abstract class BaseResourceFormComponent<
     if (this.formValueSub) {
       this.formValueSub.unsubscribe();
       this.formValueSub = undefined;
+    }
+  }
+
+  private setupSubmitEvent() {
+    const parentForm: FormGroupDirective = this.getInjectable(
+      FormGroupDirective,
+    );
+    if (parentForm) {
+      this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
+        if (this.ngFormGroupDirective) {
+          this.ngFormGroupDirective.onSubmit(event);
+        }
+        this.form.updateValueAndValidity();
+        this.cdr.markForCheck();
+      });
+    }
+  }
+
+  private setupValidators() {
+    // We should only consider fetching the NgControl at the current element:
+    const ngControl = this.injector.get<NgControl>(NgControl as any, undefined, InjectFlags.Self);
+
+    if (ngControl) {
+      const syncValidator = () => {
+        if (!this.destroyed && this.form && this.form.invalid) {
+          return { [this.constructor.name]: true };
+        }
+      };
+      const asyncValidator = () => {
+        return this.form.statusChanges.pipe(
+          startWith(this.form.status),
+          first(status => status !== PENDING),
+          map(() => syncValidator()),
+        );
+      };
+
+      // Attach nested validation status to the interface:
+      ngControl.control.validator = Validators.compose([
+        ngControl.control.validator,
+        syncValidator,
+      ]);
+
+      ngControl.control.asyncValidator = Validators.composeAsync([
+        ngControl.control.asyncValidator,
+        asyncValidator,
+      ]);
     }
   }
 

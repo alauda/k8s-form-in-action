@@ -4,12 +4,7 @@ import {
   Injector,
   forwardRef,
 } from '@angular/core';
-import {
-  AbstractControl,
-  FormArray,
-  NG_VALIDATORS,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { AbstractControl, FormArray, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {
   BaseResourceFormGroupComponent,
   PathParam,
@@ -24,11 +19,6 @@ import { PodSpec } from '../types';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => PodSpecFormComponent),
-      multi: true,
-    },
-    {
-      provide: NG_VALIDATORS,
       useExisting: forwardRef(() => PodSpecFormComponent),
       multi: true,
     },

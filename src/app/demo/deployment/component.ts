@@ -4,12 +4,7 @@ import {
   Injector,
   forwardRef,
 } from '@angular/core';
-import {
-  FormGroup,
-  NG_VALIDATORS,
-  NG_VALUE_ACCESSOR,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
 import { Deployment, DeploymentTypeMeta } from '../types';
@@ -21,11 +16,6 @@ import { Deployment, DeploymentTypeMeta } from '../types';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DeploymentFormComponent),
-      multi: true,
-    },
-    {
-      provide: NG_VALIDATORS,
       useExisting: forwardRef(() => DeploymentFormComponent),
       multi: true,
     },
@@ -43,6 +33,11 @@ export class DeploymentFormComponent extends BaseResourceFormGroupComponent<
           Validators.required,
           Validators.pattern(/^[a-z0-9][a-z0-9-]*[a-z0-9]$/),
         ],
+        () => {
+          return new Promise(res => {
+            setTimeout(res, 2000);
+          });
+        },
       ],
       namespace: ['', [Validators.required]],
       labels: [{}],

@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -6,7 +7,6 @@ import {
   HostBinding,
   HostListener,
   OnDestroy,
-  OnInit,
   Optional,
   Self,
   SkipSelf,
@@ -28,7 +28,7 @@ import { PathProviderService } from '../path.service';
   styleUrls: ['./style.css'],
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class FormSectionComponent implements OnInit, OnDestroy {
+export class FormSectionComponent implements AfterViewInit, OnDestroy {
   get label() {
     let label: string;
     if (this.cc) {
@@ -49,6 +49,7 @@ export class FormSectionComponent implements OnInit, OnDestroy {
   get status() {
     if (this.control) {
       const partials = [
+        this.control.status,
         this.control.dirty ? 'dirty' : 'pristine',
         this.control.touched ? 'touched' : 'untouched',
         this.formGroupDirective.submitted ? 'submitted' : '',
@@ -103,11 +104,17 @@ export class FormSectionComponent implements OnInit, OnDestroy {
     this.pathProvider.subject.next(this.path);
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.sub = this.pathProvider.subject.subscribe(path => {
       this.active = isEqual(path, this.path);
       this.cdr.markForCheck();
     });
+
+    if (this.control) {
+      this.control.statusChanges.subscribe(() => {
+        this.cdr.markForCheck();
+      });
+    }
   }
 
   ngOnDestroy() {

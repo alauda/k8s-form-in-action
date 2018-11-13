@@ -8,7 +8,6 @@ import {
 import {
   AbstractControl,
   FormArray,
-  NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
   ValidatorFn,
 } from '@angular/forms';
@@ -25,11 +24,6 @@ export type KeyValue = [string, string];
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => KeyValueFormComponent),
-      multi: true,
-    },
-    {
-      provide: NG_VALIDATORS,
       useExisting: forwardRef(() => KeyValueFormComponent),
       multi: true,
     },

@@ -7,7 +7,7 @@
     "build": "yarn build:lib && yarn build:demo",
     "build:demo": "ng build --prod --base-href /k8s-form-in-action/demo/ --deploy-url /k8s-form-in-action/demo/",
     "build:lib": "ng build ng-resource-form-util",
-    "prepublish": "rm -rf demo && rm -rf dist && yarn build && cp -r dist/k8s-form-in-action demo",
+    "prepublish-": "rm -rf demo && rm -rf dist && yarn build && cp -r dist/k8s-form-in-action demo",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
