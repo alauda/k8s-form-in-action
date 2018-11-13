@@ -15,13 +15,23 @@ x-form-section, ng-monaco-editor {
 
 ng-monaco-editor {
   align-self: stretch;
+  margin: 0.5em;
 }
 
 x-form-section {
   height: 100%;
+  margin: 0;
 }
 
 x-deployment {
   overflow: auto;
   height: 100%;
+}
+
+.hint {
+  border: 1px solid grey;
+}
+
+.hint::ng-deep p {
+  margin: 0.5em;
 }

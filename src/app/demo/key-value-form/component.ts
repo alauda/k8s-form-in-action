@@ -6,6 +6,7 @@ import {
   forwardRef,
 } from '@angular/core';
 import {
+  AbstractControl,
   FormArray,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
@@ -48,7 +49,20 @@ export class KeyValueFormComponent
   }
 
   createForm() {
-    return this.fb.array([]);
+    const duplicateKeyValidator = (fArray: AbstractControl) => {
+      const names = [];
+      for (const control of (fArray as FormArray).controls) {
+        const [name] = control.value;
+        if (!names.includes(name)) {
+          names.push(name);
+        } else {
+          return { duplicatedContainerName: true };
+        }
+      }
+      return null;
+    };
+
+    return this.fb.array([], duplicateKeyValidator);
   }
 
   getDefaultFormModel(): KeyValue[] {
@@ -84,13 +98,6 @@ export class KeyValueFormComponent
     this.cdr.markForCheck();
   }
 
-  private getPreviousKeys(index: number) {
-    return this.formModel
-      .slice(0, index)
-      .map(([key]) => key)
-      .filter(key => !!key);
-  }
-
   protected createNewControl() {
     const missingKeyValidator: ValidatorFn = control => {
       const [key, value] = control.value;
@@ -101,24 +108,6 @@ export class KeyValueFormComponent
       }
     };
 
-    const duplicateKeyValidator: ValidatorFn = control => {
-      const index = this.form.controls.indexOf(control);
-      const previousKeys = this.getPreviousKeys(index);
-
-      const [key] = control.value;
-
-      if (previousKeys.includes(key)) {
-        return {
-          duplicateKey: key,
-        };
-      } else {
-        return null;
-      }
-    };
-
-    return this.fb.array(
-      [[], []],
-      [missingKeyValidator, duplicateKeyValidator],
-    );
+    return this.fb.array([[], []], [missingKeyValidator]);
   }
 }

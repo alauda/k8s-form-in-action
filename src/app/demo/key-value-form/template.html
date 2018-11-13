@@ -4,7 +4,7 @@
     [formGroupName]="index"
   >
     <input formControlName="0" (blur)="onBlur()" />
-    <input formControlName="1" (blur)="onBlur()" />
+    <textarea formControlName="1" (blur)="onBlur()"></textarea>
     <button (click)="remove(index)" class="x-remove">-</button>
   </x-form-section>
   <button (click)="add()" class="x-add">+</button>

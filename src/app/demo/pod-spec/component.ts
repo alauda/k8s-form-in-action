@@ -4,7 +4,12 @@ import {
   Injector,
   forwardRef,
 } from '@angular/core';
-import { FormArray, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  AbstractControl,
+  FormArray,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import {
   BaseResourceFormGroupComponent,
   PathParam,
@@ -38,8 +43,20 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<
   }
 
   createForm() {
+    const validator = (fArray: AbstractControl) => {
+      const names = [];
+      for (const control of (fArray as FormArray).controls) {
+        const { name } = control.value;
+        if (!names.includes(name)) {
+          names.push(name);
+        } else {
+          return { duplicatedContainerName: true };
+        }
+      }
+      return null;
+    };
     return this.fb.group({
-      containers: this.fb.array([]),
+      containers: this.fb.array([], validator),
     });
   }
 

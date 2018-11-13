@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  font-family: 'Courier New', Courier, monospace;
-  text-shadow: 1px 1px 1px #fff;
+  font-family: monospace;
+  text-shadow: 1px 1px #fff;
 }
 
-input {
-  flex: 1;
+input, textarea {
+  flex: 1 1 100%;
+  background: #ffffffaa;
+  border: 1px solid grey;
+  padding: 2px 4px;
 }
 
 pre {

@@ -1,7 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { safeDump, safeLoadAll } from 'js-yaml';
+import * as Md from 'markdown-it';
 import { MonacoProviderService } from 'ng-monaco-editor';
 import { combineLatest } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
@@ -12,6 +18,8 @@ function defer(timeout: number) {
   return new Promise(res => setTimeout(res, timeout));
 }
 
+const md = new Md();
+
 @Component({
   selector: 'x-demo',
   templateUrl: './template.html',
@@ -21,12 +29,14 @@ function defer(timeout: number) {
 })
 export class DemoComponent implements OnInit {
   form: FormGroup;
-  monacoReady: Promise<[monaco.editor.IStandaloneCodeEditor, any]>;
+  monacoReady: Promise<[monaco.editor.IStandaloneCodeEditor, any, any]>;
+  contents: string;
   private monacoReadyRes: Function;
 
   private oldDecorations: string[] = [];
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private fb: FormBuilder,
     private http: HttpClient,
     private monacoProvider: MonacoProviderService,
@@ -83,15 +93,16 @@ export class DemoComponent implements OnInit {
   }
 
   async editorChanged(editor: monaco.editor.IStandaloneCodeEditor) {
-    const quickOpen: any = await this.monacoProvider.loadModule([
-      'vs/editor/contrib/quickOpen/quickOpen',
+    const [quickOpen, { getHover }]: any = await Promise.all([
+      this.monacoProvider.loadModule(['vs/editor/contrib/quickOpen/quickOpen']),
+      this.monacoProvider.loadModule(['vs/editor/contrib/hover/getHover']),
     ]);
 
     await this.monacoProvider.initMonaco();
 
     // Make sure the yaml language service is online:
-    await defer(500);
-    this.monacoReadyRes([editor, quickOpen]);
+    await defer(100);
+    this.monacoReadyRes([editor, quickOpen, getHover]);
 
     editor.onDidChangeCursorSelection(async ({ selection }) => {
       const model = editor.getModel();
@@ -125,18 +136,17 @@ export class DemoComponent implements OnInit {
   }
 
   async highlightSymbol(path: string[]) {
-    const [editor] = await this.monacoReady;
+    const [editor, _, getHover] = await this.monacoReady;
     const range = await this.getYamlRangeForPath(path);
 
     let decoration: any;
     if (range) {
-      editor.revealPositionInCenter(
-        {
-          column: range.startColumn,
-          lineNumber: range.startLineNumber,
-        },
-        monaco.editor.ScrollType.Smooth,
-      );
+      const position = {
+        column: range.startColumn,
+        lineNumber: range.startLineNumber,
+      };
+
+      editor.revealPositionInCenter(position, monaco.editor.ScrollType.Smooth);
 
       decoration = {
         range,
@@ -145,17 +155,29 @@ export class DemoComponent implements OnInit {
           className: 'x-highlight-range',
         },
       };
+
+      const [{ contents }] = await getHover(editor.getModel(), position, {
+        isCancellationRequested: () => false,
+        onCancellationRequested: () => Event.NONE,
+      });
+
+      this.contents = md.render(
+        contents.map(content => content.value).join('\n'),
+      );
     }
 
     this.oldDecorations = editor.deltaDecorations(
       this.oldDecorations,
       decoration ? [decoration] : [],
     );
+
+    this.cdr.markForCheck();
   }
 
   private async getYamlRangeForPath(path: string[]): Promise<monaco.IRange> {
     const [editor, quickOpen] = await this.monacoReady;
-    const symbols = await quickOpen.getDocumentSymbols(editor.getModel());
+    const model = editor.getModel();
+    const symbols = await quickOpen.getDocumentSymbols(model);
     const arrayIndeces = path.filter(p => Number.isInteger(+p));
     const flattenedPath = path
       .filter(p => p && !Number.isInteger(+p))
@@ -179,7 +201,6 @@ export class DemoComponent implements OnInit {
     } else {
       res = candidates[0];
     }
-
     return res && res.range;
   }
 

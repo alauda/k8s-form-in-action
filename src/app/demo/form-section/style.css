@@ -3,10 +3,10 @@
   flex-wrap: wrap;
   flex: 1 1 40%;
   border: 1px dashed grey;
-  padding: 1.5em 0.5em 1.5em 1em;
+  padding: 1.5em 0.5em;
   position: relative;
   transition: all 0.1s;
-  margin: 0.2em;
+  margin: 0.5em;
   align-items: flex-start;
 }
 
@@ -14,7 +14,7 @@
   position: absolute;
   display: block;
   content: attr(label);
-  top: 0;
+  top: 0.3em;
   left: 0.5em;
 }
 

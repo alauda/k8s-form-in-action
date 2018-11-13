@@ -60,7 +60,7 @@ export class FormSectionComponent implements OnInit, OnDestroy {
 
   @HostBinding('attr.title')
   get title() {
-    return `[${this.path.join(', ')}]`;
+    return this.path.length > 0 ? `[${this.path.join(', ')}]` : undefined;
   }
 
   get path(): string[] {
@@ -92,7 +92,7 @@ export class FormSectionComponent implements OnInit, OnDestroy {
   get labelRendered() {
     let label = this.label;
     if (!isNaN(+label)) {
-      label = `[${label}]`;
+      label = `#${label}`;
     }
     return label;
   }
