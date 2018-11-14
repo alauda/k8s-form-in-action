@@ -4,7 +4,18 @@
       <input (blur)="onBlur()" formControlName="name" />
     </x-form-section>
     <x-form-section>
-      <input (blur)="onBlur()" formControlName="namespace" />
+      <select formControlName="namespace">
+        <option value="" disabled>Choose a namespace</option>
+        <option *ngFor="let namespace of namespaces" [ngValue]="namespace">
+          {{ namespace }}
+        </option>
+        <option
+          *ngIf="!namespaces.includes(form.get('metadata.namespace').value)"
+          [ngValue]="form.get('metadata.namespace').value"
+        >
+          {{ form.get('metadata.namespace').value }}
+        </option>
+      </select>
     </x-form-section>
     <x-form-section>
       <x-key-value-form (blur)="onBlur()" formControlName="labels">

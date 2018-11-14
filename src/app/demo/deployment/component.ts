@@ -25,6 +25,8 @@ import { Deployment, DeploymentTypeMeta } from '../types';
 export class DeploymentFormComponent extends BaseResourceFormGroupComponent<
   Deployment
 > {
+  namespaces = ['default', 'kube-system'];
+
   createForm(): FormGroup {
     const metadataForm = this.fb.group({
       name: [

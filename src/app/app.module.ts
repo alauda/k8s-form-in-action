@@ -13,7 +13,7 @@ const DEFAULT_MONACO_OPTIONS: monaco.editor.IEditorConstructionOptions = {
   folding: true,
   scrollBeyondLastLine: true,
   minimap: { enabled: false },
-  mouseWheelZoom: true,
+  mouseWheelZoom: false,
   scrollbar: {
     vertical: 'visible',
     horizontal: 'visible',
