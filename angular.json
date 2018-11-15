@@ -23,6 +23,11 @@
               "src/assets",
               {
                 "glob": "**/*",
+                "input": "schema",
+                "output": "/schema"
+              },
+              {
+                "glob": "**/*",
                 "input": "node_modules/monaco-editor/min/vs",
                 "output": "/lib/v1.2/vs"
               },

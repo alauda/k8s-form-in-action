@@ -1,0 +1,1555 @@
+{
+  "oneOf": [
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.NonResourceAttributes"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AzureDiskVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.Image"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.Role"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EventSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJobStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentRequest"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SELinuxOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceRequirements"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolume"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageLayer"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigRollback"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.WeightedPodAffinityTerm"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.FSGroupStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClientList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SelfSubjectRulesReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodSecurityContext"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ComponentStatusList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.HostSubnetList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EnvVar"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceAccountList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSet"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1.StorageClassList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Binding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.Subject"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.Job"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentCauseImageTrigger"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSetList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.ClusterRoleScopeRestriction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.FSGroupStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SourceRevision"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageImportSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.Deployment"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicyReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ScaleSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicyReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.PodSecurityPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ServiceAccountRestriction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.StepInfo"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SecretSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyIngressRule"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRole"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Secret"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Capabilities"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.OwnerReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ObjectReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClientAuthorizationList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.StatusCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerState"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyBindingList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteIngressCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIVersions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStatusOutput"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRangeList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SelfSubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Handler"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.ScaleStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceRequester"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AttachedVolume"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSetSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.Deployment"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SelfSubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SecretBuildSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.TokenReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServicePort"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ProjectedVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaSelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.Scale"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentRollback"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.JobTemplateSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildLog"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RollbackConfig"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJobList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeDaemonEndpoints"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySubjectReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudgetStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationController"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.RollingUpdateDeployment"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ComponentCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.StatusDetails"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRange"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.RepositoryImportStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.VolumeMount"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRole"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingRestrictionList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscalerStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.GroupRestriction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.HostPathVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedRoleBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.CPUTargetUtilization"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.TagImageHook"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.NonResourceAttributes"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.LifecycleHook"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Pod"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.CephFSVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.RBDVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSelectorTerm"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscalerList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitHubWebHookCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.UserInfo"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.GitRepoVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BinaryBuildSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.SignatureIssuer"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.CustomDeploymentStrategyParams"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointAddress"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.Ingress"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicyRule"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImportStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LocalObjectReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointsList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.Template"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.Group"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EmptyDirVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfigSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingRestrictionSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ScaleIOVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DaemonEndpoint"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.TokenReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.PolicyRule"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ResourceQuotaStatusByNamespace"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.UserInfo"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.RollingDeploymentStrategyParams"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ComponentStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscalerSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeAddress"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LoadBalancerStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AWSElasticBlockStoreVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudget"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscalerList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageImportStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedRole"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Probe"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.SELinuxStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuotaList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicyReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.FCVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.version.Info"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigRollbackSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImportSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodTemplate"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ServiceAccountReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SecurityContextConstraints"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.AppliedClusterResourceQuotaList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstance"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Namespace"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.WatchEvent"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointSubset"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.Project"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuotaStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1beta1.StorageClassList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfigList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuotaSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.QuobyteVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRoleList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.FlexVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.Identity"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscalerSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.ScopeRestriction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodAffinity"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamMapping"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SelfSubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStatusOutputTo"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.LocalSubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentRollback"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1beta1.StorageClass"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicyList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.ClusterNetworkList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.APIVersion"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectRulesReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJobSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.TokenReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.ResourceAttributes"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.SupplementalGroupsStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentLog"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRoleBindingList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RunAsUserStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequest"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.LocalResourceAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.LocalSubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.BrokerTemplateInstanceSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SelfSubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EventList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.ScaleSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.IdentityList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.NamedTagEventList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentTriggerImageChangeParams"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.CustomBuildStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DeprecatedDownwardAPIVolumeFile"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicyPeer"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicyList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.StageInfo"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.UserIdentityMapping"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.SignatureCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStateTerminated"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSelectorRequirement"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitSourceRevision"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.PodSecurityPolicySpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DownwardAPIVolumeFile"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PreferredSchedulingTerm"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressRule"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.GlusterfsVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectRulesReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointPort"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.UserList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetUpdateStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageChangeTrigger"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.RollbackConfig"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.PodSecurityPolicyList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageSignature"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSet"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStateWaiting"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapProjection"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DeprecatedDownwardAPIVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DownwardAPIProjection"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EnvFromSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EnvVarSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscaler"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResourceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyPort"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Lifecycle"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicyBindingList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.TokenReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.ScaleSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSet"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectRequest"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildPostCommitSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudgetSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NFSVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretKeySelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NamespaceSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleBindingList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJob"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAuthorizeTokenList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.VolumeProjection"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.Eviction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedClusterRole"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerPort"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.TCPSocketAction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressBackend"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.SubresourceReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Toleration"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageLabel"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NamespaceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.ResourceAttributes"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamTag"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudgetList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Service"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagImportPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressTLS"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PortworxVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GenericWebHookCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRoleBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaim"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretEnvSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildRequest"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedClusterRoleBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RollingUpdateDeployment"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Affinity"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.ExecNewPodHook"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AzureFileVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DownwardAPIVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentTriggerPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamTagList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingRestriction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentDetails"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceFieldSelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageSourcePath"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.WebHookTrigger"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.DockerStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.Scale"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.BrokerTemplateInstance"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RoutePort"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecurityContext"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMap"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.User"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.TokenReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HostPortRange"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRangeItem"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.HTTPHeader"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ResourceAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.HTTPGetAction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.CrossVersionObjectReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.CinderVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyRule"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodTemplateList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.Scale"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.RecreateDeploymentStrategyParams"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClient"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ExecAction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodTemplateSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageChangeCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitLabWebHookCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySelfSubjectReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.SignatureSubject"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageLookupPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClientAuthorization"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicyBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagReferencePolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.Route"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.VsphereVirtualDiskVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.IDRange"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Container"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildTriggerPolicy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Node"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitBuildSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LoadBalancerIngress"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImport"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerImage"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscalerStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildTriggerCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1.StorageClass"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.UserRestriction"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.FlockerVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RollingUpdateDaemonSet"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStream"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodAffinityTerm"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteIngress"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicySpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PhotonPersistentDiskVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagEvent"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.ServiceAccountPodSecurityPolicyReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySelfSubjectReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.AppliedClusterResourceQuota"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.GroupList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRoleBindingList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Volume"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapKeySelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfig"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ScaleStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BitbucketWebHookCause"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SupplementalGroupsStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.runtime.RawExtension"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicySpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ISCSIVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.Policy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySubjectReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.ScaleStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSystemInfo"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.KeyToPath"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.GCEPersistentDiskVolumeSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceAccount"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.Build"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRoleList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SubjectAccessReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAuthorizeToken"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.BrokerTemplateInstanceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscaler"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfig"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleRef"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.ClusterNetwork"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapEnvSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuota"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAccessToken"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSetStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImage"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.JenkinsPipelineBuildStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ThirdPartyResource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SelfSubjectRulesReviewSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Event"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.Parameter"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.TLSConfig"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRangeSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Taint"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Preconditions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SecurityContextConstraintsList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAccessTokenList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.NetNamespace"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SELinuxContextStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteTargetReference"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.TokenReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretProjection"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Endpoints"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IDRange"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroupList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SourceBuildStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyPeer"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuota"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRoleBinding"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectRulesReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.LocalSubjectAccessReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.DockerBuildStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.NetNamespaceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySubjectReview"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagEventCondition"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageSource"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.Role"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStateRunning"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentStrategy"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeAffinity"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ThirdPartyResourceList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyList"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.HostSubnet"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HTTPIngressPath"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.RepositoryImportSpec"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.RunAsUserStrategyOptions"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SubjectAccessReviewStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SourceControlUser"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildOutput"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ObjectFieldSelector"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NamespaceStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodAntiAffinity"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfigStatus"
+    },
+    {
+      "$ref": "https://github.com/pengx17/k8s-form-in-action/raw/master/schema/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HTTPIngressRuleValue"
+    }
+  ]
+}

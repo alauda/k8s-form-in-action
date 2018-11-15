@@ -1,0 +1,1555 @@
+{
+  "oneOf": [
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.NonResourceAttributes"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AzureDiskVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.Image"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.Role"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EventSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJobStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentRequest"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SELinuxOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceRequirements"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolume"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageLayer"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigRollback"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.WeightedPodAffinityTerm"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.FSGroupStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClientList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SelfSubjectRulesReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodSecurityContext"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ComponentStatusList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.HostSubnetList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EnvVar"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceAccountList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSet"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1.StorageClassList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Binding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.Subject"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.Job"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentCauseImageTrigger"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSetList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.ClusterRoleScopeRestriction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.FSGroupStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SourceRevision"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageImportSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.Deployment"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicyReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ScaleSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicyReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.PodSecurityPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ServiceAccountRestriction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.StepInfo"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SecretSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyIngressRule"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRole"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Secret"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Capabilities"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.OwnerReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ObjectReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClientAuthorizationList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.StatusCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerState"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyBindingList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteIngressCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIVersions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStatusOutput"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRangeList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SelfSubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Handler"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.ScaleStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceRequester"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AttachedVolume"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSetSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.Deployment"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SelfSubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SecretBuildSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.TokenReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServicePort"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ProjectedVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaSelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.Scale"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentRollback"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.JobTemplateSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildLog"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RollbackConfig"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJobList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeDaemonEndpoints"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySubjectReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudgetStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationController"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.RollingUpdateDeployment"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ComponentCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.StatusDetails"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRange"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.RepositoryImportStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.VolumeMount"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRole"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingRestrictionList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscalerStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.GroupRestriction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.HostPathVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedRoleBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.CPUTargetUtilization"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.TagImageHook"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.NonResourceAttributes"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.LifecycleHook"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Pod"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.CephFSVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.RBDVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSelectorTerm"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscalerList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitHubWebHookCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.UserInfo"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.GitRepoVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BinaryBuildSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.SignatureIssuer"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.CustomDeploymentStrategyParams"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointAddress"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.Ingress"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicyRule"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImportStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LocalObjectReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointsList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.Template"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.Group"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EmptyDirVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfigSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingRestrictionSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ScaleIOVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DaemonEndpoint"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.TokenReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.PolicyRule"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ResourceQuotaStatusByNamespace"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.UserInfo"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.RollingDeploymentStrategyParams"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ComponentStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscalerSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeAddress"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LoadBalancerStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AWSElasticBlockStoreVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudget"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscalerList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageImportStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedRole"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Probe"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.SELinuxStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuotaList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicyReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.FCVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.version.Info"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigRollbackSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImportSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodTemplate"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ServiceAccountReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SecurityContextConstraints"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.AppliedClusterResourceQuotaList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstance"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Namespace"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.WatchEvent"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointSubset"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.Project"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuotaStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1beta1.StorageClassList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfigList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuotaSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.QuobyteVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRoleList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.FlexVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.Identity"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscalerSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.ScopeRestriction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodAffinity"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamMapping"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SelfSubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStatusOutputTo"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.LocalSubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentRollback"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1beta1.StorageClass"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaimVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicyList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.ClusterNetworkList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.APIVersion"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectRulesReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJobSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.TokenReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.ResourceAttributes"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.SupplementalGroupsStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentLog"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRoleBindingList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RunAsUserStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequest"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.LocalResourceAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.LocalSubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.BrokerTemplateInstanceSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SelfSubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EventList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.ScaleSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.IdentityList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.NamedTagEventList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentTriggerImageChangeParams"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.CustomBuildStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DeprecatedDownwardAPIVolumeFile"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicyPeer"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicyList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.StageInfo"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.UserIdentityMapping"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.SignatureCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStateTerminated"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSelectorRequirement"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitSourceRevision"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.PodSecurityPolicySpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DownwardAPIVolumeFile"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PreferredSchedulingTerm"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressRule"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.GlusterfsVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectRulesReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EndpointPort"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.UserList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetUpdateStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageChangeTrigger"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.RollbackConfig"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.PodSecurityPolicyList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageSignature"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSet"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStateWaiting"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapProjection"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DeprecatedDownwardAPIVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DownwardAPIProjection"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EnvFromSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.EnvVarSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscaler"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResourceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyPort"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ReplicationControllerList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Lifecycle"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicyBindingList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.TokenReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.ScaleSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSet"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectRequest"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildPostCommitSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudgetSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NFSVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretKeySelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NamespaceSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleBindingList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v2alpha1.CronJob"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAuthorizeTokenList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.VolumeProjection"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.Eviction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedClusterRole"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerPort"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.TCPSocketAction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressBackend"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.SubresourceReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Toleration"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageLabel"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NamespaceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.ResourceAttributes"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamTag"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.policy.v1beta1.PodDisruptionBudgetList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.certificates.v1beta1.CertificateSigningRequestStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Service"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagImportPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressTLS"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PortworxVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GenericWebHookCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRoleBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeClaim"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretEnvSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildRequest"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.NamedClusterRoleBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RollingUpdateDeployment"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Affinity"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.ExecNewPodHook"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.AzureFileVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.DownwardAPIVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentTriggerPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamTagList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleBindingRestriction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentDetails"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SubjectAccessReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceFieldSelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageSourcePath"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.WebHookTrigger"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.DockerStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.Scale"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.BrokerTemplateInstance"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RoutePort"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecurityContext"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMap"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.User"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1beta1.TokenReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HostPortRange"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRangeItem"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.HTTPHeader"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ResourceAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.HTTPGetAction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.RoleList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.CrossVersionObjectReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.CinderVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyRule"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodTemplateList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.Scale"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.RecreateDeploymentStrategyParams"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClient"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ExecAction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodTemplateSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageChangeCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitLabWebHookCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySelfSubjectReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.SignatureSubject"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.project.apis.project.v1.ProjectSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageLookupPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthClientAuthorization"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterPolicyBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagReferencePolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.Route"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.VsphereVirtualDiskVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.IDRange"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Container"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildTriggerPolicy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Node"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.GitBuildSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LoadBalancerIngress"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImport"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerImage"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.HorizontalPodAutoscalerStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildTriggerCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuotaSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.storage.v1.StorageClass"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.UserRestriction"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DaemonSetStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.FlockerVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.RollingUpdateDaemonSet"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStream"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodAffinityTerm"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteIngress"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicySpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PhotonPersistentDiskVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagEvent"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.ServiceAccountPodSecurityPolicyReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySelfSubjectReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.AppliedClusterResourceQuota"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.user.apis.user.v1.GroupList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRoleBindingList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Volume"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapKeySelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfig"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ScaleStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BitbucketWebHookCause"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SupplementalGroupsStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.runtime.RawExtension"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.EgressNetworkPolicySpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ISCSIVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.Policy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySubjectReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.DeploymentList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.autoscaling.v1.ScaleStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeSystemInfo"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.KeyToPath"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.GCEPersistentDiskVolumeSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ServiceAccount"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.Build"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.ClusterRoleList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1.SubjectAccessReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAuthorizeToken"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.BrokerTemplateInstanceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IngressSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HorizontalPodAutoscaler"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfig"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PersistentVolumeStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.RoleRef"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.ClusterNetwork"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ConfigMapEnvSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.quota.apis.quota.v1.ClusterResourceQuota"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAccessToken"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.StatefulSetStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.ImageStreamImage"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.JenkinsPipelineBuildStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ThirdPartyResource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SelfSubjectRulesReviewSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Event"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.Parameter"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.TLSConfig"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.LimitRangeSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Taint"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Preconditions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SecurityContextConstraintsList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ReplicaSetStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.oauth.apis.oauth.v1.OAuthAccessTokenList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.NetNamespace"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.SELinuxContextStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.route.apis.route.v1.RouteTargetReference"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authentication.v1.TokenReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.SecretProjection"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.deploy.apis.apps.v1.DeploymentConfigList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.Endpoints"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.IDRange"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroupList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SourceBuildStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.NetworkPolicyPeer"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.batch.v1.JobSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ResourceQuota"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.ClusterRoleBinding"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.SubjectRulesReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.LocalSubjectAccessReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.DockerBuildStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.NetNamespaceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.PodSecurityPolicySubjectReview"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.TagEventCondition"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.ImageSource"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.rbac.v1beta1.Role"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ContainerStateRunning"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.template.apis.template.v1.TemplateInstanceSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.apps.v1beta1.DeploymentStrategy"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NodeAffinity"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.ThirdPartyResourceList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.authorization.apis.authorization.v1.PolicyList"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.sdn.apis.network.v1.HostSubnet"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HTTPIngressPath"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.image.apis.image.v1.RepositoryImportSpec"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.security.apis.security.v1.RunAsUserStrategyOptions"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.authorization.v1beta1.SubjectAccessReviewStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.SourceControlUser"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildOutput"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.ObjectFieldSelector"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.NamespaceStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.api.v1.PodAntiAffinity"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/com.github.openshift.origin.pkg.build.apis.build.v1.BuildConfigStatus"
+    },
+    {
+      "$ref": "https://gist.githubusercontent.com/pengx17/0ce785e18739f3421c95ee7bf833e37f/raw/ac3783b7416196309eabb46c846748e6043c9060/_definitions.json#/definitions/io.k8s.kubernetes.pkg.apis.extensions.v1beta1.HTTPIngressRuleValue"
+    }
+  ]
+}

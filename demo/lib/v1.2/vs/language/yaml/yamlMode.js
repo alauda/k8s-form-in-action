@@ -1,6 +1,6 @@
 /*!-----------------------------------------------------------------------------
  * Copyright (c) Microsoft Corporation. All rights reserved.
- * monaco-yaml version: 1.1.0(21933e3875a54e615c75003b5cff49975b3de7cc)
+ * monaco-yaml version: 1.3.0(54764033753db38e03ed759b63dd3108af991b57)
  * Released under the MIT license
  * https://github.com/kpdecker/monaco-yaml/blob/master/LICENSE.md
  *-----------------------------------------------------------------------------*/
