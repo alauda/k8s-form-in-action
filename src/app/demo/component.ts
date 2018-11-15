@@ -20,6 +20,11 @@ function defer(timeout: number) {
 
 const md = new Md();
 
+const NEVER_CANCEL_TOKEN = {
+  isCancellationRequested: false,
+  onCancellationRequested: () => Event.NONE,
+};
+
 @Component({
   selector: 'x-demo',
   templateUrl: './template.html',
@@ -118,7 +123,11 @@ export class DemoComponent implements OnInit {
       model: monaco.editor.IModel,
       position: monaco.IPosition,
     ) {
-      let symbols = await quickOpen.getDocumentSymbols(model);
+      let symbols = await quickOpen.getDocumentSymbols(
+        model,
+        false,
+        NEVER_CANCEL_TOKEN,
+      );
       symbols = symbols.filter(symbol =>
         symbol.range.containsPosition(position),
       );
@@ -156,10 +165,11 @@ export class DemoComponent implements OnInit {
         },
       };
 
-      const [{ contents }] = await getHover(editor.getModel(), position, {
-        isCancellationRequested: () => false,
-        onCancellationRequested: () => Event.NONE,
-      });
+      const [{ contents }] = await getHover(
+        editor.getModel(),
+        position,
+        NEVER_CANCEL_TOKEN,
+      );
 
       this.contents = md.render(
         contents.map(content => content.value).join('\n'),
@@ -177,7 +187,11 @@ export class DemoComponent implements OnInit {
   private async getYamlRangeForPath(path: string[]): Promise<monaco.IRange> {
     const [editor, quickOpen] = await this.monacoReady;
     const model = editor.getModel();
-    const symbols = await quickOpen.getDocumentSymbols(model);
+    const symbols = await quickOpen.getDocumentSymbols(
+      model,
+      false,
+      NEVER_CANCEL_TOKEN,
+    );
     const arrayIndeces = path.filter(p => Number.isInteger(+p));
     const flattenedPath = path
       .filter(p => p && !Number.isInteger(+p))

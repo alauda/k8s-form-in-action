@@ -24,17 +24,17 @@
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor/min/vs",
-                "output": "/lib/v1.1/vs"
+                "output": "/lib/v1.2/vs"
               },
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-languages/release/min",
-                "output": "/lib/v1.1/vs/basic-languages"
+                "output": "/lib/v1.2/vs/basic-languages"
               },
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-yaml/min",
-                "output": "/lib/v1.1/vs/language/yaml"
+                "output": "/lib/v1.2/vs/language/yaml"
               }
             ],
             "styles": ["src/styles.css"],

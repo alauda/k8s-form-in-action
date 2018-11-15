@@ -1,5 +1,9 @@
 
-# Angular 响应式表单 Kubernetes 对象实战
+# Angular Reactive Forms - Kubernetes Objects in Action
 
-- [DEMO](https://pengx17.github.io/k8s-form-in-action/demo/): 部署表单DEMO
-- [Slides](https://pengx17.github.io/k8s-form-in-action/docs/)：演示文稿
+- [DEMO](https://pengx17.github.io/k8s-form-in-action/demo/)
+  - A working demo for editting a Kubernetes Deployment form
+- [Slides](https://pengx17.github.io/k8s-form-in-action/docs/)
+  - Slides (in Chinese) I used when presented the idea around our team
+
+You can find the source code as well in this repo. A detailed blog post behind it is on the way.

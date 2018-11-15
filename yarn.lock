@@ -4407,9 +4407,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
-monaco-editor@^0.14.3:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.14.3.tgz#7cc4a4096a3821f52fea9b10489b527ef3034e22"
+monaco-editor@^0.15.2:
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.15.2.tgz#424bcb9c0593b034f0bd4f8c14ce45329508e249"
+  integrity sha512-N+zuKyxS6NQ0EJO/HMNp6gMWj2g5C0fCeSVXkGVf6eARS0Viblz/0aPXfCZRmhnkstKX+xgczvSQj72pW9OJCg==
 
 monaco-yaml@^1.1.1:
   version "1.2.0"
@@ -4486,9 +4487,10 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
 
-ng-monaco-editor@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/ng-monaco-editor/-/ng-monaco-editor-0.2.1.tgz#cc09d1764cbcb2c33bbbb6970f314e37ed2440a8"
+ng-monaco-editor@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/ng-monaco-editor/-/ng-monaco-editor-1.0.4.tgz#391b5befea0c29bbb604ddf95d2fd8794ee9759e"
+  integrity sha512-8wHiH27XBoTeWdPzci/1zoK5nw0jTrLnqLikNIs0/Uyv86usyS1CsYYn/S7k5ntUHq3U100EQtLeTdjdo6en/A==
   dependencies:
     tslib "^1.9.0"
 
