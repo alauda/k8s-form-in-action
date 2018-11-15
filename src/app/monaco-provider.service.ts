@@ -29,6 +29,7 @@ export class CustomMonacoProviderService extends MonacoProviderService {
   private configYaml() {
     monaco.languages.yaml.yamlDefaults.setDiagnosticsOptions({
       validate: true,
+      enableSchemaRequest: true,
       schemas: [
         {
           uri: k8sDeploymentSchema,

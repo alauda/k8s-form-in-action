@@ -8,7 +8,7 @@ class: left, middle
 
 # DEMO
 
-[demo](/demo)
+[demo](https://pengx17.github.io/k8s-form-in-action/demo)
 
 ---
 
@@ -319,8 +319,8 @@ REF: [Angular Reactive Form](https://angular.cn/guide/reactive-forms)
   
 - 有且只有一个根部 `form` 控件。 根据情况可能是 `FormGroup` 、`FormArray`、`FormControl`
   - 结构一般与当前对象 schema 结构相似，这样可以
-    - 通过 `form.patchValue` 来设置表单数据
-    - 在控制器或者模板里更容易的与原始数据进行对照
+      - 通过 `form.patchValue` 来设置表单数据
+      - 在控制器或者模板里更容易的与原始数据进行对照
 - 在模板内可以组合使用 `formGroupName`, `formControlName` 等指令绑定到响应表单控件上
 
 ---

@@ -4412,8 +4412,9 @@ monaco-editor@^0.14.3:
   resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.14.3.tgz#7cc4a4096a3821f52fea9b10489b527ef3034e22"
 
 monaco-yaml@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/monaco-yaml/-/monaco-yaml-1.1.1.tgz#1a8882fe9d641ab8ffa63d923cc8da61492e0d83"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/monaco-yaml/-/monaco-yaml-1.2.0.tgz#6b652b3e5518f8fccc3f8a7226784ef441b73704"
+  integrity sha512-jabW288YmsSsCGNAvjC4QJgoSeFzJd07dWcIkvbWHGKhp574mTkQYMkEfu6Vj6jBXfCSi054UxqAF7FKS8g8bQ==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
