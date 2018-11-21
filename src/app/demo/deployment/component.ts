@@ -1,10 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Injector,
-  forwardRef,
-} from '@angular/core';
-import { FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Injector } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
 import { Deployment, DeploymentTypeMeta } from '../types';
@@ -13,13 +8,6 @@ import { Deployment, DeploymentTypeMeta } from '../types';
   selector: 'x-deployment',
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DeploymentFormComponent),
-      multi: true,
-    },
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeploymentFormComponent extends BaseResourceFormGroupComponent<

@@ -1,9 +1,11 @@
 {
   "name": "ng-resource-form-util",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
-  },
-  "module": "src/public_api.ts"
+    "@angular/core": "^7.0.0",
+    "@angular/forms": "^7.0.0",
+    "rxjs": "^6.0.0",
+    "lodash": "^4.0.0"
+  }
 }

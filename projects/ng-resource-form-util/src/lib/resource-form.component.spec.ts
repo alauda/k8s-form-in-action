@@ -7,7 +7,6 @@ import {
   OnInit,
   Output,
   ViewChild,
-  forwardRef,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -17,8 +16,6 @@ import {
   FormGroup,
   FormGroupDirective,
   FormsModule,
-  NG_VALIDATORS,
-  NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -52,18 +49,6 @@ interface TestResourceFormModel {
       />
     </form>
   `,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TestResourceFormComponent),
-      multi: true,
-    },
-    {
-      provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => TestResourceFormComponent),
-      multi: true,
-    },
-  ],
 })
 export class TestResourceFormComponent extends BaseResourceFormComponent<
   TestResource,

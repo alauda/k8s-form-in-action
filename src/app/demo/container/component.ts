@@ -4,7 +4,7 @@ import {
   Injector,
   forwardRef,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
 import { Container } from '../types';
@@ -18,13 +18,6 @@ const DEFAULT_CONTAINER: Container = {
   selector: 'x-container-form',
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ContainerFormComponent),
-      multi: true,
-    },
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContainerFormComponent extends BaseResourceFormGroupComponent<

@@ -3,14 +3,8 @@ import {
   Component,
   Injector,
   OnInit,
-  forwardRef,
 } from '@angular/core';
-import {
-  AbstractControl,
-  FormArray,
-  NG_VALUE_ACCESSOR,
-  ValidatorFn,
-} from '@angular/forms';
+import { AbstractControl, FormArray, ValidatorFn } from '@angular/forms';
 import { BaseResourceFormComponent } from 'ng-resource-form-util';
 
 export type KeyValue = [string, string];
@@ -21,13 +15,6 @@ export type KeyValue = [string, string];
   selector: 'x-key-value-form',
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => KeyValueFormComponent),
-      multi: true,
-    },
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KeyValueFormComponent

@@ -50,6 +50,7 @@ export abstract class BaseResourceFormComponent<
   private _formModel$: Observable<F>;
   readonly cdr: ChangeDetectorRef;
   readonly fb: FormBuilder;
+  readonly ngControl: NgControl;
 
   @Input()
   updateMode: boolean;
@@ -203,9 +204,11 @@ export abstract class BaseResourceFormComponent<
 
   private getInjectable<Token>(
     token: Function & { prototype: Token } | InjectionToken<Token>,
+    otherwise?: Token,
+    flags?: InjectFlags,
   ): Token {
     try {
-      return this.injector.get(token);
+      return this.injector.get(token as any, otherwise, flags);
     } catch {}
   }
 
@@ -232,8 +235,6 @@ export abstract class BaseResourceFormComponent<
         distinctUntilChanged(isEqual),
       )
       .subscribe(value => {
-        // Run another validation cycle to make sure validation depending on slibling controls is correct.
-        this.updateValidity();
         this.onChange(this.adaptFormModel(value));
       });
   }
@@ -276,10 +277,12 @@ export abstract class BaseResourceFormComponent<
     }
   }
 
+  /**
+   * setupValidators / setupValueAccessor let the users get rid of repeating
+   * providing validators/value accessors themselves.
+   */
   private setupValidators() {
-    // We should only consider fetching the NgControl at the current element:
-    const ngControl = this.injector.get<NgControl>(NgControl as any, undefined, InjectFlags.Self);
-
+    const ngControl = this.ngControl;
     if (ngControl) {
       const syncValidator = () => {
         if (!this.destroyed && this.form && this.form.invalid) {
@@ -307,8 +310,27 @@ export abstract class BaseResourceFormComponent<
     }
   }
 
+  /**
+   * setupValidators / setupValueAccessor let the users get rid of repeating
+   * providing validators/value accessors themselves.
+   */
+  private setupValueAccessor() {
+    if (this.ngControl) {
+      this.ngControl.valueAccessor = this;
+    }
+  }
+
   constructor(public injector: Injector) {
     this.cdr = this.getInjectable(ChangeDetectorRef);
     this.fb = this.getInjectable(FormBuilder);
+
+    // We should only consider fetching the NgControl at the current element:
+    this.ngControl = this.getInjectable<NgControl>(
+      NgControl,
+      undefined,
+      InjectFlags.Self,
+    );
+
+    this.setupValueAccessor();
   }
 }

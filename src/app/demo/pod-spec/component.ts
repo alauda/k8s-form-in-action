@@ -4,7 +4,7 @@ import {
   Injector,
   forwardRef,
 } from '@angular/core';
-import { AbstractControl, FormArray, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AbstractControl, FormArray } from '@angular/forms';
 import {
   BaseResourceFormGroupComponent,
   PathParam,
@@ -16,13 +16,6 @@ import { PodSpec } from '../types';
   selector: 'x-pod-spec-form',
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => PodSpecFormComponent),
-      multi: true,
-    },
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PodSpecFormComponent extends BaseResourceFormGroupComponent<
