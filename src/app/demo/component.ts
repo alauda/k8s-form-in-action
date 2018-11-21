@@ -8,6 +8,7 @@ import {
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { safeDump, safeLoadAll } from 'js-yaml';
 import * as Md from 'markdown-it';
+import { ZoneWidget } from 'monaco-editor/esm/vs/editor/contrib/zoneWidget/zoneWidget';
 import { MonacoProviderService } from 'ng-monaco-editor';
 import { combineLatest } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
@@ -24,6 +25,12 @@ const NEVER_CANCEL_TOKEN = {
   isCancellationRequested: false,
   onCancellationRequested: () => Event.NONE,
 };
+
+class ZoneWidgetImpl extends ZoneWidget {
+  _fillContainer(container: HTMLElement) {
+    container.innerHTML = 'LOLOLOL';
+  }
+}
 
 @Component({
   selector: 'x-demo',
@@ -109,10 +116,14 @@ export class DemoComponent implements OnInit {
     await defer(100);
     this.monacoReadyRes([editor, quickOpen, getHover]);
 
+    const widget = new (ZoneWidgetImpl as any)(editor, { showArrow: true });
+    widget.create();
+
     editor.onDidChangeCursorSelection(async ({ selection }) => {
       const model = editor.getModel();
       const position = selection.getPosition();
       const symbols = await _getSymbolsForPosition(model, position);
+      widget.show(position, 10);
       console.log(symbols);
       if (editor.hasTextFocus()) {
         this.highlightSymbol([]);
