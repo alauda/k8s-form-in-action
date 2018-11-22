@@ -4,8 +4,9 @@ import { FormGroup } from '@angular/forms';
 import { BaseResourceFormComponent } from './base-resource-form.component';
 
 export abstract class BaseResourceFormGroupComponent<
-  T = { [key: string]: any }
-> extends BaseResourceFormComponent<T> {
+  R extends Object = any,
+  F extends Object = R
+> extends BaseResourceFormComponent<R, F> {
   form: FormGroup;
 
   /**

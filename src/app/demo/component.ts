@@ -1,9 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  EmbeddedViewRef,
   OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { safeDump, safeLoadAll } from 'js-yaml';
@@ -27,8 +32,9 @@ const NEVER_CANCEL_TOKEN = {
 };
 
 class ZoneWidgetImpl extends ZoneWidget {
+  container: HTMLElement;
   _fillContainer(container: HTMLElement) {
-    container.innerHTML = 'LOLOLOL';
+    this.container = container;
   }
 }
 
@@ -39,13 +45,15 @@ class ZoneWidgetImpl extends ZoneWidget {
   providers: [PathProviderService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent implements OnInit, AfterViewInit {
+  @ViewChild('demoZoneTemplate') demoZoneTemplate: TemplateRef<any>;
   form: FormGroup;
   monacoReady: Promise<[monaco.editor.IStandaloneCodeEditor, any, any]>;
   contents: string;
   private monacoReadyRes: Function;
-
   private oldDecorations: string[] = [];
+  private widget: ZoneWidgetImpl & any;
+  private widgetViewRef: EmbeddedViewRef<any>;
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -53,6 +61,7 @@ export class DemoComponent implements OnInit {
     private http: HttpClient,
     private monacoProvider: MonacoProviderService,
     private pathProvider: PathProviderService,
+    private vc: ViewContainerRef,
   ) {
     this.monacoReady = new Promise(res => (this.monacoReadyRes = res));
   }
@@ -102,7 +111,11 @@ export class DemoComponent implements OnInit {
       .subscribe(([path]) => {
         this.highlightSymbol(path);
       });
+
+    this.widgetViewRef = this.vc.createEmbeddedView(this.demoZoneTemplate);
   }
+
+  ngAfterViewInit() {}
 
   async editorChanged(editor: monaco.editor.IStandaloneCodeEditor) {
     const [quickOpen, { getHover }]: any = await Promise.all([
@@ -118,12 +131,14 @@ export class DemoComponent implements OnInit {
 
     const widget = new (ZoneWidgetImpl as any)(editor, { showArrow: true });
     widget.create();
+    widget.container.append(this.widgetViewRef.rootNodes[0]);
+
+    this.widget = widget;
 
     editor.onDidChangeCursorSelection(async ({ selection }) => {
       const model = editor.getModel();
       const position = selection.getPosition();
       const symbols = await _getSymbolsForPosition(model, position);
-      widget.show(position, 10);
       console.log(symbols);
       if (editor.hasTextFocus()) {
         this.highlightSymbol([]);
@@ -185,6 +200,8 @@ export class DemoComponent implements OnInit {
       this.contents = md.render(
         contents.map(content => content.value).join('\n'),
       );
+
+      this.widget.show(position, 8);
     }
 
     this.oldDecorations = editor.deltaDecorations(
