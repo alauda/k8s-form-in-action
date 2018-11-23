@@ -20,6 +20,7 @@ import {
   FormGroup,
   FormGroupDirective,
   NgControl,
+  NgForm,
   Validators,
 } from '@angular/forms';
 import { cloneDeep, isEqual } from 'lodash';
@@ -263,8 +264,10 @@ export abstract class BaseResourceFormComponent<
   }
 
   private setupSubmitEvent() {
-    const parentForm: FormGroupDirective = this.getInjectable(
+    const parentForm = this.getInjectable(
       FormGroupDirective,
+    ) || this.getInjectable(
+      NgForm,
     );
     if (parentForm) {
       this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
