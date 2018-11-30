@@ -3,7 +3,7 @@
   <x-form-section>
     <x-deployment formControlName="ui"></x-deployment>
   </x-form-section>
-  <x-form-section>
+  <x-form-section [noPathIntelligence]="true">
     <ng-monaco-editor
       (monacoEditorChanged)="editorChanged($event)"
       [options]="{ language: 'yaml' }"

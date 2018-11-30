@@ -6,6 +6,7 @@ import {
   ContentChild,
   HostBinding,
   HostListener,
+  Input,
   OnDestroy,
   Optional,
   Self,
@@ -39,6 +40,8 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
 
     return label;
   }
+
+  @Input() noPathIntelligence = false;
 
   @HostBinding('class.invalid')
   get invalid() {
@@ -100,8 +103,10 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
 
   @HostListener('click', ['$event'])
   onClick(event: Event) {
-    event.stopPropagation();
-    this.pathProvider.subject.next(this.path);
+    if (!this.noPathIntelligence) {
+      event.stopPropagation();
+      this.pathProvider.subject.next(this.path);
+    }
   }
 
   ngAfterViewInit() {

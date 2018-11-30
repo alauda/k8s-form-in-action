@@ -27,3 +27,7 @@ pre {
 .x-remove {
   background-color: #ffddd4;
 }
+
+* {
+  box-sizing: border-box;
+}
