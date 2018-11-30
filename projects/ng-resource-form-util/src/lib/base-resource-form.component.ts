@@ -23,9 +23,9 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
-import { cloneDeep, isEqual } from 'lodash';
+import { cloneDeep } from 'lodash';
 import { Observable, Subscription } from 'rxjs';
-import { distinctUntilChanged, first, map, startWith } from 'rxjs/operators';
+import { first, map, startWith } from 'rxjs/operators';
 
 import {
   OnFormArrayResizeFn,
@@ -233,7 +233,6 @@ export abstract class BaseResourceFormComponent<
           }
           return formModel;
         }),
-        distinctUntilChanged(isEqual),
       )
       .subscribe(value => {
         this.onChange(this.adaptFormModel(value));
@@ -248,12 +247,6 @@ export abstract class BaseResourceFormComponent<
     } else {
       return [this.form];
     }
-  }
-
-  protected updateValidity() {
-    this.controls.forEach(control =>
-      control.updateValueAndValidity({ onlySelf: true, emitEvent: false }),
-    );
   }
 
   protected deregisterObservables() {

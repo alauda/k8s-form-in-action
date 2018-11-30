@@ -25,7 +25,7 @@
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "lodash": "^4.17.11",
-    "ng-monaco-editor": "^1.0.4",
+    "ng-monaco-editor": "^1.0.8",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

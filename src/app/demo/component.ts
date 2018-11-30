@@ -238,6 +238,7 @@ export class DemoComponent implements OnInit {
   }
 
   private formToYaml(json: any) {
+    console.log('formToYaml');
     try {
       // Following line is to remove undefined values
       json = JSON.parse(JSON.stringify(json));

@@ -4487,10 +4487,10 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
 
-ng-monaco-editor@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/ng-monaco-editor/-/ng-monaco-editor-1.0.4.tgz#391b5befea0c29bbb604ddf95d2fd8794ee9759e"
-  integrity sha512-8wHiH27XBoTeWdPzci/1zoK5nw0jTrLnqLikNIs0/Uyv86usyS1CsYYn/S7k5ntUHq3U100EQtLeTdjdo6en/A==
+ng-monaco-editor@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/ng-monaco-editor/-/ng-monaco-editor-1.0.8.tgz#08e795e3e67be089d504ab028e2493eb61cc2514"
+  integrity sha512-Kk+aNHKz3Ycif1sdiB0WTp9XWNmI+IXETIPwlbo5ueSy6fRfgumv+yImghXBhyRLt+FdHYJvZoJ6NZs8Zahf3w==
   dependencies:
     tslib "^1.9.0"
 
