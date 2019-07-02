@@ -23,7 +23,7 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
-import { cloneDeep } from 'lodash';
+import { cloneDeep } from 'lodash-es';
 import { Observable, Subscription } from 'rxjs';
 import { first, map, startWith } from 'rxjs/operators';
 

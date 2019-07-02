@@ -4,7 +4,7 @@ import {
   FormControl,
   FormGroup,
 } from '@angular/forms';
-import { cloneDeep, get, isEqual, set, unset } from 'lodash';
+import { cloneDeep, get, isEqual, set, unset } from 'lodash-es';
 
 export type OnFormArrayResizeFn = (path: PathParam) => AbstractControl;
 export type PathParam = (string | number)[];

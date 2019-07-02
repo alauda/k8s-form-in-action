@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
-    "lodash": "^4.17.11",
+    "lodash-es": "^4.17.11",
     "ng-monaco-editor": "^1.1.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
@@ -38,7 +38,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/js-yaml": "^3.11.2",
-    "@types/lodash": "^4.14.118",
+    "@types/lodash-es": "^4.17.3",
     "@types/markdown-it": "^0.0.7",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
@@ -93,5 +93,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "resolutions": {
+    "har-validator": "5.1.3"
   }
 }
