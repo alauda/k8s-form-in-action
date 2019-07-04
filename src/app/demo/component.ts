@@ -121,7 +121,6 @@ export class DemoComponent implements OnInit {
       model: monaco.editor.IModel,
       position: monaco.IPosition,
     ) {
-      // debugger;
       let symbols = await quickOpen.getDocumentSymbols(
         model,
         true,
