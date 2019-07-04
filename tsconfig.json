@@ -16,5 +16,8 @@
       "ng-resource-form-util": ["dist/ng-resource-form-util"],
       "ng-resource-form-util/*": ["dist/ng-resource-form-util/*"]
     }
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true
   }
 }

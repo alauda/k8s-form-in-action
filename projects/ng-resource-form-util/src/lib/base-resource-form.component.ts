@@ -59,7 +59,7 @@ export abstract class BaseResourceFormComponent<
   @Output()
   blur = new EventEmitter();
 
-  @ViewChild(FormGroupDirective)
+  @ViewChild(FormGroupDirective, { static: false })
   ngFormGroupDirective: FormGroupDirective;
 
   disabled = false;
@@ -257,11 +257,8 @@ export abstract class BaseResourceFormComponent<
   }
 
   private setupSubmitEvent() {
-    const parentForm = this.getInjectable(
-      FormGroupDirective,
-    ) || this.getInjectable(
-      NgForm,
-    );
+    const parentForm =
+      this.getInjectable(FormGroupDirective) || this.getInjectable(NgForm);
     if (parentForm) {
       this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
         if (this.ngFormGroupDirective) {

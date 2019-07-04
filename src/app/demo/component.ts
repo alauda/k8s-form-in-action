@@ -87,10 +87,10 @@ export class DemoComponent implements OnInit {
         yamlCtrl.setValue(deployment);
       });
 
-    combineLatest(
+    combineLatest([
       this.pathProvider.subject,
       uiCtrl.valueChanges.pipe(startWith(uiCtrl.value)),
-    )
+    ])
       .pipe(filter(([path]) => !!path && path.length > 0))
       .subscribe(([path]) => {
         this.highlightSymbol(path);
@@ -98,6 +98,7 @@ export class DemoComponent implements OnInit {
   }
 
   async editorChanged(editor: monaco.editor.IStandaloneCodeEditor) {
+    console.log('editor changed');
     const [quickOpen, { getHover }]: any = await Promise.all([
       this.monacoProvider.loadModule(['vs/editor/contrib/quickOpen/quickOpen']),
       this.monacoProvider.loadModule(['vs/editor/contrib/hover/getHover']),
@@ -120,11 +121,13 @@ export class DemoComponent implements OnInit {
       model: monaco.editor.IModel,
       position: monaco.IPosition,
     ) {
+      // debugger;
       let symbols = await quickOpen.getDocumentSymbols(
         model,
         true,
         NEVER_CANCEL_TOKEN,
       );
+
       return (symbols = symbols.filter(symbol =>
         symbol.range.containsPosition(position),
       ));
@@ -185,7 +188,6 @@ export class DemoComponent implements OnInit {
       false,
       NEVER_CANCEL_TOKEN,
     );
-
     function _findSymbolForPath(
       parent: monaco.languages.DocumentSymbol,
       _symbols: monaco.languages.DocumentSymbol[],
