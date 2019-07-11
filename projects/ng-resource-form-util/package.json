@@ -1,11 +1,11 @@
 {
   "name": "ng-resource-form-util",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0",
-    "@angular/forms": "^7.0.0",
-    "rxjs": "^6.0.0",
-    "lodash": "^4.0.0"
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/forms": "^8.0.0",
+    "rxjs": "^6.5.0",
+    "lodash-es": "^4.17.0"
   }
 }

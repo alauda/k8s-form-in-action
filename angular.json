@@ -170,5 +170,10 @@
       }
     }
   },
-  "defaultProject": "k8s-form-in-action"
+  "defaultProject": "k8s-form-in-action",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }

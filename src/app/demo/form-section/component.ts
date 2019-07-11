@@ -88,7 +88,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
     public pathProvider: PathProviderService,
   ) {}
   private sub: Subscription;
-  @ContentChild(NgControl) nc: NgControl;
+  @ContentChild(NgControl, { static: false }) nc: NgControl;
 
   @HostBinding('class.active') active = false;
 
