@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
     "core-js": "^3.1.4",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.14",
     "ng-monaco-editor": "1.1.0",
     "rxjs": "~6.5.2",
     "zone.js": "~0.9.1"
