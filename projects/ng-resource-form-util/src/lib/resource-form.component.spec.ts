@@ -54,10 +54,10 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
   TestResource,
   TestResourceFormModel
 > {
-  @ViewChild(FormGroupDirective)
+  @ViewChild(FormGroupDirective, { static: false })
   formDir: FormGroupDirective;
 
-  @ViewChild('simpleInput')
+  @ViewChild('simpleInput', { static: false })
   simpleInput: ElementRef;
 
   constructor(private elementRef: ElementRef, injector: Injector) {
@@ -145,10 +145,10 @@ export class TestResourceFormWrapperComponent implements OnInit {
   @Output()
   resourceChange = new EventEmitter();
 
-  @ViewChild(FormGroupDirective)
+  @ViewChild(FormGroupDirective, { static: false })
   formDir: FormGroupDirective;
 
-  @ViewChild(TestResourceFormComponent)
+  @ViewChild(TestResourceFormComponent, { static: false })
   resourceForm: TestResourceFormComponent;
 
   control = new FormControl();
