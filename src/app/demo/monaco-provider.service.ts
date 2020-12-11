@@ -1,5 +1,5 @@
 /// <reference path="../../../node_modules/monaco-editor/monaco.d.ts" />
-/// <reference path="../../../node_modules/monaco-yaml/monaco.d.ts" />
+/// <reference path="../../../node_modules/monaco-yaml/lib/monaco.d.ts" />
 
 import { Injectable } from '@angular/core';
 import { MonacoProviderService } from 'ng-monaco-editor';
@@ -14,12 +14,12 @@ const k8sSchema =
   providedIn: 'root',
 })
 export class CustomMonacoProviderService extends MonacoProviderService {
-  private ready: Promise<void>;
+  private ready: Promise<typeof monaco>;
   private res: Function;
   async initMonaco() {
     if (!this.ready) {
       this.ready = new Promise(res => (this.res = res));
-      await super.initMonaco();
+      const monaco = await super.initMonaco();
 
       // Load custom yaml language service:
       await super.loadModule([
@@ -29,7 +29,7 @@ export class CustomMonacoProviderService extends MonacoProviderService {
       ]);
       this.configYaml();
 
-      this.res();
+      this.res(monaco);
     }
 
     return this.ready;

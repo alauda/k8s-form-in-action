@@ -5,13 +5,14 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
+    "skipLibCheck": true,
     "paths": {
       "ng-resource-form-util": [
         "projects/ng-resource-form-util/src/public_api"

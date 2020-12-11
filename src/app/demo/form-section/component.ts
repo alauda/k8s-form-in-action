@@ -33,9 +33,9 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
   get label() {
     let label: string;
     if (this.cc) {
-      label = this.cc.name;
+      label = this.cc.name as string;
     } else if (this.nc) {
-      label = this.nc.name;
+      label = this.nc.name as string;
     }
 
     return label;

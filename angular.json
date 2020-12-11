@@ -38,12 +38,13 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/monaco-yaml/min",
+                "input": "node_modules/monaco-yaml/lib/min",
                 "output": "/lib/v1.2/vs/language/yaml"
               }
             ],
             "styles": ["src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -56,17 +57,19 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -104,13 +107,6 @@
       "projectType": "library",
       "prefix": "lib",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ng-resource-form-util/tsconfig.lib.json",
-            "project": "projects/ng-resource-form-util/ng-package.json"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

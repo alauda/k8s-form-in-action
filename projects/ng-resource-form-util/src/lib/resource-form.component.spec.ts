@@ -9,7 +9,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import {
   FormArray,
   FormControl,
@@ -182,11 +181,13 @@ describe('BaseResourceFormGroupComponent', () => {
   });
 
   it('should create a form', () => {
+    expect(wrapper.form).toBeFalsy();
     wrapper.resource = { simple: '123', ignored: 456 };
     fixture.detectChanges();
+    expect(wrapper.form).toBeTruthy();
   });
 
-  it('form should be correclty initialized', () => {
+  it('form should be correctly initialized', () => {
     wrapper.resource = { simple: '123', ignored: 456, array: '0,1 ,2' };
     fixture.detectChanges();
 
