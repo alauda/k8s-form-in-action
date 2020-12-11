@@ -42,7 +42,7 @@ export const PENDING = 'PENDING';
 
 // Base form component for Resources.
 // <T> refers the type of the resource.
-@Directive({})
+@Directive()
 export abstract class BaseResourceFormComponent<
   R extends Object = any,
   F extends Object = R

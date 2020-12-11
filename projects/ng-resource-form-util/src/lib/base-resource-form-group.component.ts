@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { BaseResourceFormComponent } from './base-resource-form.component';
 
-@Directive({})
+@Directive()
 export abstract class BaseResourceFormGroupComponent<
   R extends Object = { [key: string]: any },
   F extends Object = R
