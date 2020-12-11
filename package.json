@@ -8,6 +8,7 @@
     "build:demo": "ng build --prod --base-href /k8s-form-in-action/demo/ --deploy-url /k8s-form-in-action/demo/",
     "build:lib": "ng-packagr -p projects/ng-resource-form-util",
     "prerelease": "rm -rf demo && rm -rf dist && yarn build && cp -r dist/k8s-form-in-action demo",
+    "release": "npm publish dist/ng-resource-form-util",
     "test": "ng test",
     "lint": "ng lint"
   },
