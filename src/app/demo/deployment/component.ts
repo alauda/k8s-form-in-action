@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Injector } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
@@ -56,9 +56,5 @@ export class DeploymentFormComponent extends BaseResourceFormGroupComponent<
 
   getDefaultFormModel() {
     return DeploymentTypeMeta;
-  }
-
-  constructor(injector: Injector) {
-    super(injector);
   }
 }

@@ -1,8 +1,9 @@
-import { Injector } from '@angular/core';
+import { Directive } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { BaseResourceFormComponent } from './base-resource-form.component';
 
+@Directive({})
 export abstract class BaseResourceFormGroupComponent<
   R extends Object = { [key: string]: any },
   F extends Object = R
@@ -16,9 +17,5 @@ export abstract class BaseResourceFormGroupComponent<
 
   getResourceMergeStrategy() {
     return true;
-  }
-
-  constructor(injector: Injector) {
-    super(injector);
   }
 }

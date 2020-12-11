@@ -8,7 +8,7 @@ class: left, middle
 
 # DEMO
 
-[demo](https://pengx17.github.io/k8s-form-in-action/demo)
+[demo](https://alauda.github.io/k8s-form-in-action/demo)
 
 ---
 
@@ -25,6 +25,7 @@ class: left, middle
 # YAML/表单(UI)互转问题 - K8S 对象
 
 ### YAML 是 Kubernetes 对象最常见的展现和修改形式。
+
 ### Kuberntes 对象通常有如下字段:
 
 - 类型信息：TypeMeta
@@ -78,6 +79,7 @@ spec:
 class: start, middle
 
 # 静下心来...
+
 # 思考一下任务目标 🙏
 
 ---
@@ -85,7 +87,9 @@ class: start, middle
 class: left, middle
 
 ## 众所众知
+
 ### 控制台应用中处理复杂表单是 Web 前端最难的任务之一
+
 ### 而处理复杂的 Kubernetes 表单把这个问题推到了极致
 
 ---
@@ -135,18 +139,22 @@ class: start, middle
 ---
 
 # Link 中 k8s 对象表单开发范式
+
 ### 流程
 
 1. 学习目标 Kubernetes 对象的基本功能, 对它的 YAML Schema 有基本概念。
 2. 书写目标 API 对象 TypeScript 的类型 ( `interface` / `type` 等)。
 3. 拆解 k8s 对象类型成一系列子对象，为每个可复用的子对象封装为单独的表单组件。
-  - 比如 `PodSpec`, `Container`, `Env` 等
+
+- 比如 `PodSpec`, `Container`, `Env` 等
+
 4. 为拆解出来的每个子对象表单组件实现表单到对象的互转。
 5. 组合子对象表单，最终组合成完整的 K8S 对象表单。
 
 ---
 
 # Link 中 k8s 对象表单开发范式
+
 ### 学习 Kubernetes 对象
 
 由于我们前端人员对于 YAML 字段的高透明度和充分的修改灵活度, 我们需要了解相关 k8s 对象的业务/特性.
@@ -162,9 +170,11 @@ class: start, middle
 
 class: split
 
-### 先看一个例子🌰：部署表单
+### 先看一个例子 🌰：部署表单
+
 .column[
 https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#deployment-v1-apps
+
 ```yaml
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -181,9 +191,11 @@ spec:
         - name: nginx
           image: nginx:1.7.9
 ```
+
 ]
 
 .column[
+
 ```ts
 interface Deployment {
   apiVersion: string;
@@ -211,15 +223,16 @@ export interface PodSpec {
 export interface Container {
   name?: string;
   image?: string;
- }
+}
 ```
+
 ]
 
 ---
 
 ### 部署表单拓扑
 
-- 对于部署表单，我们拆分为3个主要表单
+- 对于部署表单，我们拆分为 3 个主要表单
   - `[DeploymentForm, PodSpecForm, ContainerForm]`
 
 ```plaintext
@@ -250,6 +263,7 @@ art: http://asciiflow.com/
 ### K8S 资源对象表单控件组件 - 模板
 
 最外层组件，对象的使用者可以依然使用模板驱动表单，将视图双向绑定到数据上：
+
 ```html
 <deployment-form [(ngModel)]="deployment"></deployment-form>
 ```
@@ -257,11 +271,12 @@ art: http://asciiflow.com/
 内部模板书写上比较容易：由普通表单控件 (如`aui-select`, `aui-input`等) 和其他子对象表单控件（如`pod-spec-form`）组成为一个单独的表单。
 
 部署模板使用响应式表单：
+
 ```html
 <form formGroup="form">
   <ng-container formGroupName="metadata">
-    Name:     <input formControlName="name">
-    Namespace <select formControlName="namespace"></select>
+    Name: <input formControlName="name" /> Namespace
+    <select formControlName="namespace"></select>
   </ng-container>
   <ng-container formGroupName="spec">
     <ng-container formGroupName="template">
@@ -291,7 +306,9 @@ REF: [Angular Reactive Form](https://angular.cn/guide/reactive-forms)
 ---
 
 ### K8S 资源对象表单控件组件 - 控制器
+
 #### 职责
+
 - 对外暴露为一个单独的表单控件
   - Host 模板可以绑定表单相关指令到对象表单控件
 - 对内表现为一个完整的表单组件
@@ -303,7 +320,9 @@ REF: [Angular Reactive Form](https://angular.cn/guide/reactive-forms)
 ---
 
 ### K8S 资源对象表单控件组件 - 控制器
+
 #### 使用响应式表单给了我们几个问题：
+
 - 如何初始化响应式表单控件
 - 如何实现 `writeValue`
   - 处理流入表单的数据
@@ -313,18 +332,21 @@ REF: [Angular Reactive Form](https://angular.cn/guide/reactive-forms)
 ---
 
 ### K8S 资源对象表单控件组件 - 控制器
+
 #### 表单初始化
 
 组件初始化时，需要生成一个响应式表单控件树
-  
+
 - 有且只有一个根部 `form` 控件。 根据情况可能是 `FormGroup` 、`FormArray`、`FormControl`
   - 结构一般与当前对象 schema 结构相似，这样可以
-      - 通过 `form.patchValue` 来设置表单数据
-      - 在控制器或者模板里更容易的与原始数据进行对照
+    - 通过 `form.patchValue` 来设置表单数据
+    - 在控制器或者模板里更容易的与原始数据进行对照
 - 在模板内可以组合使用 `formGroupName`, `formControlName` 等指令绑定到响应表单控件上
 
 ---
+
 ### K8S 资源对象表单控件组件 - 控制器
+
 #### 表单初始化
 
 比如对于部署表单，我们需要生成这样结构的表单控件：
@@ -334,26 +356,28 @@ const metadataForm = this.fb.group({
   name: ['', [Validators.required]],
   namespace: ['', [Validators.required]],
   labels: [{}],
-  annotations: [{}]
+  annotations: [{}],
 });
 
 const specForm = this.fb.group({
   selector: this.fb.group({ matchLabels: [{}] }),
-  template: this.fb.group({ spec: [{}] })
+  template: this.fb.group({ spec: [{}] }),
 });
 
 const deployForm = this.fb.group({
   metadata: metadataForm,
   spec: specForm,
 });
-
 ```
 
 ---
 
 ### K8S 资源对象表单控件组件 - 控制器
+
 #### 对外暴露为一个普通的表单控件，同时提供验证器以暴露自身表单控件的错误
+
 实现 `ControlValueAccessor` 和 `Validator`接口。
+
 - `writeValue`: 由外部写入内部时，需要将资源对象适配为表单可用的模型结构。
   - 大部分时候表单的 FormModel 与资源对象的 schema 一致。
   - 假如业务需要，比如 k8s 的 `metadata.labels` 字段是 `{ [key: string]: string }` 键值映射对象，但在视图中他的表单模型是键值对数组 `[string, string][]`，可以在这个阶段进行数据适配。
@@ -364,6 +388,7 @@ const deployForm = this.fb.group({
 ---
 
 ### K8S 资源对象表单控件组件 - 控制器
+
 #### `setFormByResource` 和 `setResourceByForm`
 
 刚才提到，为表单设置资源对象数据时可以直接通过调用 `form.patchValue(formModel)` ，使得一个结构化的表单被能快速的填充。
@@ -398,7 +423,6 @@ adaptResource  adaptForm
      +------>>>+ Form |
                +------+
 ```
-
 
 由于控制器大多数情况下使用方式和行为高度相似，于是 Link 将表单的这些功能和行为抽象、封装到了 `BaseResourceFormComponent` 基类内。
 
@@ -441,6 +465,7 @@ export abstract class BaseResourceFormComponent<R, F> implements ControlValueAcc
 ```
 
 ---
+
 ### 在最后
 
 基于表单开发范式，Link 的开发者可以非常快速的进行 K8S 相关资源对象表单的实现。
@@ -448,6 +473,6 @@ export abstract class BaseResourceFormComponent<R, F> implements ControlValueAcc
 - 实现总结过程中基本是我自己闭门造车，希望得到大家的反馈
 - 实现方案依需打磨，在成文过程中依然返厂了多次，修改了不少实践
 - 缺少用例分析。目前有一些简单的测试用例覆盖，但还不完整。
-- 源码：https://github.com/pengx17/k8s-form-in-action
+- 源码：https://github.com/alauda/k8s-form-in-action
 
 ## 谢谢大家

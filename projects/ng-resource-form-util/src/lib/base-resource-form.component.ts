@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   ChangeDetectorRef,
+  Directive,
   EventEmitter,
   InjectFlags,
   InjectionToken,
@@ -41,6 +42,7 @@ export const PENDING = 'PENDING';
 
 // Base form component for Resources.
 // <T> refers the type of the resource.
+@Directive({})
 export abstract class BaseResourceFormComponent<
   R extends Object = any,
   F extends Object = R

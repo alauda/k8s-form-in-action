@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Injector,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractControl, FormArray } from '@angular/forms';
 import {
   BaseResourceFormGroupComponent,
@@ -21,10 +16,6 @@ import { PodSpec } from '../types';
 export class PodSpecFormComponent extends BaseResourceFormGroupComponent<
   PodSpec
 > {
-  constructor(injector: Injector) {
-    super(injector);
-  }
-
   createForm() {
     const validator = (fArray: AbstractControl) => {
       const names = [];

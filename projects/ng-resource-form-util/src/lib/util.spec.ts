@@ -10,7 +10,7 @@ describe('form utilities', () => {
       imports: [ReactiveFormsModule],
     });
 
-    fb = TestBed.get(FormBuilder);
+    fb = TestBed.inject(FormBuilder);
   });
 
   it('setFormByResource', () => {
