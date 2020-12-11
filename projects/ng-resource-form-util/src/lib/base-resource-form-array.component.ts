@@ -1,8 +1,9 @@
-import { Injector } from '@angular/core';
+import { Directive } from '@angular/core';
 import { FormArray } from '@angular/forms';
 
 import { BaseResourceFormComponent } from './base-resource-form.component';
 
+@Directive({})
 export abstract class BaseResourceFormArrayComponent<
   R extends Object = { [key: string]: any },
   F extends Object = R
@@ -36,9 +37,5 @@ export abstract class BaseResourceFormArrayComponent<
   remove(index: number) {
     this.form.removeAt(index);
     this.cdr.markForCheck();
-  }
-
-  constructor(injector: Injector) {
-    super(injector);
   }
 }

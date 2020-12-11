@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Injector,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
@@ -23,10 +18,6 @@ const DEFAULT_CONTAINER: Container = {
 export class ContainerFormComponent extends BaseResourceFormGroupComponent<
   Container
 > {
-  constructor(injector: Injector) {
-    super(injector);
-  }
-
   createForm() {
     return this.fb.group({
       name: [

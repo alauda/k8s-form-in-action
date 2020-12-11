@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Injector,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, ValidatorFn } from '@angular/forms';
 import { BaseResourceFormComponent } from 'ng-resource-form-util';
 
@@ -21,9 +16,6 @@ export class KeyValueFormComponent
   extends BaseResourceFormComponent<{ [key: string]: string }, KeyValue[]>
   implements OnInit {
   form: FormArray;
-  constructor(injector: Injector) {
-    super(injector);
-  }
 
   getResourceMergeStrategy(): boolean {
     return false;
