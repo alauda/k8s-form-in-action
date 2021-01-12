@@ -159,6 +159,7 @@ export abstract class BaseResourceFormComponent<
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
+    this.form[isDisabled ? 'disable' : 'enable']();
   }
 
   writeValue(resource: R) {
@@ -206,7 +207,7 @@ export abstract class BaseResourceFormComponent<
   }
 
   private getInjectable<Token>(
-    token: Function & { prototype: Token } | InjectionToken<Token>,
+    token: (Function & { prototype: Token }) | InjectionToken<Token>,
     otherwise?: Token,
     flags?: InjectFlags,
   ): Token {
@@ -226,7 +227,7 @@ export abstract class BaseResourceFormComponent<
 
     this.formValueSub = this.form.valueChanges
       .pipe(
-        map(formModel => {
+        map((formModel) => {
           if (this.getResourceMergeStrategy()) {
             formModel = setResourceByForm(
               this.form,
@@ -236,7 +237,7 @@ export abstract class BaseResourceFormComponent<
           return formModel;
         }),
       )
-      .subscribe(value => {
+      .subscribe((value) => {
         this.onChange(this.adaptFormModel(value));
       });
   }
@@ -287,7 +288,7 @@ export abstract class BaseResourceFormComponent<
       const asyncValidator = () => {
         return this.form.statusChanges.pipe(
           startWith(this.form.status),
-          first(status => status !== PENDING),
+          first((status) => status !== PENDING),
           map(() => syncValidator()),
         );
       };
