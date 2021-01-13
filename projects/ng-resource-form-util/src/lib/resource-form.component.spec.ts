@@ -42,7 +42,7 @@ interface TestResourceFormModel {
       <input #simpleInput formControlName="simple" (blur)="onBlur()" />
       <input
         class="array-input"
-        *ngFor="let item of form.get('array').controls"
+        *ngFor="let item of $any(form.get('array')).controls"
         [formControl]="item"
         (blur)="onBlur()"
       />
@@ -102,8 +102,8 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
       ...resource,
       array: (resource.array || '')
         .split(',')
-        .map(item => item.trim())
-        .filter(item => !!item),
+        .map((item) => item.trim())
+        .filter((item) => !!item),
     };
 
     return adapted;
@@ -112,15 +112,16 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
   adaptFormModel(formModel: TestResourceFormModel) {
     return {
       ...formModel,
-      array: formModel.array.map(item => +item).join(','),
+      array: formModel.array.map((item) => +item).join(','),
       defaultField: 'DEFAULT',
     };
   }
 
   private get arrayInputs() {
-    return (this.elementRef.nativeElement as HTMLElement).querySelectorAll<
-      HTMLInputElement
-    >('input.array-input');
+    return (this.elementRef
+      .nativeElement as HTMLElement).querySelectorAll<HTMLInputElement>(
+      'input.array-input',
+    );
   }
 }
 
@@ -155,7 +156,7 @@ export class TestResourceFormWrapperComponent implements OnInit {
   form: FormGroup;
 
   ngOnInit() {
-    this.control.valueChanges.subscribe(value =>
+    this.control.valueChanges.subscribe((value) =>
       this.resourceChange.emit(value),
     );
 
@@ -259,5 +260,18 @@ describe('BaseResourceFormGroupComponent', () => {
     wrapper.resourceForm.simulateBlur();
     fixture.detectChanges();
     expect(wrapper.form.touched).toEqual(true);
+  });
+
+  it('should change form disabled state correctly', () => {
+    wrapper.resource = { simple: '123', ignored: 456 };
+    fixture.detectChanges();
+
+    wrapper.form.disable();
+    fixture.detectChanges();
+    expect(wrapper.resourceForm.form.disabled).toEqual(true);
+
+    wrapper.form.enable();
+    fixture.detectChanges();
+    expect(wrapper.resourceForm.form.disabled).toEqual(false);
   });
 });
