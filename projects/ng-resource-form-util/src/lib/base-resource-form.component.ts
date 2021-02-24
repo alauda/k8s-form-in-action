@@ -45,7 +45,8 @@ export const PENDING = 'PENDING';
 @Directive()
 export abstract class BaseResourceFormComponent<
   R extends Object = any,
-  F extends Object = R
+  F extends Object = R,
+  Control extends AbstractControl = FormControl
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit {
   private formValueSub: Subscription;
   private parentFormSub: Subscription;
@@ -68,12 +69,12 @@ export abstract class BaseResourceFormComponent<
   destroyed = false;
 
   // Based on scenarios, the form can be a single form control, array or a complex group.
-  form: FormControl | FormGroup | FormArray;
+  form: Control;
 
   /**
    * Method to create the default form
    */
-  abstract createForm(): FormControl | FormGroup | FormArray;
+  abstract createForm(): Control;
 
   /**
    * The default form model
@@ -130,7 +131,7 @@ export abstract class BaseResourceFormComponent<
   }
 
   /**
-   * Wrapps the ControlValueAccessor onChange (cvaConChange) to let
+   * Wraps the ControlValueAccessor onChange (cvaConChange) to let
    * the user do some hack before calling onChange
    */
   onChange(formValue: R) {
@@ -165,7 +166,7 @@ export abstract class BaseResourceFormComponent<
   writeValue(resource: R) {
     let formModel = (this.adaptedResource = this.adaptResourceModel(resource));
 
-    // We need to unsub the form value change before setting the form value
+    // We need to unsubscribe the form value change before setting the form value
     // because the form may emit events when setFormByResource is called.
     this.deregisterObservables();
 

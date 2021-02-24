@@ -7,14 +7,7 @@ import { BaseResourceFormComponent } from './base-resource-form.component';
 export abstract class BaseResourceFormGroupComponent<
   R extends Object = { [key: string]: any },
   F extends Object = R
-> extends BaseResourceFormComponent<R, F> {
-  form: FormGroup;
-
-  /**
-   * Method to create the default form
-   */
-  abstract createForm(): FormGroup;
-
+> extends BaseResourceFormComponent<R, F, FormGroup> {
   getResourceMergeStrategy() {
     return true;
   }

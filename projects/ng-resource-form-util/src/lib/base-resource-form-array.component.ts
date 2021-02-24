@@ -7,9 +7,7 @@ import { BaseResourceFormComponent } from './base-resource-form.component';
 export abstract class BaseResourceFormArrayComponent<
   R extends Object = { [key: string]: any },
   F extends Object = R
-> extends BaseResourceFormComponent<R[], F[]> {
-  form: FormArray;
-
+> extends BaseResourceFormComponent<R[], F[], FormArray> {
   get length() {
     return this.form.length;
   }

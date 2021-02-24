@@ -13,9 +13,8 @@ export type KeyValue = [string, string];
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KeyValueFormComponent
-  extends BaseResourceFormComponent<{ [key: string]: string }, KeyValue[]>
+  extends BaseResourceFormComponent<{ [key: string]: string }, KeyValue[], FormArray>
   implements OnInit {
-  form: FormArray;
 
   getResourceMergeStrategy(): boolean {
     return false;
