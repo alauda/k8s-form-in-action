@@ -15,7 +15,7 @@ import { filter, map, startWith } from 'rxjs/operators';
 import { PathProviderService } from './path.service';
 
 function defer(timeout: number) {
-  return new Promise(res => setTimeout(res, timeout));
+  return new Promise((resolve) => setTimeout(resolve, timeout));
 }
 
 const md = new Md();
@@ -36,7 +36,11 @@ export class DemoComponent implements OnInit {
   form: FormGroup;
   monacoReady: Promise<[monaco.editor.IStandaloneCodeEditor, any, any]>;
   contents: string;
-  private monacoReadyRes: Function;
+  private monacoReadyResolve: ([editor, getDocumentSymbols, getHover]: [
+    monaco.editor.IStandaloneCodeEditor,
+    any,
+    any,
+  ]) => void;
 
   private oldDecorations: string[] = [];
 
@@ -47,7 +51,9 @@ export class DemoComponent implements OnInit {
     private monacoProvider: MonacoProviderService,
     private pathProvider: PathProviderService,
   ) {
-    this.monacoReady = new Promise(res => (this.monacoReadyRes = res));
+    this.monacoReady = new Promise(
+      (resolve) => (this.monacoReadyResolve = resolve),
+    );
   }
 
   ngOnInit(): void {
@@ -62,20 +68,20 @@ export class DemoComponent implements OnInit {
     uiCtrl.valueChanges
       .pipe(
         startWith(uiCtrl.value),
-        map(value => this.formToYaml(value)),
-        filter(v => !!v),
+        map((value) => this.formToYaml(value)),
+        filter((v) => !!v),
       )
-      .subscribe(value => {
+      .subscribe((value) => {
         yamlCtrl.setValue(value, { emitEvent: false });
       });
 
     yamlCtrl.valueChanges
       .pipe(
         startWith(yamlCtrl.value),
-        map(value => this.yamlToForm(value)),
-        filter(v => !!v),
+        map((value) => this.yamlToForm(value)),
+        filter((v) => !!v),
       )
-      .subscribe(value => {
+      .subscribe((value) => {
         uiCtrl.setValue(value, { emitEvent: false });
       });
 
@@ -99,8 +105,11 @@ export class DemoComponent implements OnInit {
 
   async editorChanged(editor: monaco.editor.IStandaloneCodeEditor) {
     console.log('editor changed');
-    const [quickOpen, { getHover }]: any = await Promise.all([
-      this.monacoProvider.loadModule(['vs/editor/contrib/quickOpen/quickOpen']),
+
+    const [{ getDocumentSymbols }, { getHover }]: any = await Promise.all([
+      this.monacoProvider.loadModule([
+        'vs/editor/contrib/documentSymbols/documentSymbols',
+      ]),
       this.monacoProvider.loadModule(['vs/editor/contrib/hover/getHover']),
     ]);
 
@@ -108,26 +117,23 @@ export class DemoComponent implements OnInit {
 
     // Make sure the yaml language service is online:
     await defer(100);
-    this.monacoReadyRes([editor, quickOpen, getHover]);
+
+    this.monacoReadyResolve([editor, getDocumentSymbols, getHover]);
 
     editor.onDidChangeCursorSelection(async ({ selection }) => {
       const model = editor.getModel();
       const position = selection.getPosition();
       const symbols = await _getSymbolsForPosition(model, position);
-      this.pathProvider.subject.next(symbols.map(symbol => symbol.name));
+      this.pathProvider.subject.next(symbols.map((symbol) => symbol.name));
     });
 
     async function _getSymbolsForPosition(
       model: monaco.editor.IModel,
       position: monaco.IPosition,
     ) {
-      let symbols = await quickOpen.getDocumentSymbols(
-        model,
-        true,
-        NEVER_CANCEL_TOKEN,
-      );
+      let symbols = await getDocumentSymbols(model, true, NEVER_CANCEL_TOKEN);
 
-      return (symbols = symbols.filter(symbol =>
+      return (symbols = symbols.filter((symbol) =>
         symbol.range.containsPosition(position),
       ));
     }
@@ -166,7 +172,7 @@ export class DemoComponent implements OnInit {
         );
 
         this.contents = md.render(
-          contents.map(content => content.value).join('\n'),
+          contents.map((content) => content.value).join('\n'),
         );
       }
     }
@@ -194,7 +200,7 @@ export class DemoComponent implements OnInit {
     ): monaco.languages.DocumentSymbol {
       const childSymbol = _symbols.find(
         // tslint:disable-next-line:triple-equals
-        _symbol => _symbol.name == path[pathDepth],
+        (_symbol) => _symbol.name == path[pathDepth],
       );
 
       if (
@@ -219,7 +225,7 @@ export class DemoComponent implements OnInit {
 
   private yamlToForm(yaml: string) {
     try {
-      const formModels = safeLoadAll(yaml).map(item =>
+      const formModels = safeLoadAll(yaml).map((item) =>
         item === 'undefined' ? undefined : item,
       );
       let formModel = formModels[0];
