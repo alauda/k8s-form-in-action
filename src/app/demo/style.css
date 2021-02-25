@@ -3,7 +3,8 @@ form {
   height: calc(100vh - 120px);
 }
 
-x-form-section, ng-monaco-editor {
+x-form-section,
+ng-monaco-editor {
   flex: 1;
   border: 1px solid grey;
   overflow: hidden;

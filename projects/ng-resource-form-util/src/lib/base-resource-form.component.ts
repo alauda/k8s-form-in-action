@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {
+  AbstractType,
   AfterViewInit,
   ChangeDetectorRef,
   Directive,
@@ -10,6 +12,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  Type,
   ViewChild,
 } from '@angular/core';
 import {
@@ -43,9 +46,13 @@ export const PENDING = 'PENDING';
 // Base form component for Resources.
 // <T> refers the type of the resource.
 @Directive()
+// tslint:disable-next-line: directive-class-suffix
 export abstract class BaseResourceFormComponent<
-  R extends Object = any,
-  F extends Object = R
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  R extends object = object,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  F extends object = R,
+  Control extends AbstractControl = FormControl
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit {
   private formValueSub: Subscription;
   private parentFormSub: Subscription;
@@ -68,12 +75,12 @@ export abstract class BaseResourceFormComponent<
   destroyed = false;
 
   // Based on scenarios, the form can be a single form control, array or a complex group.
-  form: FormControl | FormGroup | FormArray;
+  form: Control;
 
   /**
    * Method to create the default form
    */
-  abstract createForm(): FormControl | FormGroup | FormArray;
+  abstract createForm(): Control;
 
   /**
    * The default form model
@@ -130,7 +137,7 @@ export abstract class BaseResourceFormComponent<
   }
 
   /**
-   * Wrapps the ControlValueAccessor onChange (cvaConChange) to let
+   * Wraps the ControlValueAccessor onChange (cvaConChange) to let
    * the user do some hack before calling onChange
    */
   onChange(formValue: R) {
@@ -165,7 +172,7 @@ export abstract class BaseResourceFormComponent<
   writeValue(resource: R) {
     let formModel = (this.adaptedResource = this.adaptResourceModel(resource));
 
-    // We need to unsub the form value change before setting the form value
+    // We need to unsubscribe the form value change before setting the form value
     // because the form may emit events when setFormByResource is called.
     this.deregisterObservables();
 
@@ -206,13 +213,13 @@ export abstract class BaseResourceFormComponent<
     this.destroyed = true;
   }
 
-  private getInjectable<Token>(
-    token: (Function & { prototype: Token }) | InjectionToken<Token>,
-    otherwise?: Token,
+  private getInjectable<T>(
+    token: Type<T> | AbstractType<T> | InjectionToken<T>,
+    otherwise?: T,
     flags?: InjectFlags,
-  ): Token {
+  ) {
     try {
-      return this.injector.get(token as any, otherwise, flags);
+      return this.injector.get(token, otherwise, flags);
     } catch {}
   }
 
@@ -227,7 +234,7 @@ export abstract class BaseResourceFormComponent<
 
     this.formValueSub = this.form.valueChanges
       .pipe(
-        map((formModel) => {
+        map(formModel => {
           if (this.getResourceMergeStrategy()) {
             formModel = setResourceByForm(
               this.form,
@@ -237,7 +244,7 @@ export abstract class BaseResourceFormComponent<
           return formModel;
         }),
       )
-      .subscribe((value) => {
+      .subscribe(value => {
         this.onChange(this.adaptFormModel(value));
       });
   }
@@ -245,11 +252,11 @@ export abstract class BaseResourceFormComponent<
   get controls(): AbstractControl[] {
     if (this.form instanceof FormArray) {
       return this.form.controls;
-    } else if (this.form instanceof FormGroup) {
-      return Object.values(this.form.controls);
-    } else {
-      return [this.form];
     }
+    if (this.form instanceof FormGroup) {
+      return Object.values(this.form.controls);
+    }
+    return [this.form];
   }
 
   protected deregisterObservables() {
@@ -285,13 +292,12 @@ export abstract class BaseResourceFormComponent<
           return { [this.constructor.name]: true };
         }
       };
-      const asyncValidator = () => {
-        return this.form.statusChanges.pipe(
+      const asyncValidator = () =>
+        this.form.statusChanges.pipe(
           startWith(this.form.status),
-          first((status) => status !== PENDING),
+          first(status => status !== PENDING),
           map(() => syncValidator()),
         );
-      };
 
       // Attach nested validation status to the interface:
       ngControl.control.validator = Validators.compose([

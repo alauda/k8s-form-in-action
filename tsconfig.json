@@ -1,26 +1,29 @@
 {
-  "compileOnSave": false,
+  "extends": "@1stg/tsconfig/angular",
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"],
-    "skipLibCheck": true,
+    "baseUrl": ".",
     "paths": {
       "ng-resource-form-util": [
-        "projects/ng-resource-form-util/src/public_api"
+        "./projects/ng-resource-form-util/src/public-api"
       ],
-      "ng-resource-form-util/*": ["projects/ng-resource-form-util/src/lib/*"]
+      "ng-resource-form-util/*": ["./projects/ng-resource-form-util/src/lib/*"]
     }
   },
+  // Extending `angularCompilerOptions` from `tsconfig` is not working for now
+  // it wil be supported in ng 12.0, see https://github.com/angular/angular/issues/36715
+  // TODO: remove it after upgrading to ng 12.0
   "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true
-  }
+    "disableTypeScriptVersionCheck": true,
+    "enableIvy": false,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictTemplates": true,
+    "trace": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "exclude": ["node_modules", "docs", "release"]
 }

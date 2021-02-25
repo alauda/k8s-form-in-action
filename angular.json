@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/k8s-form-in-action",
+            "outputPath": "docs/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -38,7 +38,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/monaco-yaml/lib/min",
+                "input": "node_modules/monaco-yaml/lib/dev",
                 "output": "/lib/v1.2/vs/language/yaml"
               }
             ],
@@ -85,19 +85,6 @@
               "browserTarget": "k8s-form-in-action:build:production"
             }
           }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "k8s-form-in-action:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["src/tsconfig.app.json"],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -113,16 +100,6 @@
             "main": "projects/ng-resource-form-util/src/test.ts",
             "tsConfig": "projects/ng-resource-form-util/tsconfig.spec.json",
             "karmaConfig": "projects/ng-resource-form-util/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ng-resource-form-util/tsconfig.lib.json",
-              "projects/ng-resource-form-util/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }

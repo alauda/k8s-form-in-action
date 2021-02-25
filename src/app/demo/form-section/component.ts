@@ -18,7 +18,7 @@ import {
   FormGroupDirective,
   NgControl,
 } from '@angular/forms';
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 import { Subscription } from 'rxjs';
 
 import { PathProviderService } from '../path.service';
@@ -27,6 +27,7 @@ import { PathProviderService } from '../path.service';
   selector: 'x-form-section',
   templateUrl: './template.html',
   styleUrls: ['./style.css'],
+  // tslint:disable-next-line: validate-decorators
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class FormSectionComponent implements AfterViewInit, OnDestroy {
@@ -84,9 +85,10 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
     @Optional() @SkipSelf() public parent: FormSectionComponent,
     @Optional() @Self() public cc: ControlContainer,
     @Optional() public fgd: FormGroupDirective,
-    private cdr: ChangeDetectorRef,
+    private readonly cdr: ChangeDetectorRef,
     public pathProvider: PathProviderService,
   ) {}
+
   private sub: Subscription;
   @ContentChild(NgControl, { static: false }) nc: NgControl;
 

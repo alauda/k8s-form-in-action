@@ -7,7 +7,7 @@ import {
 import { cloneDeep, get, isEqual, set, unset } from 'lodash-es';
 
 export type OnFormArrayResizeFn = (path: PathParam) => AbstractControl;
-export type PathParam = (string | number)[];
+export type PathParam = Array<string | number>;
 
 /**
  * Utility function to set a dynamic form with the given resource.
@@ -22,7 +22,8 @@ export type PathParam = (string | number)[];
  * (not all fields are editable in biz logic), we will traverse the form hierarchy
  * and feed each form control with the value at the path.
  */
-export function setFormByResource<R extends Object>(
+// eslint-disable-next-line sonarjs/cognitive-complexity
+export function setFormByResource<R>(
   form: AbstractControl,
   resource: R,
   onFormArrayResize?: OnFormArrayResizeFn,
@@ -84,7 +85,8 @@ export function setFormByResource<R extends Object>(
  * (not all fields are editable in biz logic), we will traverse the control and feed
  * each field one by one.
  */
-export function setResourceByForm<R extends Object>(
+// eslint-disable-next-line @typescript-eslint/ban-types, sonarjs/cognitive-complexity
+export function setResourceByForm<R extends object>(
   form: AbstractControl,
   resource: R,
 ): R {
@@ -111,8 +113,9 @@ export function setResourceByForm<R extends Object>(
     } else if (item instanceof FormArray) {
       // if resource has more items, remove them.
       // Since set will enlarge the array
+      // eslint-disable-next-line no-unmodified-loop-condition
       while (resourceAtPath && item.controls.length < resourceAtPath.length) {
-        (resourceAtPath as Array<any>).pop();
+        (resourceAtPath as any[]).pop();
       }
       item.controls.forEach((control, index) => {
         setResourceValueByPath(control, [...path, index]);

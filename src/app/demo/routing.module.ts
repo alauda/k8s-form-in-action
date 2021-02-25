@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { DemoComponent } from './component';
 
-const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: DemoComponent,
-  },
-];
-
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild([
+      {
+        path: '',
+        pathMatch: 'full',
+        component: DemoComponent,
+      },
+    ]),
+  ],
   exports: [RouterModule],
 })
 export class DemoRoutingModule {}

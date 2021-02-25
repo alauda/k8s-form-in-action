@@ -1,0 +1,4 @@
+docs/demo
+node_modules
+release
+/!.*.js

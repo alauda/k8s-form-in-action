@@ -5,9 +5,11 @@ body {
   text-shadow: 1px 1px #fff;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   flex: 1 1 100%;
-  background: #ffffffaa;
+  background: #fffa;
   border: 1px solid grey;
   padding: 2px 4px;
 }

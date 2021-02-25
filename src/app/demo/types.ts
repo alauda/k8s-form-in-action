@@ -132,10 +132,6 @@ export interface RollingUpdateStatefulSetStrategy {
   partition?: string | number;
 }
 
-// TODO: fill this in if required
-// tslint:disable-next-line:no-empty-interface
-export interface DeploymentStatus {}
-
 export interface PodSpec {
   initContainers?: Container[];
   containers: Container[];
@@ -153,10 +149,6 @@ export interface VolumeMount {
   subPath?: string;
   mountPropagation?: string;
 }
-
-// TODO: fill this in if required
-// tslint:disable-next-line:no-empty-interface
-export interface VolumeSource {}
 
 export interface KeyToPath {
   key?: string;
@@ -204,9 +196,6 @@ export interface EnvFromSource {
   configMapRef?: ConfigMapRef;
   secretRef?: SecretRef;
 }
-
-// tslint:disable-next-line:no-empty-interface
-export interface Namespace extends KubernetesResource {}
 
 export interface LocalObjectReference {
   name: string;

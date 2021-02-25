@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractControl, FormArray, ValidatorFn } from '@angular/forms';
 import { BaseResourceFormComponent } from 'ng-resource-form-util';
 
@@ -12,18 +12,18 @@ export type KeyValue = [string, string];
   styleUrls: ['./style.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class KeyValueFormComponent
-  extends BaseResourceFormComponent<{ [key: string]: string }, KeyValue[]>
-  implements OnInit {
-  form: FormArray;
-
-  getResourceMergeStrategy(): boolean {
+export class KeyValueFormComponent extends BaseResourceFormComponent<
+  { [key: string]: string },
+  KeyValue[],
+  FormArray
+> {
+  getResourceMergeStrategy() {
     return false;
   }
 
   createForm() {
     const duplicateKeyValidator = (fArray: AbstractControl) => {
-      const names = [];
+      const names: string[] = [];
       for (const control of (fArray as FormArray).controls) {
         const [name] = control.value;
         if (!names.includes(name)) {
@@ -76,9 +76,8 @@ export class KeyValueFormComponent
       const [key, value] = control.value;
       if (value && !key) {
         return { keyIsMissing: true };
-      } else {
-        return null;
       }
+      return null;
     };
 
     return this.fb.array([[], []], [missingKeyValidator]);

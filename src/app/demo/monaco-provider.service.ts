@@ -15,10 +15,11 @@ const k8sSchema =
 })
 export class CustomMonacoProviderService extends MonacoProviderService {
   private ready: Promise<typeof monaco>;
-  private res: Function;
+  private resolve: (result: typeof monaco) => void;
   async initMonaco() {
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     if (!this.ready) {
-      this.ready = new Promise(res => (this.res = res));
+      this.ready = new Promise(resolve => (this.resolve = resolve));
       const monaco = await super.initMonaco();
 
       // Load custom yaml language service:
@@ -29,7 +30,7 @@ export class CustomMonacoProviderService extends MonacoProviderService {
       ]);
       this.configYaml();
 
-      this.res(monaco);
+      this.resolve(monaco);
     }
 
     return this.ready;
