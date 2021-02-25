@@ -38,7 +38,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/monaco-yaml/lib/dev",
+                "input": "node_modules/monaco-yaml/lib/min",
                 "output": "/lib/v1.2/vs/language/yaml"
               }
             ],
