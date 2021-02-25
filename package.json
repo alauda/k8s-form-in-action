@@ -12,7 +12,7 @@
     "lint:style": "stylelint . --cache",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc --noEmit",
-    "release": "standard-version --release-as",
+    "release": "cd projects/ng-resource-form-util && standard-version --no-verify --release-as",
     "start": "ng serve --hmr",
     "test": "ng test",
     "test:watch": "WATCH=true ng test"
