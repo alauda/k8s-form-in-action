@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/alauda/k8s-form-in-action/compare/v3.0.0...v3.0.1) (2021-02-25)
+
+
+### Bug Fixes
+
+* use Object instead of object which accept other types like string ([ca1c20e](https://github.com/alauda/k8s-form-in-action/commit/ca1c20eb7feca642b09209708666ef5a14d74bd1))
+
 ## 3.0.0 (2021-02-25)
 
 
