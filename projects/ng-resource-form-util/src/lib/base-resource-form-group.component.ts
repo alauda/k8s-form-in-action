@@ -7,9 +7,9 @@ import { BaseResourceFormComponent } from './base-resource-form.component';
 // tslint:disable-next-line: directive-class-suffix
 export abstract class BaseResourceFormGroupComponent<
   // eslint-disable-next-line @typescript-eslint/ban-types
-  R extends object = { [key: string]: unknown },
+  R extends Object = { [key: string]: unknown },
   // eslint-disable-next-line @typescript-eslint/ban-types
-  F extends object = R
+  F extends Object = R
 > extends BaseResourceFormComponent<R, F, FormGroup> {
   getResourceMergeStrategy() {
     return true;

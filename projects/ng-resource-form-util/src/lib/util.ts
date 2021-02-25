@@ -86,7 +86,7 @@ export function setFormByResource<R>(
  * each field one by one.
  */
 // eslint-disable-next-line @typescript-eslint/ban-types, sonarjs/cognitive-complexity
-export function setResourceByForm<R extends object>(
+export function setResourceByForm<R extends Object>(
   form: AbstractControl,
   resource: R,
 ): R {

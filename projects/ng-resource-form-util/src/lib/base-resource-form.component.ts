@@ -49,9 +49,9 @@ export const PENDING = 'PENDING';
 // tslint:disable-next-line: directive-class-suffix
 export abstract class BaseResourceFormComponent<
   // eslint-disable-next-line @typescript-eslint/ban-types
-  R extends object = object,
+  R extends Object = Object,
   // eslint-disable-next-line @typescript-eslint/ban-types
-  F extends object = R,
+  F extends Object = R,
   Control extends AbstractControl = FormControl
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit {
   private formValueSub: Subscription;

@@ -7,9 +7,9 @@ import { BaseResourceFormComponent } from './base-resource-form.component';
 // tslint:disable-next-line: directive-class-suffix
 export abstract class BaseResourceFormArrayComponent<
   // eslint-disable-next-line @typescript-eslint/ban-types
-  R extends object = { [key: string]: unknown },
+  R extends Object = { [key: string]: unknown },
   // eslint-disable-next-line @typescript-eslint/ban-types
-  F extends object = R
+  F extends Object = R
 > extends BaseResourceFormComponent<R[], F[], FormArray> {
   get length() {
     return this.form.length;
