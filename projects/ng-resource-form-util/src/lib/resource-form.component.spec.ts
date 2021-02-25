@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-export */
 import {
   Component,
   ElementRef,
@@ -19,7 +20,7 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { BaseResourceFormComponent } from './base-resource-form.component';
+import { BaseResourceFormGroupComponent } from './base-resource-form-group.component';
 
 interface TestResource {
   simple?: string;
@@ -49,7 +50,7 @@ interface TestResourceFormModel {
     </form>
   `,
 })
-export class TestResourceFormComponent extends BaseResourceFormComponent<
+export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
   TestResource,
   TestResourceFormModel
 > {
@@ -59,7 +60,7 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
   @ViewChild('simpleInput', { static: false })
   simpleInput: ElementRef;
 
-  constructor(private elementRef: ElementRef, injector: Injector) {
+  constructor(private readonly elementRef: ElementRef, injector: Injector) {
     super(injector);
   }
 
@@ -79,7 +80,7 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
   }
 
   simulateManualInput(text: string) {
-    const el = <HTMLInputElement>this.simpleInput.nativeElement;
+    const el = this.simpleInput.nativeElement as HTMLInputElement;
     el.value = text;
     el.dispatchEvent(new Event('input'));
   }
@@ -93,26 +94,24 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
   }
 
   simulateBlur() {
-    const el = <HTMLInputElement>this.simpleInput.nativeElement;
+    const el = this.simpleInput.nativeElement as HTMLInputElement;
     el.dispatchEvent(new FocusEvent('blur'));
   }
 
   adaptResourceModel(resource: TestResource) {
-    const adapted = {
+    return {
       ...resource,
       array: (resource.array || '')
         .split(',')
-        .map((item) => item.trim())
-        .filter((item) => !!item),
+        .map(item => item.trim())
+        .filter(item => !!item),
     };
-
-    return adapted;
   }
 
   adaptFormModel(formModel: TestResourceFormModel) {
     return {
       ...formModel,
-      array: formModel.array.map((item) => +item).join(','),
+      array: formModel.array.map(item => +item).join(','),
       defaultField: 'DEFAULT',
     };
   }
@@ -125,6 +124,7 @@ export class TestResourceFormComponent extends BaseResourceFormComponent<
   }
 }
 
+// tslint:disable-next-line: max-classes-per-file
 @Component({
   template: `
     <form [formGroup]="form">
@@ -139,9 +139,11 @@ export class TestResourceFormWrapperComponent implements OnInit {
   set resource(resource: any) {
     this.control.setValue(resource);
   }
+
   get resource() {
     return this.control.value;
   }
+
   @Output()
   resourceChange = new EventEmitter();
 
@@ -156,7 +158,7 @@ export class TestResourceFormWrapperComponent implements OnInit {
   form: FormGroup;
 
   ngOnInit() {
-    this.control.valueChanges.subscribe((value) =>
+    this.control.valueChanges.subscribe(value =>
       this.resourceChange.emit(value),
     );
 

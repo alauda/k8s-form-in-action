@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/no-duplicate-string */
+
 import { TestBed } from '@angular/core/testing';
 import { FormArray, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 

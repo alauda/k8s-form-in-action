@@ -7,27 +7,20 @@ import { Deployment, DeploymentTypeMeta } from '../types';
 @Component({
   selector: 'x-deployment',
   templateUrl: './template.html',
-  styleUrls: ['./style.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DeploymentFormComponent extends BaseResourceFormGroupComponent<
-  Deployment
-> {
+export class DeploymentFormComponent extends BaseResourceFormGroupComponent<Deployment> {
   namespaces = ['default', 'kube-system'];
 
   createForm(): FormGroup {
     const metadataForm = this.fb.group({
       name: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(/^[a-z0-9][a-z0-9-]*[a-z0-9]$/),
-        ],
-        () => {
-          return new Promise(res => {
-            setTimeout(res, 2000);
-          });
-        },
+        [Validators.required, Validators.pattern(/^[\da-z][\da-z-]*[\da-z]$/)],
+        () =>
+          new Promise(resolve => {
+            setTimeout(resolve, 2000);
+          }),
       ],
       namespace: ['', [Validators.required]],
       labels: [{}],

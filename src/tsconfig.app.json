@@ -1,9 +1,12 @@
 {
   "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../out-tsc/app",
-    "types": []
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true,
+    "enableIvy": false,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictTemplates": true,
+    "trace": true
   },
-  "files": ["main.ts", "polyfills.ts"],
-  "include": ["src/**/*.d.ts"]
+  "files": ["main.ts", "polyfills.ts"]
 }

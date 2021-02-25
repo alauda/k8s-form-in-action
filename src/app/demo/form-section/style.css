@@ -5,12 +5,13 @@
   border: 1px dashed grey;
   padding: 1.5em 0.5em;
   position: relative;
+  /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
   transition: all 0.1s;
   margin: 0.5em;
   align-items: flex-start;
 }
 
-:host::before {
+:host:before {
   position: absolute;
   display: block;
   content: attr(label);
@@ -18,7 +19,7 @@
   left: 0.5em;
 }
 
-:host::after {
+:host:after {
   position: absolute;
   display: block;
   content: attr(status);

@@ -13,12 +13,10 @@ import { PodSpec } from '../types';
   styleUrls: ['./style.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PodSpecFormComponent extends BaseResourceFormGroupComponent<
-  PodSpec
-> {
+export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec> {
   createForm() {
     const validator = (fArray: AbstractControl) => {
-      const names = [];
+      const names: string[] = [];
       for (const control of (fArray as FormArray).controls) {
         const { name } = control.value;
         if (!names.includes(name)) {

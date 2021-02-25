@@ -11,8 +11,8 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot([
       {
         path: '',
-        loadChildren: () =>
-          import('./demo/module').then(({ DemoModule }) => DemoModule),
+        pathMatch: 'full',
+        loadChildren: () => import('./demo/module').then(M => M.DemoModule),
       },
     ]),
   ],

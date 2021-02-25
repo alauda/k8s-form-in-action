@@ -1,0 +1,8 @@
+docs/demo
+node_modules
+release
+*.json
+*.log
+*.ico
+*.yml
+*.yaml

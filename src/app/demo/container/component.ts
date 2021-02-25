@@ -12,20 +12,14 @@ const DEFAULT_CONTAINER: Container = {
 @Component({
   selector: 'x-container-form',
   templateUrl: './template.html',
-  styleUrls: ['./style.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContainerFormComponent extends BaseResourceFormGroupComponent<
-  Container
-> {
+export class ContainerFormComponent extends BaseResourceFormGroupComponent<Container> {
   createForm() {
     return this.fb.group({
       name: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(/^[a-z0-9][a-z0-9-]*[a-z0-9]$/),
-        ],
+        [Validators.required, Validators.pattern(/^[\da-z][\da-z-]*[\da-z]$/)],
       ],
       image: [],
     });

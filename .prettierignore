@@ -1,3 +1,4 @@
-demo
-dist
+release
+coverage
 node_modules
+docs/demo
