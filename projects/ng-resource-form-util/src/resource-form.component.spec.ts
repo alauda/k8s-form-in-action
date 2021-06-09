@@ -1,5 +1,5 @@
-/* eslint-disable jest/no-export */
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -49,6 +49,7 @@ interface TestResourceFormModel {
       />
     </form>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
   TestResource,
@@ -117,10 +118,9 @@ export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
   }
 
   private get arrayInputs() {
-    return (this.elementRef
-      .nativeElement as HTMLElement).querySelectorAll<HTMLInputElement>(
-      'input.array-input',
-    );
+    return (
+      this.elementRef.nativeElement as HTMLElement
+    ).querySelectorAll<HTMLInputElement>('input.array-input');
   }
 }
 
@@ -133,6 +133,7 @@ export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
       ></lib-test-resource-form>
     </form>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestResourceFormWrapperComponent implements OnInit {
   @Input()

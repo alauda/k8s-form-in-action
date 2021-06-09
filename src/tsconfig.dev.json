@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.app",
+  // disable following checks for fewer errors on development
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  // Only enable strict checks on development
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictTemplates": true
+  }
+}

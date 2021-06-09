@@ -11,7 +11,7 @@ const DEFAULT_CONTAINER: Container = {
 
 @Component({
   selector: 'x-container-form',
-  templateUrl: './template.html',
+  templateUrl: 'template.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContainerFormComponent extends BaseResourceFormGroupComponent<Container> {

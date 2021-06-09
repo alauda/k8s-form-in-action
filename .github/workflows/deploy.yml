@@ -1,4 +1,4 @@
-name: Deploy stories
+name: Deploy demo
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
 
 jobs:
   deploy_stories:
-    name: Deploy stories
+    name: Deploy demo
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn
-      - name: Build stories
+      - name: Build demo
         run: yarn build:demo --base-href /k8s-form-in-action/demo/ --deploy-url /k8s-form-in-action/demo/
       - name: Deploy
         if: success()

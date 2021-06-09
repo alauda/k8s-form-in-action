@@ -6,3 +6,4 @@ release
 *.ico
 *.yml
 *.yaml
+*.d.ts

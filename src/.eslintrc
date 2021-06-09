@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "@angular-eslint/component-selector": [
+      2,
+      {
+        "type": "element",
+        "prefix": "x",
+        "style": "kebab-case"
+      }
+    ],
+    "@angular-eslint/directive-selector": [
+      2,
+      {
+        "type": "attribute",
+        "prefix": "x",
+        "style": "camelCase"
+      }
+    ]
+  }
+}

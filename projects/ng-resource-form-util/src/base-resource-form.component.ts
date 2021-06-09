@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import {
   AbstractType,
   AfterViewInit,
@@ -44,16 +43,14 @@ import {
 export const PENDING = 'PENDING';
 
 // Base form component for Resources.
-// <T> refers the type of the resource.
+// <R> refers the type of the resource.
 @Directive()
-// tslint:disable-next-line: directive-class-suffix
 export abstract class BaseResourceFormComponent<
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  R extends Object = Object,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  F extends Object = R,
-  Control extends AbstractControl = FormControl
-> implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit {
+  R = unknown,
+  F = R,
+  Control extends AbstractControl = FormControl,
+> implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit
+{
   private formValueSub: Subscription;
   private parentFormSub: Subscription;
   private adaptedResource: F;
@@ -65,8 +62,9 @@ export abstract class BaseResourceFormComponent<
   @Input()
   updateMode: boolean;
 
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output()
-  blur = new EventEmitter();
+  blur = new EventEmitter<void>();
 
   @ViewChild(FormGroupDirective, { static: false })
   ngFormGroupDirective: FormGroupDirective;
@@ -144,9 +142,11 @@ export abstract class BaseResourceFormComponent<
     this.onCvaChange(formValue);
   }
 
+  /* eslint-disable @typescript-eslint/no-empty-function */
   onCvaChange = (_: R) => {};
   onCvaTouched = () => {};
   onValidatorChange = () => {};
+  /* eslint-enable @typescript-eslint/no-empty-function */
 
   /**
    * To be bound to the template.

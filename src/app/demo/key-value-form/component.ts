@@ -8,8 +8,8 @@ export type KeyValue = [string, string];
 // 这个表单有些特别. 内部实现是以FormArray实现, 但对外暴露的是一个key->value对象.
 @Component({
   selector: 'x-key-value-form',
-  templateUrl: './template.html',
-  styleUrls: ['./style.css'],
+  templateUrl: 'template.html',
+  styleUrls: ['styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KeyValueFormComponent extends BaseResourceFormComponent<
