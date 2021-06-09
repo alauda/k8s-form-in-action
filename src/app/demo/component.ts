@@ -4,12 +4,11 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
-  isDevMode,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { dump, loadAll } from 'js-yaml';
 import Md from 'markdown-it';
-import {
+import type {
   CancellationToken,
   IPosition,
   IRange,
@@ -57,6 +56,21 @@ const EDITOR_OPTIONS: MonacoEditorOptions = {
   scrollbar: {
     alwaysConsumeMouseWheel: false,
   },
+};
+
+/**
+ * fix https://github.com/microsoft/monaco-editor/issues/2517 temporarily.
+ * Ideally, we should use the `flat` parameter of `getDocumentSymbols` instead.
+ */
+const flatSymbols = (symbols: languages.DocumentSymbol[]) => {
+  const flattenSymbols: languages.DocumentSymbol[] = [];
+  for (const symbol of symbols) {
+    flattenSymbols.push(symbol);
+    if (symbol.children?.length) {
+      flattenSymbols.push(...flatSymbols(symbol.children));
+    }
+  }
+  return flattenSymbols;
 };
 
 @Component({
@@ -163,12 +177,13 @@ export class DemoComponent implements OnInit {
       model: editor.IModel,
       position: IPosition,
     ) {
-      const symbols = await getDocumentSymbols(model, true, NEVER_CANCEL_TOKEN);
-      if (window.DEBUG || isDevMode()) {
-        console.log(symbols);
-      }
-      return symbols.filter(symbol =>
-        Range.containsPosition(symbol.range, position),
+      const symbols = await getDocumentSymbols(
+        model,
+        false,
+        NEVER_CANCEL_TOKEN,
+      );
+      return flatSymbols(symbols).filter(symbol =>
+        (symbol.range as Range).containsPosition(position),
       );
     }
   }

@@ -21,6 +21,7 @@ import {
 import { isEqual } from 'lodash-es';
 import { Subscription } from 'rxjs';
 
+import { KeyValue, KeyValueFormComponent } from '../key-value-form/component';
 import { PathProviderService } from '../path.service';
 
 @Component({
@@ -69,7 +70,14 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
 
   get path(): string[] {
     // Strips off the root form, since we don't want to use 'UI' here:
-    return this.parent ? [...this.parent.path, this.label] : [];
+    return this.parent
+      ? [
+          ...this.parent.path,
+          this.keyValueForm
+            ? (this.keyValueForm.form.get(this.label).value as KeyValue)[0]
+            : this.label,
+        ]
+      : [];
   }
 
   get control(): AbstractControlDirective {
@@ -81,11 +89,12 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
   }
 
   constructor(
-    @Optional() @SkipSelf() public parent: FormSectionComponent,
-    @Optional() @Self() public cc: ControlContainer,
-    @Optional() public fgd: FormGroupDirective,
+    @Optional() @SkipSelf() private readonly parent: FormSectionComponent,
+    @Optional() @Self() private readonly cc: ControlContainer,
+    @Optional() private readonly fgd: FormGroupDirective,
+    @Optional() private readonly keyValueForm: KeyValueFormComponent,
     private readonly cdr: ChangeDetectorRef,
-    public pathProvider: PathProviderService,
+    private readonly pathProvider: PathProviderService,
   ) {}
 
   private sub: Subscription;
@@ -95,11 +104,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
 
   @HostBinding('attr.label')
   get labelRendered() {
-    let label = this.label;
-    if (!Number.isNaN(+label)) {
-      label = `#${label}`;
-    }
-    return label;
+    return (/^\d+$/.test(this.label) ? '#' : '') + this.label;
   }
 
   @HostListener('click', ['$event'])

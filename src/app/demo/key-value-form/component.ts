@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AbstractControl, FormArray, ValidatorFn } from '@angular/forms';
+import { FormArray, ValidatorFn } from '@angular/forms';
 import { BaseResourceFormComponent } from 'ng-resource-form-util';
+
+import { StringMap } from '../types';
 
 export type KeyValue = [string, string];
 
@@ -13,7 +15,7 @@ export type KeyValue = [string, string];
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KeyValueFormComponent extends BaseResourceFormComponent<
-  { [key: string]: string },
+  StringMap,
   KeyValue[],
   FormArray
 > {
@@ -22,9 +24,9 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
   }
 
   createForm() {
-    const duplicateKeyValidator = (fArray: AbstractControl) => {
+    const duplicateKeyValidator = (fArray: FormArray) => {
       const names: string[] = [];
-      for (const control of (fArray as FormArray).controls) {
+      for (const control of fArray.controls) {
         const [name] = control.value;
         if (!names.includes(name)) {
           names.push(name);
