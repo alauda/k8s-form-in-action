@@ -5,7 +5,7 @@
   </x-form-section>
   <x-form-section [noPathIntelligence]="true">
     <ng-monaco-editor
-      (editorChange)="editorChanged($event)"
+      (editorChange)="onEditorChange($event)"
       [options]="EDITOR_OPTIONS"
       formControlName="yaml"
     ></ng-monaco-editor>

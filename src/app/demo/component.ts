@@ -4,14 +4,16 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
+  isDevMode,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { dump, loadAll } from 'js-yaml';
 import Md from 'markdown-it';
-import type {
+import {
   CancellationToken,
   IPosition,
   IRange,
+  Position,
   Range,
   editor,
   languages,
@@ -120,7 +122,7 @@ export class DemoComponent implements OnInit {
       .get('assets/deployment.yaml', {
         responseType: 'text',
       })
-      .subscribe((deployment: string) => {
+      .subscribe(deployment => {
         yamlCtrl.setValue(deployment);
       });
 
@@ -128,15 +130,13 @@ export class DemoComponent implements OnInit {
       this.pathProvider.subject,
       uiCtrl.valueChanges.pipe(startWith(uiCtrl.value)),
     ])
-      .pipe(filter(([path]) => !!path && path.length > 0))
+      .pipe(filter(([path]) => path?.length > 0))
       .subscribe(([path]) => {
         this.highlightSymbol(path);
       });
   }
 
-  async editorChanged(editor: MonacoEditor) {
-    console.log('editor changed');
-
+  async onEditorChange(editor: MonacoEditor) {
     const [{ getDocumentSymbols }, { getHover }] = await Promise.all([
       import(
         'monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols'
@@ -144,9 +144,12 @@ export class DemoComponent implements OnInit {
       import('monaco-editor/esm/vs/editor/contrib/hover/getHover'),
     ]);
 
-    const monaco = await this.monacoProvider.initMonaco();
-
-    this.monacoReadyResolve([monaco, editor, getDocumentSymbols, getHover]);
+    this.monacoReadyResolve([
+      this.monacoProvider.monaco,
+      editor,
+      getDocumentSymbols,
+      getHover,
+    ]);
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     editor.onDidChangeCursorSelection(async ({ selection }) => {
@@ -161,8 +164,11 @@ export class DemoComponent implements OnInit {
       position: IPosition,
     ) {
       const symbols = await getDocumentSymbols(model, true, NEVER_CANCEL_TOKEN);
+      if (window.DEBUG || isDevMode()) {
+        console.log(symbols);
+      }
       return symbols.filter(symbol =>
-        (symbol.range as Range).containsPosition(position),
+        Range.containsPosition(symbol.range, position),
       );
     }
   }
@@ -171,6 +177,7 @@ export class DemoComponent implements OnInit {
     const [monaco, editor, , getHover] = await this.monacoReady;
 
     let decoration: editor.IModelDeltaDecoration;
+
     if (!editor.hasTextFocus()) {
       const range = await this.getYamlRangeForPath(path);
 
@@ -195,14 +202,12 @@ export class DemoComponent implements OnInit {
 
         const [{ contents }] = await getHover(
           editor.getModel(),
-          new monaco.Position(position.lineNumber, position.column),
+          position as Position,
           NEVER_CANCEL_TOKEN,
         );
 
         this.contents = md.render(
-          (contents as Array<{ value: string }>)
-            .map(content => content.value)
-            .join('\n'),
+          contents.map(content => content.value).join('\n'),
         );
       }
     }
@@ -221,12 +226,11 @@ export class DemoComponent implements OnInit {
     const symbols = await getDocumentSymbols(model, false, NEVER_CANCEL_TOKEN);
     function _findSymbolForPath(
       parent: languages.DocumentSymbol,
-      _symbols: languages.DocumentSymbol[],
+      docSymbols: languages.DocumentSymbol[],
       pathDepth: number,
     ): languages.DocumentSymbol {
-      const childSymbol = _symbols.find(
-        // eslint-disable-next-line eqeqeq
-        _symbol => _symbol.name == path[pathDepth],
+      const childSymbol = docSymbols.find(
+        symbol => symbol.name === path[pathDepth],
       );
 
       if (
@@ -258,8 +262,8 @@ export class DemoComponent implements OnInit {
 
       // For now we can only process a single deployment resource in the yaml.
       if (formModels.length > 1) {
-        console.log('Can only convert a single resource at the moment');
-        console.log('formModels:', formModels);
+        console.warn('Can only convert a single resource at the moment');
+        console.warn('formModels:', formModels);
       }
 
       if (!formModel || formModel instanceof String) {

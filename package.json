@@ -15,6 +15,7 @@
     "lint:tsc": "tsc --noEmit",
     "postinstall": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
     "release": "cd projects/ng-resource-form-util && standard-version --no-verify --release-as",
+    "serve": "serve docs/demo -p 4200",
     "start": "ng serve --hmr",
     "test": "ng test",
     "test:watch": "WATCH=true ng test"
@@ -59,6 +60,7 @@
     "ng-packagr": "^12.0.4",
     "rimraf": "^3.0.2",
     "rxjs": "^7.1.0",
+    "serve": "^12.0.0",
     "standard-version": "^9.3.0",
     "ts-node": "^10.0.0",
     "tslib": "^2.2.0",

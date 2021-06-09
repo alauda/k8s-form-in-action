@@ -34,11 +34,10 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
   get label() {
     let label: string;
     if (this.cc) {
-      label = this.cc.name as string;
+      label = String(this.cc.name);
     } else if (this.nc) {
-      label = this.nc.name as string;
+      label = String(this.nc.name);
     }
-
     return label;
   }
 
@@ -97,7 +96,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
   @HostBinding('attr.label')
   get labelRendered() {
     let label = this.label;
-    if (!isNaN(+label)) {
+    if (!Number.isNaN(+label)) {
       label = `#${label}`;
     }
     return label;
