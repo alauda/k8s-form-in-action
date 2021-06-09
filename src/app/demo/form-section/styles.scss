@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 40%;
+  border: 1px dashed grey;
+  padding: 1.5em 0.5em;
+  position: relative;
+  /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
+  transition: all 0.1s;
+  margin: 0.5em;
+  align-items: flex-start;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: attr(label);
+    top: 0.3em;
+    left: 0.5em;
+  }
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: attr(status);
+    text-shadow: 1px 1px 1px #fff;
+    bottom: 0;
+    right: 0.5em;
+    font-size: 12px;
+  }
+
+  &.invalid {
+    background: rgba(200, 0, 0, 0.2);
+  }
+
+  &.active {
+    border: inset 5px #00aa;
+  }
+}
+
+pre {
+  flex: 1 0 100%;
+}

@@ -9,8 +9,8 @@ import { PodSpec } from '../types';
 
 @Component({
   selector: 'x-pod-spec-form',
-  templateUrl: './template.html',
-  styleUrls: ['./style.css'],
+  templateUrl: 'template.html',
+  styleUrls: ['styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec> {

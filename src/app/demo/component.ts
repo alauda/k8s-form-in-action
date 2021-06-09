@@ -8,41 +8,76 @@ import {
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { dump, loadAll } from 'js-yaml';
 import Md from 'markdown-it';
-import { MonacoProviderService } from 'ng-monaco-editor';
+import type {
+  CancellationToken,
+  IPosition,
+  IRange,
+  Range,
+  editor,
+  languages,
+} from 'monaco-editor';
+import {
+  Monaco,
+  MonacoEditor,
+  MonacoEditorOptions,
+  MonacoProviderService,
+} from 'ng-monaco-editor';
 import { combineLatest } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
 
 import { PathProviderService } from './path.service';
 
-function defer(timeout: number) {
-  return new Promise(resolve => setTimeout(resolve, timeout));
-}
-
 const md = new Md();
 
-const NEVER_CANCEL_TOKEN = {
+const NEVER_CANCEL_TOKEN: CancellationToken = {
   isCancellationRequested: false,
-  onCancellationRequested: () => Event.NONE,
+  onCancellationRequested: () => ({
+    dispose() {
+      //
+    },
+  }),
+};
+
+export type MonacoReadyResult = [
+  Monaco,
+  MonacoEditor,
+  typeof import('monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols').getDocumentSymbols,
+  typeof import('monaco-editor/esm/vs/editor/contrib/hover/getHover').getHover,
+];
+
+const EDITOR_OPTIONS: MonacoEditorOptions = {
+  language: 'yaml',
+  folding: true,
+  minimap: { enabled: false },
+  wordWrap: 'on',
+  tabSize: 2,
+  lineNumbers: 'on',
+  scrollbar: {
+    alwaysConsumeMouseWheel: false,
+  },
 };
 
 @Component({
   selector: 'x-demo',
-  templateUrl: './template.html',
-  styleUrls: ['./style.css'],
+  templateUrl: 'template.html',
+  styleUrls: ['styles.scss'],
   providers: [PathProviderService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoComponent implements OnInit {
   form: FormGroup;
-  monacoReady: Promise<[monaco.editor.IStandaloneCodeEditor, any, any]>;
+
   contents: string;
-  private monacoReadyResolve: ([editor, getDocumentSymbols, getHover]: [
-    monaco.editor.IStandaloneCodeEditor,
-    any,
-    any,
-  ]) => void;
+
+  EDITOR_OPTIONS = EDITOR_OPTIONS;
+
+  private monacoReadyResolve: (result: MonacoReadyResult) => void;
 
   private oldDecorations: string[] = [];
+
+  private readonly monacoReady = new Promise<MonacoReadyResult>(
+    resolve => (this.monacoReadyResolve = resolve),
+  );
 
   constructor(
     private readonly cdr: ChangeDetectorRef,
@@ -50,11 +85,7 @@ export class DemoComponent implements OnInit {
     private readonly http: HttpClient,
     private readonly monacoProvider: MonacoProviderService,
     private readonly pathProvider: PathProviderService,
-  ) {
-    this.monacoReady = new Promise(
-      resolve => (this.monacoReadyResolve = resolve),
-    );
-  }
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -103,22 +134,19 @@ export class DemoComponent implements OnInit {
       });
   }
 
-  async editorChanged(editor: monaco.editor.IStandaloneCodeEditor) {
+  async editorChanged(editor: MonacoEditor) {
     console.log('editor changed');
 
-    const [{ getDocumentSymbols }, { getHover }]: any = await Promise.all([
-      this.monacoProvider.loadModule([
-        'vs/editor/contrib/documentSymbols/documentSymbols',
-      ]),
-      this.monacoProvider.loadModule(['vs/editor/contrib/hover/getHover']),
+    const [{ getDocumentSymbols }, { getHover }] = await Promise.all([
+      import(
+        'monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols'
+      ),
+      import('monaco-editor/esm/vs/editor/contrib/hover/getHover'),
     ]);
 
-    await this.monacoProvider.initMonaco();
+    const monaco = await this.monacoProvider.initMonaco();
 
-    // Make sure the yaml language service is online:
-    await defer(100);
-
-    this.monacoReadyResolve([editor, getDocumentSymbols, getHover]);
+    this.monacoReadyResolve([monaco, editor, getDocumentSymbols, getHover]);
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     editor.onDidChangeCursorSelection(async ({ selection }) => {
@@ -129,25 +157,20 @@ export class DemoComponent implements OnInit {
     });
 
     async function _getSymbolsForPosition(
-      model: monaco.editor.IModel,
-      position: monaco.IPosition,
+      model: editor.IModel,
+      position: IPosition,
     ) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      const symbols: any[] = await getDocumentSymbols(
-        model,
-        true,
-        NEVER_CANCEL_TOKEN,
+      const symbols = await getDocumentSymbols(model, true, NEVER_CANCEL_TOKEN);
+      return symbols.filter(symbol =>
+        (symbol.range as Range).containsPosition(position),
       );
-
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      return symbols.filter(symbol => symbol.range.containsPosition(position));
     }
   }
 
   async highlightSymbol(path: string[]) {
-    const [editor, , getHover] = await this.monacoReady;
+    const [monaco, editor, , getHover] = await this.monacoReady;
 
-    let decoration: any;
+    let decoration: editor.IModelDeltaDecoration;
     if (!editor.hasTextFocus()) {
       const range = await this.getYamlRangeForPath(path);
 
@@ -170,10 +193,9 @@ export class DemoComponent implements OnInit {
           },
         };
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         const [{ contents }] = await getHover(
           editor.getModel(),
-          position,
+          new monaco.Position(position.lineNumber, position.column),
           NEVER_CANCEL_TOKEN,
         );
 
@@ -193,20 +215,15 @@ export class DemoComponent implements OnInit {
     this.cdr.markForCheck();
   }
 
-  private async getYamlRangeForPath(path: string[]): Promise<monaco.IRange> {
-    const [editor, getDocumentSymbols] = await this.monacoReady;
+  private async getYamlRangeForPath(path: string[]): Promise<IRange> {
+    const [, editor, getDocumentSymbols] = await this.monacoReady;
     const model = editor.getModel();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    const symbols: monaco.languages.DocumentSymbol[] = await getDocumentSymbols(
-      model,
-      false,
-      NEVER_CANCEL_TOKEN,
-    );
+    const symbols = await getDocumentSymbols(model, false, NEVER_CANCEL_TOKEN);
     function _findSymbolForPath(
-      parent: monaco.languages.DocumentSymbol,
-      _symbols: monaco.languages.DocumentSymbol[],
+      parent: languages.DocumentSymbol,
+      _symbols: languages.DocumentSymbol[],
       pathDepth: number,
-    ): monaco.languages.DocumentSymbol {
+    ): languages.DocumentSymbol {
       const childSymbol = _symbols.find(
         // eslint-disable-next-line eqeqeq
         _symbol => _symbol.name == path[pathDepth],
@@ -228,7 +245,7 @@ export class DemoComponent implements OnInit {
 
     const symbol = _findSymbolForPath(undefined, symbols, 0);
 
-    return symbol && symbol.range;
+    return symbol?.range;
   }
 
   private yamlToForm(yaml: string) {
@@ -236,28 +253,29 @@ export class DemoComponent implements OnInit {
       const formModels = loadAll(yaml).map(item =>
         item === 'undefined' ? undefined : item,
       );
+
       let formModel = formModels[0];
 
       // For now we can only process a single deployment resource in the yaml.
       if (formModels.length > 1) {
         console.log('Can only convert a single resource at the moment');
+        console.log('formModels:', formModels);
       }
 
       if (!formModel || formModel instanceof String) {
         formModel = {};
       }
       return formModel;
-    } catch {}
+    } catch (err) {
+      console.error(err);
+    }
   }
 
-  private formToYaml(json: any) {
-    console.log('formToYaml');
+  private formToYaml(json: unknown) {
     try {
-      // Following line is to remove undefined values
-      json = JSON.parse(JSON.stringify(json));
-      return dump(json);
+      return dump(json, { skipInvalid: true });
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 }

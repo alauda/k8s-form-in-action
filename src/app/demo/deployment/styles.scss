@@ -1,0 +1,10 @@
+:host ::ng-deep {
+  input,
+  textarea,
+  select {
+    flex: 1 1 100%;
+    background: #fffa;
+    border: 1px solid grey;
+    padding: 2px 4px;
+  }
+}

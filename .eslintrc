@@ -1,6 +1,6 @@
 {
   "extends": "@1stg/eslint-config/loose",
-  "parserOptions": {
-    "requireConfigFile": false
+  "rules": {
+    "jest/no-export": 0
   }
 }

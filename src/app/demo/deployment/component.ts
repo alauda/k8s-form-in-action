@@ -6,7 +6,8 @@ import { Deployment, DeploymentTypeMeta } from '../types';
 
 @Component({
   selector: 'x-deployment',
-  templateUrl: './template.html',
+  templateUrl: 'template.html',
+  styleUrls: ['styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeploymentFormComponent extends BaseResourceFormGroupComponent<Deployment> {

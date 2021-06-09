@@ -11,40 +11,35 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            },
+            "allowedCommonJsDependencies": ["monaco-editor"],
             "outputPath": "docs/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "schema",
-                "output": "/schema"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/monaco-editor/min/vs",
-                "output": "/lib/v1.2/vs"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/monaco-languages/release/min",
-                "output": "/lib/v1.2/vs/basic-languages"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/monaco-yaml/lib/min",
-                "output": "/lib/v1.2/vs/language/yaml"
+                "input": "docs/schema",
+                "output": "schema"
               }
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/monaco-editor/min/vs/editor/editor.main.css"
+            ],
             "scripts": [],
-            "aot": true
+            "tsConfig": "src/tsconfig.dev.json",
+            "buildOptimizer": false,
+            "extractLicenses": false,
+            "namedChunks": true,
+            "sourceMap": true,
+            "optimization": false
           },
           "configurations": {
             "production": {
@@ -54,13 +49,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "tsConfig": "src/tsconfig.app.json",
+              "buildOptimizer": true,
+              "extractCss": true,
+              "extractLicenses": true,
+              "namedChunks": false,
+              "sourceMap": false,
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -76,7 +73,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "k8s-form-in-action:build"
           },
@@ -98,7 +95,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/ng-resource-form-util/src/test.ts",
-            "tsConfig": "projects/ng-resource-form-util/tsconfig.spec.json",
+            "tsConfig": "tsconfig.json",
             "karmaConfig": "projects/ng-resource-form-util/karma.conf.js"
           }
         }

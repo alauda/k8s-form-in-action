@@ -25,9 +25,9 @@ import { PathProviderService } from '../path.service';
 
 @Component({
   selector: 'x-form-section',
-  templateUrl: './template.html',
-  styleUrls: ['./style.css'],
-  // tslint:disable-next-line: validate-decorators
+  templateUrl: 'template.html',
+  styleUrls: ['styles.scss'],
+  // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class FormSectionComponent implements AfterViewInit, OnDestroy {
@@ -46,7 +46,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
 
   @HostBinding('class.invalid')
   get invalid() {
-    return this.control && this.control.invalid;
+    return this.control?.invalid;
   }
 
   @HostBinding('attr.status')
@@ -60,7 +60,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
       ];
       return partials.filter(s => !!s).join(', ');
     }
-    return this.control && this.control.status;
+    return this.control?.status;
   }
 
   @HostBinding('attr.title')
@@ -78,7 +78,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
   }
 
   get formGroupDirective(): FormGroupDirective {
-    return this.fgd || (this.parent && this.parent.formGroupDirective);
+    return this.fgd || this.parent?.formGroupDirective;
   }
 
   constructor(

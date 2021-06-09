@@ -1,12 +1,12 @@
 {
-  "extends": "../tsconfig.json",
-  "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true,
-    "enableIvy": false,
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "strictTemplates": true,
-    "trace": true
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "target": "ES2019"
   },
-  "files": ["main.ts", "polyfills.ts"]
+  "files": ["main.ts", "shim.d.ts"],
+  // Only enable strict checks on development
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": false,
+    "strictTemplates": false
+  }
 }

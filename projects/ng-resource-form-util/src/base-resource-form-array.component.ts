@@ -4,12 +4,9 @@ import { FormArray } from '@angular/forms';
 import { BaseResourceFormComponent } from './base-resource-form.component';
 
 @Directive()
-// tslint:disable-next-line: directive-class-suffix
 export abstract class BaseResourceFormArrayComponent<
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  R extends Object = { [key: string]: unknown },
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  F extends Object = R
+  R = Record<string, unknown>,
+  F = R,
 > extends BaseResourceFormComponent<R[], F[], FormArray> {
   get length() {
     return this.form.length;

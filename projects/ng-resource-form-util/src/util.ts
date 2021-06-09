@@ -113,9 +113,9 @@ export function setResourceByForm<R extends Object>(
     } else if (item instanceof FormArray) {
       // if resource has more items, remove them.
       // Since set will enlarge the array
-      // eslint-disable-next-line no-unmodified-loop-condition
+      // eslint-disable-next-line no-unmodified-loop-condition, sonar/no-infinite-loop
       while (resourceAtPath && item.controls.length < resourceAtPath.length) {
-        (resourceAtPath as any[]).pop();
+        (resourceAtPath as unknown[]).pop();
       }
       item.controls.forEach((control, index) => {
         setResourceValueByPath(control, [...path, index]);

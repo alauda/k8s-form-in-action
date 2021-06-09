@@ -1,0 +1,25 @@
+{
+  "overrides": [
+    {
+      "files": "*.spec.ts",
+      "rules": {
+        "@angular-eslint/component-selector": [
+          2,
+          {
+            "type": "element",
+            "prefix": "lib",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          2,
+          {
+            "type": "attribute",
+            "prefix": "lib",
+            "style": "camelCase"
+          }
+        ]
+      }
+    }
+  ]
+}

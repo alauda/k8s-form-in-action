@@ -10,10 +10,6 @@ ng-monaco-editor {
   overflow: hidden;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 ng-monaco-editor {
   align-self: stretch;
   margin: 0.5em;
@@ -31,8 +27,8 @@ x-deployment {
 
 .hint {
   border: 1px solid grey;
-}
 
-.hint::ng-deep p {
-  margin: 0.5em;
+  ::ng-deep p {
+    margin: 0.5em;
+  }
 }
