@@ -19,7 +19,8 @@ import {
   NgControl,
 } from '@angular/forms';
 import { isEqual } from 'lodash-es';
-import { Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { KeyValue, KeyValueFormComponent } from '../key-value-form/component';
 import { PathProviderService } from '../path.service';
@@ -88,6 +89,8 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
     return this.fgd || this.parent?.formGroupDirective;
   }
 
+  destroy$$ = new Subject<void>();
+
   constructor(
     @Optional() @SkipSelf() private readonly parent: FormSectionComponent,
     @Optional() @Self() private readonly cc: ControlContainer,
@@ -97,7 +100,6 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
     private readonly pathProvider: PathProviderService,
   ) {}
 
-  private sub: Subscription;
   @ContentChild(NgControl, { static: false }) nc: NgControl;
 
   @HostBinding('class.active') active = false;
@@ -116,19 +118,22 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.sub = this.pathProvider.subject.subscribe(path => {
-      this.active = isEqual(path, this.path);
-      this.cdr.markForCheck();
-    });
-
-    if (this.control) {
-      this.control.statusChanges.subscribe(() => {
+    this.pathProvider.subject
+      .pipe(takeUntil(this.destroy$$))
+      .subscribe(path => {
+        this.active = !this.noPathIntelligence && isEqual(path, this.path);
         this.cdr.markForCheck();
       });
-    }
+
+    this.control?.statusChanges
+      .pipe(takeUntil(this.destroy$$))
+      .subscribe(() => {
+        this.cdr.markForCheck();
+      });
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.destroy$$.next();
+    this.destroy$$.complete();
   }
 }
