@@ -37,7 +37,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
   }
 
   adaptResourceModel(resource: PodSpec) {
-    // Makes sure user will not accidently remove the last container:
+    // Makes sure user will not accidentally remove the last container:
     if (resource && !resource.containers) {
       resource = { ...resource, containers: [{ name: '', image: '' }] };
     }
@@ -47,7 +47,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
   getDefaultFormModel(): PodSpec {
     return {
       containers: [{ name: '', image: '' }],
-      volumes: [] as any,
+      volumes: [],
     };
   }
 

@@ -34,7 +34,6 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
           return { duplicatedContainerName: true };
         }
       }
-      return null;
     };
 
     return this.fb.array([], duplicateKeyValidator);

@@ -12,8 +12,6 @@ import type {
   CancellationToken,
   IPosition,
   IRange,
-  Position,
-  Range,
   editor,
   languages,
 } from 'monaco-editor';
@@ -39,12 +37,12 @@ const NEVER_CANCEL_TOKEN: CancellationToken = {
   }),
 };
 
-export type MonacoReadyResult = [
-  Monaco,
-  MonacoEditor,
-  typeof import('monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols').getDocumentSymbols,
-  typeof import('monaco-editor/esm/vs/editor/contrib/hover/getHover').getHover,
-];
+export interface MonacoReadyResult {
+  monaco: Monaco;
+  editor: MonacoEditor;
+  getDocumentSymbols: typeof import('monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols').getDocumentSymbols;
+  getHover: typeof import('monaco-editor/esm/vs/editor/contrib/hover/getHover').getHover;
+}
 
 const EDITOR_OPTIONS: MonacoEditorOptions = {
   language: 'yaml',
@@ -56,6 +54,29 @@ const EDITOR_OPTIONS: MonacoEditorOptions = {
   scrollbar: {
     alwaysConsumeMouseWheel: false,
   },
+};
+
+const getSymbolForPath = (
+  path: string[],
+  parent: languages.DocumentSymbol,
+  symbols: languages.DocumentSymbol[],
+  pathDepth: number,
+): languages.DocumentSymbol => {
+  const childSymbol = symbols.find(symbol => symbol.name === path[pathDepth]);
+
+  if (
+    path.length - 1 !== pathDepth &&
+    childSymbol &&
+    Array.isArray(childSymbol.children)
+  ) {
+    return getSymbolForPath(
+      path,
+      childSymbol,
+      childSymbol.children,
+      pathDepth + 1,
+    );
+  }
+  return childSymbol || parent;
 };
 
 /**
@@ -71,6 +92,17 @@ const flatSymbols = (symbols: languages.DocumentSymbol[]) => {
     }
   }
   return flattenSymbols;
+};
+
+const getSymbolsForPosition = async (
+  { monaco, getDocumentSymbols }: MonacoReadyResult,
+  model: editor.IModel,
+  position: IPosition,
+) => {
+  const symbols = await getDocumentSymbols(model, false, NEVER_CANCEL_TOKEN);
+  return flatSymbols(symbols).filter(symbol =>
+    monaco.Range.containsPosition(symbol.range, position),
+  );
 };
 
 @Component({
@@ -143,11 +175,9 @@ export class DemoComponent implements OnInit {
     combineLatest([
       this.pathProvider.subject,
       uiCtrl.valueChanges.pipe(startWith(uiCtrl.value)),
-    ])
-      .pipe(filter(([path]) => path?.length > 0))
-      .subscribe(([path]) => {
-        this.highlightSymbol(path);
-      });
+    ]).subscribe(([path]) => {
+      this.highlightSymbol(path);
+    });
   }
 
   async onEditorChange(editor: MonacoEditor) {
@@ -158,73 +188,61 @@ export class DemoComponent implements OnInit {
       import('monaco-editor/esm/vs/editor/contrib/hover/getHover'),
     ]);
 
-    this.monacoReadyResolve([
-      this.monacoProvider.monaco,
+    const result = {
+      monaco: this.monacoProvider.monaco,
       editor,
       getDocumentSymbols,
       getHover,
-    ]);
+    };
+
+    this.monacoReadyResolve(result);
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     editor.onDidChangeCursorSelection(async ({ selection }) => {
       const model = editor.getModel();
       const position = selection.getPosition();
-      const symbols = await _getSymbolsForPosition(model, position);
+      const symbols = await getSymbolsForPosition(result, model, position);
       this.pathProvider.subject.next(symbols.map(symbol => symbol.name));
     });
-
-    async function _getSymbolsForPosition(
-      model: editor.IModel,
-      position: IPosition,
-    ) {
-      const symbols = await getDocumentSymbols(
-        model,
-        false,
-        NEVER_CANCEL_TOKEN,
-      );
-      return flatSymbols(symbols).filter(symbol =>
-        (symbol.range as Range).containsPosition(position),
-      );
-    }
   }
 
   async highlightSymbol(path: string[]) {
-    const [monaco, editor, , getHover] = await this.monacoReady;
+    const { monaco, editor, getHover } = await this.monacoReady;
 
     let decoration: editor.IModelDeltaDecoration;
 
-    if (!editor.hasTextFocus()) {
-      const range = await this.getYamlRangeForPath(path);
+    const range = await this.getYamlRangeForPath(path);
 
-      if (range) {
-        const position = {
-          column: range.startColumn,
-          lineNumber: range.startLineNumber,
-        };
+    if (range) {
+      const position = new monaco.Position(
+        range.startLineNumber,
+        range.startColumn,
+      );
 
+      if (!editor.hasTextFocus()) {
         editor.revealPositionInCenter(
           position,
           monaco.editor.ScrollType.Smooth,
         );
-
-        decoration = {
-          range,
-          options: {
-            isWholeLine: true,
-            className: 'x-highlight-range',
-          },
-        };
-
-        const [{ contents }] = await getHover(
-          editor.getModel(),
-          position as Position,
-          NEVER_CANCEL_TOKEN,
-        );
-
-        this.contents = md.render(
-          contents.map(content => content.value).join('\n'),
-        );
       }
+
+      decoration = {
+        range,
+        options: {
+          isWholeLine: true,
+          className: 'x-highlight-range',
+        },
+      };
+
+      const [{ contents }] = await getHover(
+        editor.getModel(),
+        position,
+        NEVER_CANCEL_TOKEN,
+      );
+
+      this.contents = md.render(
+        contents.map(content => content.value).join('\n'),
+      );
     }
 
     this.oldDecorations = editor.deltaDecorations(
@@ -236,35 +254,17 @@ export class DemoComponent implements OnInit {
   }
 
   private async getYamlRangeForPath(path: string[]): Promise<IRange> {
-    const [, editor, getDocumentSymbols] = await this.monacoReady;
+    const { editor, getDocumentSymbols } = await this.monacoReady;
     const model = editor.getModel();
-    const symbols = await getDocumentSymbols(model, false, NEVER_CANCEL_TOKEN);
-    function _findSymbolForPath(
-      parent: languages.DocumentSymbol,
-      docSymbols: languages.DocumentSymbol[],
-      pathDepth: number,
-    ): languages.DocumentSymbol {
-      const childSymbol = docSymbols.find(
-        symbol => symbol.name === path[pathDepth],
-      );
 
-      if (
-        path.length - 1 !== pathDepth &&
-        childSymbol &&
-        Array.isArray(childSymbol.children)
-      ) {
-        return _findSymbolForPath(
-          childSymbol,
-          childSymbol.children,
-          pathDepth + 1,
-        );
-      }
-      return childSymbol || parent;
-    }
-
-    const symbol = _findSymbolForPath(undefined, symbols, 0);
-
-    return symbol?.range;
+    return path.length
+      ? getSymbolForPath(
+          path,
+          undefined,
+          await getDocumentSymbols(model, false, NEVER_CANCEL_TOKEN),
+          0,
+        ).range
+      : model.getFullModelRange();
   }
 
   private yamlToForm(yaml: string) {
