@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "ng-resource-form-util": [
-        "./projects/ng-resource-form-util/src/public-api"
-      ]
+      "ng-resource-form-util": ["packages/ng-resource-form-util/src/public-api"]
     }
   },
   "ts-node": {

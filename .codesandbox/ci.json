@@ -1,0 +1,8 @@
+{
+  "node": "14",
+  "packages": [
+    "packages/*"
+  ],
+  "buildCommand": "build:lib",
+  "sandboxes": []
+}
