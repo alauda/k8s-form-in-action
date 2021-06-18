@@ -6,8 +6,6 @@
 
 - [#28](https://github.com/alauda/k8s-form-in-action/pull/28) [`c9e14fa`](https://github.com/alauda/k8s-form-in-action/commit/c9e14fa8da69b7223491db97ac3fcf1e3aa28543) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump angular version, use esm in demo
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
 ### [3.0.1](https://github.com/alauda/k8s-form-in-action/compare/v3.0.0...v3.0.1) (2021-02-25)
 
 ### Bug Fixes
