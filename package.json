@@ -18,7 +18,7 @@
     "lint:tsc": "tsc --noEmit",
     "prepare": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
     "prerelease": "yarn build:lib",
-    "release": "changeset publish",
+    "release": "cd packages/ng-resource-form-util && standard-version --no-verify",
     "serve": "serve docs/demo -p 4200",
     "start": "ng serve --hmr",
     "test": "ng test",
@@ -46,9 +46,8 @@
     "@types/js-yaml": "^4.0.1",
     "@types/lodash-es": "^4.17.4",
     "@types/markdown-it": "^12.0.2",
-    "@types/node": "^15.12.2",
+    "@types/node": "^15.12.4",
     "@types/webpack-env": "^1.16.0",
-    "core-js": "^3.14.0",
     "jasmine-core": "^3.7.1",
     "jasmine-spec-reporter": "^7.0.0",
     "js-yaml": "^4.1.0",
@@ -63,10 +62,11 @@
     "monaco-editor-webpack-plugin": "^4.0.0",
     "monaco-yaml": "^2.5.1",
     "ng-monaco-editor": "^4.0.2",
-    "ng-packagr": "^12.0.5",
+    "ng-packagr": "^12.0.6",
     "rimraf": "^3.0.2",
     "rxjs": "^7.1.0",
     "serve": "^12.0.0",
+    "standard-version": "^9.3.0",
     "ts-node": "^10.0.0",
     "tslib": "^2.3.0",
     "tslint": "^6.1.3",
@@ -75,5 +75,43 @@
   },
   "resolutions": {
     "prettier": "^2.3.1"
+  },
+  "browserslist": "extends @1stg/browserslist-config/modern",
+  "commitlint": {
+    "extends": [
+      "@1stg"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@1stg/eslint-config/loose",
+    "rules": {
+      "jest/no-export": 0
+    }
+  },
+  "eslintIgnore": [
+    "docs/demo",
+    "node_modules",
+    "release",
+    "CHANGELOG.md",
+    "/!.*.js"
+  ],
+  "prettier": "@1stg/prettier-config/semi/angular",
+  "renovate": {
+    "extends": [
+      "@1stg"
+    ]
+  },
+  "stylelint": {
+    "extends": "@1stg/stylelint-config/scss/loose",
+    "rules": {
+      "selector-type-no-unknown": [
+        true,
+        {
+          "ignoreTypes": [
+            "/^(ng|x)-/"
+          ]
+        }
+      ]
+    }
   }
 }

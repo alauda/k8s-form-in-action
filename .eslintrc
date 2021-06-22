@@ -1,6 +1,0 @@
-{
-  "extends": "@1stg/eslint-config/loose",
-  "rules": {
-    "jest/no-export": 0
-  }
-}
