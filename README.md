@@ -1,6 +1,6 @@
 # Angular Reactive Forms - Kubernetes Objects in Action
 
-[![GitHub Workflow Status](https://github.com/rx-ts/eslint/workflows/Release/badge.svg)](https://github.com/alauda/k8s-form-in-action/actions/workflows/release.yml)
+[![GitHub Workflow Status](https://github.com/alauda/k8s-form-in-action/workflows/Release/badge.svg)](https://github.com/alauda/k8s-form-in-action/actions/workflows/release.yml)
 [![npm](https://img.shields.io/npm/v/ng-resource-form-util)](https://www.npmjs.com/package/ng-resource-form-util)
 
 - [DEMO](https://k8s-form-in-action.netlify.app/demo)
