@@ -62,8 +62,8 @@ export abstract class BaseResourceFormComponent<
   @Input()
   updateMode: boolean;
 
-  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output()
+  // eslint-disable-next-line @angular-eslint/no-output-native
   blur = new EventEmitter<void>();
 
   @ViewChild(FormGroupDirective, { static: false })

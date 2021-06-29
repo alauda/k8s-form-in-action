@@ -44,8 +44,7 @@ jobs:
         uses: changesets/action@master
         with:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
-          # workaround for https://github.com/atlassian/changesets/issues/605
-          publish: sh scripts/release.sh
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
