@@ -11,8 +11,9 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  QueryList,
   Type,
-  ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import {
   AbstractControl,
@@ -66,8 +67,8 @@ export abstract class BaseResourceFormComponent<
   // eslint-disable-next-line @angular-eslint/no-output-native
   blur = new EventEmitter<void>();
 
-  @ViewChild(FormGroupDirective, { static: false })
-  ngFormGroupDirective: FormGroupDirective;
+  @ViewChildren(FormGroupDirective)
+  private readonly ngFormGroupDirectives: QueryList<FormGroupDirective>;
 
   disabled = false;
   destroyed = false;
@@ -271,8 +272,8 @@ export abstract class BaseResourceFormComponent<
       this.getInjectable(FormGroupDirective) || this.getInjectable(NgForm);
     if (parentForm) {
       this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
-        if (this.ngFormGroupDirective) {
-          this.ngFormGroupDirective.onSubmit(event);
+        if (this.ngFormGroupDirectives?.length) {
+          this.ngFormGroupDirectives.forEach(fgd => fgd.onSubmit(event));
         }
         this.form.updateValueAndValidity();
         this.cdr.markForCheck();
