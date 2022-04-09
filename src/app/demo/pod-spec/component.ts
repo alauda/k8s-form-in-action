@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractControl, FormArray } from '@angular/forms';
+
+import { PodSpec } from '../types';
+
 import {
   BaseResourceFormGroupComponent,
   PathParam,
 } from 'ng-resource-form-util';
-
-import { PodSpec } from '../types';
 
 @Component({
   selector: 'x-pod-spec-form',
@@ -18,7 +19,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
     const validator = (fArray: AbstractControl) => {
       const names: string[] = [];
       for (const control of (fArray as FormArray).controls) {
-        const { name } = control.value;
+        const { name } = control.value as { name: string };
         if (!names.includes(name)) {
           names.push(name);
         } else {
@@ -36,7 +37,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
     return secret.name;
   }
 
-  adaptResourceModel(resource: PodSpec) {
+  override adaptResourceModel(resource: PodSpec) {
     // Makes sure user will not accidentally remove the last container:
     if (resource && !resource.containers) {
       resource = { ...resource, containers: [{ name: '', image: '' }] };
@@ -60,7 +61,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
     this.containersForm.removeAt(index);
   }
 
-  getOnFormArrayResizeFn() {
+  override getOnFormArrayResizeFn() {
     return (path: PathParam) => this.getNewContainerFormControl(path);
   }
 

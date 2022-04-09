@@ -1,4 +1,8 @@
-<div *ngIf="contents" class="hint" [innerHTML]="contents"></div>
+<div
+  *ngIf="contents"
+  class="hint"
+  [innerHTML]="contents"
+></div>
 <form [formGroup]="form">
   <x-form-section>
     <x-deployment formControlName="ui"></x-deployment>

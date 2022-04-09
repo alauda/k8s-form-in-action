@@ -1,35 +1,56 @@
 <form [formGroup]="form">
   <x-form-section formGroupName="metadata">
     <x-form-section>
-      <input (blur)="onBlur()" formControlName="name" />
+      <input
+        (blur)="onBlur()"
+        formControlName="name"
+      />
     </x-form-section>
     <x-form-section>
       <select formControlName="namespace">
-        <option value="" disabled>Choose a namespace</option>
-        <option *ngFor="let namespace of namespaces" [ngValue]="namespace">
+        <option
+          value=""
+          disabled
+        >
+          Choose a namespace
+        </option>
+        <option
+          *ngFor="let namespace of namespaces"
+          [ngValue]="namespace"
+        >
           {{ namespace }}
         </option>
         <option
-          *ngIf="!namespaces.includes(form.get('metadata.namespace').value)"
-          [ngValue]="form.get('metadata.namespace').value"
+          *ngIf="!namespaces.includes(form.get('metadata.namespace')!.value)"
+          [ngValue]="form.get('metadata.namespace')!.value"
         >
-          {{ form.get('metadata.namespace').value }}
+          {{ form.get('metadata.namespace')!.value }}
         </option>
       </select>
     </x-form-section>
     <x-form-section>
-      <x-key-value-form (blur)="onBlur()" formControlName="labels">
+      <x-key-value-form
+        (blur)="onBlur()"
+        formControlName="labels"
+      >
       </x-key-value-form>
     </x-form-section>
     <x-form-section>
-      <x-key-value-form (blur)="onBlur()" formControlName="annotations">
+      <x-key-value-form
+        (blur)="onBlur()"
+        formControlName="annotations"
+      >
       </x-key-value-form>
     </x-form-section>
   </x-form-section>
 
   <x-form-section formGroupName="spec">
     <x-form-section>
-      <input (blur)="onBlur()" type="number" formControlName="replicas" />
+      <input
+        (blur)="onBlur()"
+        type="number"
+        formControlName="replicas"
+      />
     </x-form-section>
     <x-form-section>
       <input
@@ -41,7 +62,10 @@
 
     <x-form-section formGroupName="selector">
       <x-form-section>
-        <x-key-value-form (blur)="onBlur()" formControlName="matchLabels">
+        <x-key-value-form
+          (blur)="onBlur()"
+          formControlName="matchLabels"
+        >
         </x-key-value-form>
       </x-form-section>
     </x-form-section>
@@ -49,7 +73,10 @@
     <x-form-section formGroupName="template">
       <x-form-section formGroupName="metadata">
         <x-form-section>
-          <x-key-value-form (blur)="onBlur()" formControlName="labels">
+          <x-key-value-form
+            (blur)="onBlur()"
+            formControlName="labels"
+          >
           </x-key-value-form>
         </x-form-section>
       </x-form-section>

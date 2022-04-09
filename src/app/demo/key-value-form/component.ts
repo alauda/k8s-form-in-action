@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormArray, ValidatorFn } from '@angular/forms';
-import { BaseResourceFormComponent } from 'ng-resource-form-util';
+import { AbstractControl, FormArray, ValidatorFn } from '@angular/forms';
 
 import { StringMap } from '../types';
+
+import { BaseResourceFormComponent } from 'ng-resource-form-util';
 
 export type KeyValue = [string, string];
 
@@ -24,16 +25,17 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
   }
 
   createForm() {
-    const duplicateKeyValidator = (fArray: FormArray) => {
+    const duplicateKeyValidator = (fArray: AbstractControl) => {
       const names: string[] = [];
-      for (const control of fArray.controls) {
-        const [name] = control.value;
+      for (const control of (fArray as FormArray).controls) {
+        const [name] = control.value as string[];
         if (!names.includes(name)) {
           names.push(name);
         } else {
           return { duplicatedContainerName: true };
         }
       }
+      return null;
     };
 
     return this.fb.array([], duplicateKeyValidator);
@@ -43,7 +45,7 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
     return [['', '']];
   }
 
-  adaptResourceModel(resource: { [key: string]: string }) {
+  override adaptResourceModel(resource: { [key: string]: string }) {
     let newFormModel = Object.entries(resource || {});
     if (newFormModel.length === 0) {
       newFormModel = this.getDefaultFormModel();
@@ -52,13 +54,13 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
     return newFormModel;
   }
 
-  adaptFormModel(formModel: KeyValue[]) {
+  override adaptFormModel(formModel: KeyValue[]) {
     return formModel
       .filter(row => !!row[0])
       .reduce((obj, [k, v]) => ({ ...obj, [k]: v }), {});
   }
 
-  getOnFormArrayResizeFn() {
+  override getOnFormArrayResizeFn() {
     return () => this.createNewControl();
   }
 

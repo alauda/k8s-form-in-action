@@ -1,4 +1,4 @@
-/// <reference path="../../node_modules/monaco-yaml/lib/monaco.d.ts" />
+/// <reference path="../../node_modules/monaco-yaml/index.d.ts" />
 
 import { Injectable } from '@angular/core';
 import { Monaco, MonacoProviderService } from 'ng-monaco-editor';
@@ -10,10 +10,9 @@ import { Monaco, MonacoProviderService } from 'ng-monaco-editor';
   providedIn: 'root',
 })
 export class CustomMonacoProviderService extends MonacoProviderService {
-  private ready: Promise<Monaco>;
+  private ready?: Promise<Monaco>;
 
-  async initMonaco() {
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  override async initMonaco() {
     if (!this.ready) {
       this.ready = new Promise((resolve, reject) => {
         super
@@ -29,7 +28,7 @@ export class CustomMonacoProviderService extends MonacoProviderService {
   }
 
   private configYaml() {
-    monaco.languages.yaml.yamlDefaults.setDiagnosticsOptions({
+    this.monaco.languages.yaml.yamlDefaults.setDiagnosticsOptions({
       validate: true,
       format: true,
       enableSchemaRequest: true,

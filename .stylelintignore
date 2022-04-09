@@ -2,6 +2,7 @@ docs/demo
 node_modules
 release
 *.json
+*.lock
 *.log
 *.ico
 *.yml

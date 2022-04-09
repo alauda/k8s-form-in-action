@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
 import { Container } from '../types';
+
+import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
 const DEFAULT_CONTAINER: Container = {
   name: '',
