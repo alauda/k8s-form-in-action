@@ -62,8 +62,8 @@ export abstract class BaseResourceFormComponent<
   private formValueSub?: Subscription;
   private adaptedResource!: F;
   private _formModel$?: Observable<F>;
-  private _resource!: R;
-  private readonly _resource$$ = new ReplaySubject<R>(1);
+  private _resourceModel!: R;
+  private readonly _resourceModel$$ = new ReplaySubject<R>(1);
 
   private readonly _destroy$$ = new Subject<void>();
 
@@ -71,7 +71,7 @@ export abstract class BaseResourceFormComponent<
   readonly fb: FormBuilder;
   readonly ngControl: NgControl;
 
-  readonly resource$ = this._resource$$.asObservable();
+  readonly resource$ = this._resourceModel$$.asObservable();
   readonly destroy$ = this._destroy$$.asObservable();
 
   @Input()
@@ -109,8 +109,8 @@ export abstract class BaseResourceFormComponent<
   /**
    * Returns the incoming resource value
    */
-  get resource(): R {
-    return this._resource;
+  get resourceModel(): R {
+    return this._resourceModel;
   }
 
   /**
@@ -191,7 +191,7 @@ export abstract class BaseResourceFormComponent<
   }
 
   writeValue(resource: R) {
-    this._resource$$.next((this._resource = resource));
+    this._resourceModel$$.next((this._resourceModel = resource));
 
     let formModel = (this.adaptedResource = this.adaptResourceModel(resource));
 
