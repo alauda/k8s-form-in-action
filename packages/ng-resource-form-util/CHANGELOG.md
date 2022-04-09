@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.0
+
+### Major Changes
+
+- [#44](https://github.com/alauda/k8s-form-in-action/pull/44) [`40974be`](https://github.com/alauda/k8s-form-in-action/commit/40974be2375777f5d259467ce7ee47ed5c7385ba) Thanks [@JounQin](https://github.com/JounQin)! - feat!: expose destroy$ for reuse, bump deps
+
 ## 4.0.0
 
 ### Major Changes
