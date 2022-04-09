@@ -27,8 +27,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { cloneDeep } from 'lodash-es';
-import { Observable, Subscription } from 'rxjs';
-import { first, map, startWith } from 'rxjs/operators';
+import { Observable, Subject, Subscription } from 'rxjs';
+import { first, map, startWith, takeUntil } from 'rxjs/operators';
 
 import {
   OnFormArrayResizeFn,
@@ -51,29 +51,31 @@ export abstract class BaseResourceFormComponent<
   Control extends AbstractControl = FormControl,
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit
 {
-  private formValueSub: Subscription;
-  private parentFormSub: Subscription;
-  private adaptedResource: F;
-  private _formModel$: Observable<F>;
+  private formValueSub?: Subscription;
+  private adaptedResource!: F;
+  private _formModel$?: Observable<F>;
+
+  private readonly _destroy$$ = new Subject<void>();
   readonly cdr: ChangeDetectorRef;
   readonly fb: FormBuilder;
   readonly ngControl: NgControl;
 
+  readonly destroy$ = this._destroy$$.asObservable();
+
   @Input()
-  updateMode: boolean;
+  updateMode?: boolean;
 
   @Output()
   // eslint-disable-next-line @angular-eslint/no-output-native
   blur = new EventEmitter<void>();
 
   @ViewChild(FormGroupDirective, { static: false })
-  ngFormGroupDirective: FormGroupDirective;
+  ngFormGroupDirective?: FormGroupDirective;
 
   disabled = false;
-  destroyed = false;
 
   // Based on scenarios, the form can be a single form control, array or a complex group.
-  form: Control;
+  form!: Control;
 
   /**
    * Method to create the default form
@@ -178,9 +180,11 @@ export abstract class BaseResourceFormComponent<
 
     this.setupForm();
 
-    if (this.getDefaultFormModel()) {
+    const defaultModel = this.getDefaultFormModel();
+
+    if (defaultModel && typeof defaultModel === 'object') {
       formModel = Object.assign(
-        cloneDeep(this.getDefaultFormModel()),
+        cloneDeep(defaultModel as F & object),
         formModel,
       );
     }
@@ -207,20 +211,16 @@ export abstract class BaseResourceFormComponent<
 
   ngOnDestroy() {
     this.deregisterObservables();
-    if (this.parentFormSub) {
-      this.parentFormSub.unsubscribe();
-    }
-    this.destroyed = true;
+    this._destroy$$.next();
+    this._destroy$$.complete();
   }
 
   private getInjectable<T>(
     token: Type<T> | AbstractType<T> | InjectionToken<T>,
-    otherwise?: T,
+    otherwise?: T | null,
     flags?: InjectFlags,
   ) {
-    try {
-      return this.injector.get(token, otherwise, flags);
-    } catch {}
+    return this.injector.get(token, otherwise ?? null, flags);
   }
 
   protected setupForm() {
@@ -232,14 +232,17 @@ export abstract class BaseResourceFormComponent<
   protected registerObservables() {
     this.deregisterObservables();
 
-    this.formValueSub = this.form.valueChanges
+    this.formValueSub = (this.form.valueChanges as Observable<F>)
       .pipe(
         map(formModel => {
           if (this.getResourceMergeStrategy()) {
-            formModel = setResourceByForm(
-              this.form,
-              cloneDeep(this.adaptedResource),
-            );
+            formModel =
+              this.adaptedResource && typeof this.adaptedResource === 'object'
+                ? setResourceByForm(
+                    this.form,
+                    this.adaptedResource as F & object,
+                  )
+                : this.adaptedResource;
           }
           return formModel;
         }),
@@ -270,13 +273,15 @@ export abstract class BaseResourceFormComponent<
     const parentForm =
       this.getInjectable(FormGroupDirective) || this.getInjectable(NgForm);
     if (parentForm) {
-      this.parentFormSub = parentForm.ngSubmit.subscribe((event: Event) => {
-        if (this.ngFormGroupDirective) {
-          this.ngFormGroupDirective.onSubmit(event);
-        }
-        this.form.updateValueAndValidity();
-        this.cdr.markForCheck();
-      });
+      parentForm.ngSubmit
+        .pipe(takeUntil(this._destroy$$))
+        .subscribe((event: Event) => {
+          if (this.ngFormGroupDirective) {
+            this.ngFormGroupDirective.onSubmit(event);
+          }
+          this.form.updateValueAndValidity();
+          this.cdr.markForCheck();
+        });
     }
   }
 
@@ -286,11 +291,12 @@ export abstract class BaseResourceFormComponent<
    */
   private setupValidators() {
     const ngControl = this.ngControl;
-    if (ngControl) {
+    if (ngControl?.control) {
       const syncValidator = () => {
-        if (!this.destroyed && this.form && this.form.invalid) {
+        if (this.form?.invalid) {
           return { [this.constructor.name]: true };
         }
+        return null;
       };
       const asyncValidator = () =>
         this.form.statusChanges.pipe(
@@ -323,15 +329,15 @@ export abstract class BaseResourceFormComponent<
   }
 
   constructor(public injector: Injector) {
-    this.cdr = this.getInjectable(ChangeDetectorRef);
-    this.fb = this.getInjectable(FormBuilder);
+    this.cdr = this.getInjectable(ChangeDetectorRef)!;
+    this.fb = this.getInjectable(FormBuilder)!;
 
     // We should only consider fetching the NgControl at the current element:
     this.ngControl = this.getInjectable<NgControl>(
       NgControl,
-      undefined,
+      null,
       InjectFlags.Self,
-    );
+    )!;
 
     this.setupValueAccessor();
   }

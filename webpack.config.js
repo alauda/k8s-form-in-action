@@ -36,10 +36,10 @@ module.exports = config => {
       customLanguages: [
         {
           label: 'yaml',
-          entry: '../../monaco-yaml/lib/esm/monaco.contribution',
+          entry: '../../monaco-yaml/index.js',
           worker: {
             id: 'vs/language/yaml/yamlWorker',
-            entry: '../../monaco-yaml/lib/esm/yaml.worker.js',
+            entry: '../../monaco-yaml/yaml.worker.js',
           },
         },
       ],

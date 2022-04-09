@@ -40,7 +40,11 @@ interface TestResourceFormModel {
   selector: 'lib-test-resource-form',
   template: `
     <form [formGroup]="form">
-      <input #simpleInput formControlName="simple" (blur)="onBlur()" />
+      <input
+        #simpleInput
+        formControlName="simple"
+        (blur)="onBlur()"
+      />
       <input
         class="array-input"
         *ngFor="let item of $any(form.get('array')).controls"
@@ -56,16 +60,16 @@ export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
   TestResourceFormModel
 > {
   @ViewChild(FormGroupDirective, { static: false })
-  formDir: FormGroupDirective;
+  formDir!: FormGroupDirective;
 
   @ViewChild('simpleInput', { static: false })
-  simpleInput: ElementRef;
+  simpleInput!: ElementRef;
 
   constructor(private readonly elementRef: ElementRef, injector: Injector) {
     super(injector);
   }
 
-  getResourceMergeStrategy() {
+  override getResourceMergeStrategy() {
     return true;
   }
 
@@ -99,7 +103,7 @@ export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
     el.dispatchEvent(new FocusEvent('blur'));
   }
 
-  adaptResourceModel(resource: TestResource) {
+  override adaptResourceModel(resource: TestResource) {
     return {
       ...resource,
       array: (resource.array || '')
@@ -109,10 +113,10 @@ export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
     };
   }
 
-  adaptFormModel(formModel: TestResourceFormModel) {
+  override adaptFormModel(formModel: TestResourceFormModel) {
     return {
       ...formModel,
-      array: formModel.array.map(item => +item).join(','),
+      array: formModel.array?.map(item => +item).join(','),
       defaultField: 'DEFAULT',
     };
   }
@@ -149,14 +153,14 @@ export class TestResourceFormWrapperComponent implements OnInit {
   resourceChange = new EventEmitter();
 
   @ViewChild(FormGroupDirective, { static: false })
-  formDir: FormGroupDirective;
+  formDir!: FormGroupDirective;
 
   @ViewChild(TestResourceFormComponent, { static: false })
-  resourceForm: TestResourceFormComponent;
+  resourceForm!: TestResourceFormComponent;
 
   control = new FormControl();
 
-  form: FormGroup;
+  form!: FormGroup;
 
   ngOnInit() {
     this.control.valueChanges.subscribe(value =>
@@ -216,7 +220,7 @@ describe('BaseResourceFormGroupComponent', () => {
     wrapper.resource = { simple: '123', ignored: 456 };
     fixture.detectChanges();
 
-    wrapper.formDir.onSubmit(null);
+    wrapper.formDir.onSubmit(null!);
 
     expect(wrapper.resourceForm.formDir.submitted).toEqual(true);
   });

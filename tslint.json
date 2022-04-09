@@ -1,3 +1,0 @@
-{
-  "extends": ["@1stg/tslint-config/angular", "@1stg/tslint-config/eslint"]
-}

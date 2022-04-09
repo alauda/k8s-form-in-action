@@ -21,7 +21,7 @@ import {
   MonacoEditorOptions,
   MonacoProviderService,
 } from 'ng-monaco-editor';
-import { combineLatest } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
 
 import { PathProviderService } from './path.service';
@@ -58,10 +58,10 @@ const EDITOR_OPTIONS: MonacoEditorOptions = {
 
 const getSymbolForPath = (
   path: string[],
-  parent: languages.DocumentSymbol,
+  parent: languages.DocumentSymbol | undefined,
   symbols: languages.DocumentSymbol[],
   pathDepth: number,
-): languages.DocumentSymbol => {
+): languages.DocumentSymbol | undefined => {
   const childSymbol = symbols.find(symbol => symbol.name === path[pathDepth]);
 
   if (
@@ -113,13 +113,13 @@ const getSymbolsForPosition = async (
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
-  contents: string;
+  contents?: string;
 
   EDITOR_OPTIONS = EDITOR_OPTIONS;
 
-  private monacoReadyResolve: (result: MonacoReadyResult) => void;
+  private monacoReadyResolve!: (result: MonacoReadyResult) => void;
 
   private oldDecorations: string[] = [];
 
@@ -141,8 +141,8 @@ export class DemoComponent implements OnInit {
       yaml: [],
     });
 
-    const uiCtrl = this.form.get('ui');
-    const yamlCtrl = this.form.get('yaml');
+    const uiCtrl = this.form.get('ui')!;
+    const yamlCtrl = this.form.get('yaml')!;
 
     uiCtrl.valueChanges
       .pipe(
@@ -154,9 +154,9 @@ export class DemoComponent implements OnInit {
         yamlCtrl.setValue(value, { emitEvent: false });
       });
 
-    yamlCtrl.valueChanges
+    (yamlCtrl.valueChanges as Observable<string>)
       .pipe(
-        startWith(yamlCtrl.value),
+        startWith(yamlCtrl.value as string),
         map(value => this.yamlToForm(value)),
         filter(v => !!v),
       )
@@ -199,7 +199,7 @@ export class DemoComponent implements OnInit {
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     editor.onDidChangeCursorSelection(async ({ selection }) => {
-      const model = editor.getModel();
+      const model = editor.getModel()!;
       const position = selection.getPosition();
       const symbols = await getSymbolsForPosition(result, model, position);
       this.pathProvider.subject.next(symbols.map(symbol => symbol.name));
@@ -209,7 +209,7 @@ export class DemoComponent implements OnInit {
   async highlightSymbol(path: string[]) {
     const { monaco, editor, getHover } = await this.monacoReady;
 
-    let decoration: editor.IModelDeltaDecoration;
+    let decoration: editor.IModelDeltaDecoration | undefined;
 
     const range = await this.getYamlRangeForPath(path);
 
@@ -235,7 +235,7 @@ export class DemoComponent implements OnInit {
       };
 
       const [{ contents }] = await getHover(
-        editor.getModel(),
+        editor.getModel()!,
         position,
         NEVER_CANCEL_TOKEN,
       );
@@ -253,9 +253,11 @@ export class DemoComponent implements OnInit {
     this.cdr.markForCheck();
   }
 
-  private async getYamlRangeForPath(path: string[]): Promise<IRange> {
+  private async getYamlRangeForPath(
+    path: string[],
+  ): Promise<IRange | undefined> {
     const { editor, getDocumentSymbols } = await this.monacoReady;
-    const model = editor.getModel();
+    const model = editor.getModel()!;
 
     return path.length
       ? getSymbolForPath(
@@ -263,7 +265,7 @@ export class DemoComponent implements OnInit {
           undefined,
           await getDocumentSymbols(model, false, NEVER_CANCEL_TOKEN),
           0,
-        ).range
+        )?.range
       : model.getFullModelRange();
   }
 

@@ -3,6 +3,6 @@
  */
 
 export * from './base-resource-form.component';
-export * from './base-resource-form-group.component';
 export * from './base-resource-form-array.component';
+export * from './base-resource-form-group.component';
 export * from './util';

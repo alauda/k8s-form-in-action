@@ -26,7 +26,7 @@ export type PathParam = Array<string | number>;
 export function setFormByResource<R>(
   form: AbstractControl,
   resource: R,
-  onFormArrayResize?: OnFormArrayResizeFn,
+  onFormArrayResize: OnFormArrayResizeFn,
 ): void {
   let newFormValue = cloneDeep(form.value);
   const setFormValueByPath = (
@@ -85,12 +85,12 @@ export function setFormByResource<R>(
  * (not all fields are editable in biz logic), we will traverse the control and feed
  * each field one by one.
  */
-// eslint-disable-next-line @typescript-eslint/ban-types, sonarjs/cognitive-complexity
-export function setResourceByForm<R extends Object>(
+
+export function setResourceByForm<R extends object>(
   form: AbstractControl,
   resource: R,
 ): R {
-  const newResource = cloneDeep<R>(resource || ({} as any));
+  const newResource = cloneDeep<R>(resource);
   const formValue = form.value;
 
   const setResourceValueByPath = (

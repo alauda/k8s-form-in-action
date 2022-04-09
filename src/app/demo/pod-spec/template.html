@@ -4,8 +4,18 @@
       *ngFor="let control of containersForm.controls; let index = index"
     >
       <x-container-form [formControlName]="index"> </x-container-form>
-      <button (click)="removeContainer(index)" class="x-remove">-</button>
+      <button
+        (click)="removeContainer(index)"
+        class="x-remove"
+      >
+        -
+      </button>
     </x-form-section>
-    <button (click)="addContainer()" class="x-add">+</button>
+    <button
+      (click)="addContainer()"
+      class="x-add"
+    >
+      +
+    </button>
   </x-form-section>
 </form>

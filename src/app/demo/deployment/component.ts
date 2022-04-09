@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import { BaseResourceFormGroupComponent } from 'packages/ng-resource-form-util/src/public-api';
 
 import { Deployment, DeploymentTypeMeta } from '../types';
+
+import { BaseResourceFormGroupComponent } from 'packages/ng-resource-form-util/src/public-api';
 
 @Component({
   selector: 'x-deployment',

@@ -1,0 +1,28 @@
+diff --git a/node_modules/monaco-yaml/index.js b/node_modules/monaco-yaml/index.js
+index d89e293..d6dbfd0 100644
+--- a/node_modules/monaco-yaml/index.js
++++ b/node_modules/monaco-yaml/index.js
+@@ -65,12 +65,12 @@ function createDiagnosticsAdapter(getWorker, defaults) {
+     const diagnostics = await worker.doValidation(String(resource));
+     const markers = diagnostics.map(toDiagnostics);
+     const model = editor.getModel(resource);
+-    if (model && model.getLanguageId() === languageId) {
++    if (model && model.getModeId() === languageId) {
+       editor.setModelMarkers(model, languageId, markers);
+     }
+   };
+   const onModelAdd = (model) => {
+-    if (model.getLanguageId() !== languageId) {
++    if (model.getModeId() !== languageId) {
+       return;
+     }
+     let handle;
+@@ -101,7 +101,7 @@ function createDiagnosticsAdapter(getWorker, defaults) {
+   });
+   defaults.onDidChange(() => {
+     for (const model of editor.getModels()) {
+-      if (model.getLanguageId() === languageId) {
++      if (model.getModeId() === languageId) {
+         onModelRemoved(model);
+         onModelAdd(model);
+       }

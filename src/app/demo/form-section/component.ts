@@ -34,13 +34,13 @@ import { PathProviderService } from '../path.service';
 })
 export class FormSectionComponent implements AfterViewInit, OnDestroy {
   get label() {
-    let label: string;
+    let label: string | undefined;
     if (this.cc) {
       label = String(this.cc.name);
     } else if (this.nc) {
       label = String(this.nc.name);
     }
-    return label;
+    return label!;
   }
 
   @Input() noPathIntelligence = false;
@@ -61,7 +61,6 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
       ];
       return partials.filter(s => !!s).join(', ');
     }
-    return this.control?.status;
   }
 
   @HostBinding('attr.title')
@@ -75,7 +74,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
       ? [
           ...this.parent.path,
           this.keyValueForm
-            ? (this.keyValueForm.form.get(this.label).value as KeyValue)[0]
+            ? (this.keyValueForm.form.get(this.label)?.value as KeyValue)[0]
             : this.label,
         ]
       : [];
@@ -100,7 +99,8 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
     private readonly pathProvider: PathProviderService,
   ) {}
 
-  @ContentChild(NgControl, { static: false }) nc: NgControl;
+  @ContentChild(NgControl, { static: false })
+  nc?: NgControl;
 
   @HostBinding('class.active') active = false;
 
@@ -126,7 +126,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
       });
 
     this.control?.statusChanges
-      .pipe(takeUntil(this.destroy$$))
+      ?.pipe(takeUntil(this.destroy$$))
       .subscribe(() => {
         this.cdr.markForCheck();
       });

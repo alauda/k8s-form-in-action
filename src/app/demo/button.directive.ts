@@ -6,7 +6,8 @@ import { Directive, HostBinding, Input } from '@angular/core';
   selector: 'button',
 })
 export class ButtonDirective {
-  @Input() type: string;
+  @Input()
+  type?: string;
 
   @HostBinding('attr.type')
   get typeBinding() {
