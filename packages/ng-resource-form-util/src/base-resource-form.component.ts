@@ -27,8 +27,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { cloneDeep } from 'lodash-es';
-import { Observable, Subject, Subscription } from 'rxjs';
-import { first, map, startWith, takeUntil } from 'rxjs/operators';
+import {
+  Observable,
+  Subject,
+  Subscription,
+  first,
+  map,
+  startWith,
+  takeUntil,
+  ReplaySubject,
+} from 'rxjs';
 
 import {
   OnFormArrayResizeFn,
@@ -54,12 +62,16 @@ export abstract class BaseResourceFormComponent<
   private formValueSub?: Subscription;
   private adaptedResource!: F;
   private _formModel$?: Observable<F>;
+  private _resource!: R;
+  private readonly _resource$$ = new ReplaySubject<R>(1);
 
   private readonly _destroy$$ = new Subject<void>();
+
   readonly cdr: ChangeDetectorRef;
   readonly fb: FormBuilder;
   readonly ngControl: NgControl;
 
+  readonly resource$ = this._resource$$.asObservable();
   readonly destroy$ = this._destroy$$.asObservable();
 
   @Input()
@@ -93,6 +105,13 @@ export abstract class BaseResourceFormComponent<
    * - When with the adapted input resource upon onChange
    */
   abstract getResourceMergeStrategy(): boolean;
+
+  /**
+   * Returns the incoming resource value
+   */
+  get resource(): R {
+    return this._resource;
+  }
 
   /**
    * Returns the embedded form value
@@ -172,6 +191,8 @@ export abstract class BaseResourceFormComponent<
   }
 
   writeValue(resource: R) {
+    this._resource$$.next((this._resource = resource));
+
     let formModel = (this.adaptedResource = this.adaptResourceModel(resource));
 
     // We need to unsubscribe the form value change before setting the form value
