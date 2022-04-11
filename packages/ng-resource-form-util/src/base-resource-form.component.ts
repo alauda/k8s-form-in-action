@@ -241,7 +241,11 @@ export abstract class BaseResourceFormComponent<
     otherwise?: T | null,
     flags?: InjectFlags,
   ) {
-    return this.injector.get(token, otherwise ?? null, flags);
+    try {
+      return this.injector.get(token, otherwise, flags);
+    } catch {
+      return null;
+    }
   }
 
   protected setupForm() {

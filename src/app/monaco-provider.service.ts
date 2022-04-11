@@ -1,6 +1,7 @@
 /// <reference path="../../node_modules/monaco-yaml/index.d.ts" />
 
 import { Injectable } from '@angular/core';
+import { setDiagnosticsOptions } from 'monaco-yaml';
 import { Monaco, MonacoProviderService } from 'ng-monaco-editor';
 
 /**
@@ -28,7 +29,7 @@ export class CustomMonacoProviderService extends MonacoProviderService {
   }
 
   private configYaml() {
-    this.monaco.languages.yaml.yamlDefaults.setDiagnosticsOptions({
+    setDiagnosticsOptions({
       validate: true,
       format: true,
       enableSchemaRequest: true,
