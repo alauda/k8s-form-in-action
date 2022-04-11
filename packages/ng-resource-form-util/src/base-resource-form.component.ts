@@ -299,10 +299,13 @@ export abstract class BaseResourceFormComponent<
       this.getInjectable(FormGroupDirective) || this.getInjectable(NgForm);
     if (parentForm) {
       parentForm.ngSubmit
-        .pipe(takeUntil(this._destroy$$))
-        .subscribe((event: Event) => {
+        .pipe(startWith(parentForm.submitted), takeUntil(this._destroy$$))
+        .subscribe((event: Event | boolean) => {
+          if (event === false) {
+            return;
+          }
           if (this.ngFormGroupDirective) {
-            this.ngFormGroupDirective.onSubmit(event);
+            this.ngFormGroupDirective.onSubmit(event === true ? null! : event);
           }
           this.form.updateValueAndValidity();
           this.cdr.markForCheck();
