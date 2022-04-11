@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.1.0
+
+### Minor Changes
+
+- [#46](https://github.com/alauda/k8s-form-in-action/pull/46) [`7d94e26`](https://github.com/alauda/k8s-form-in-action/commit/7d94e26e56cf5dc6ae8796adce02e7d6224b7985) Thanks [@JounQin](https://github.com/JounQin)! - feat: provide a way to get latest resource
+
+### Patch Changes
+
+- [#46](https://github.com/alauda/k8s-form-in-action/pull/46) [`7d94e26`](https://github.com/alauda/k8s-form-in-action/commit/7d94e26e56cf5dc6ae8796adce02e7d6224b7985) Thanks [@JounQin](https://github.com/JounQin)! - fix: revert catch injector get error
+
 ## 5.0.0
 
 ### Major Changes
