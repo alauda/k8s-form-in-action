@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.2
+
+### Patch Changes
+
+- [#50](https://github.com/alauda/k8s-form-in-action/pull/50) [`c5afc99`](https://github.com/alauda/k8s-form-in-action/commit/c5afc99c400698081d15d68d94bea402b6a88dc4) Thanks [@JounQin](https://github.com/JounQin)! - fix: formModel is set undefined unexpectedly
+
 ## 5.1.1
 
 ### Patch Changes
