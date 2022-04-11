@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.1
+
+### Patch Changes
+
+- [#48](https://github.com/alauda/k8s-form-in-action/pull/48) [`3dc11c4`](https://github.com/alauda/k8s-form-in-action/commit/3dc11c47cacd504afde4465978208ad71d0f9207) Thanks [@JounQin](https://github.com/JounQin)! - fix: trigger submit if parent form has been submitted on init
+
 ## 5.1.0
 
 ### Minor Changes
