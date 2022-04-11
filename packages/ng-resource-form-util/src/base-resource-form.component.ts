@@ -260,14 +260,15 @@ export abstract class BaseResourceFormComponent<
     this.formValueSub = (this.form.valueChanges as Observable<F>)
       .pipe(
         map(formModel => {
-          if (this.getResourceMergeStrategy()) {
-            formModel =
-              this.adaptedResource && typeof this.adaptedResource === 'object'
-                ? setResourceByForm(
-                    this.form,
-                    this.adaptedResource as F & object,
-                  )
-                : this.adaptedResource;
+          if (
+            this.getResourceMergeStrategy() &&
+            this.adaptedResource &&
+            typeof this.adaptedResource === 'object'
+          ) {
+            formModel = setResourceByForm(
+              this.form,
+              this.adaptedResource as F & object,
+            );
           }
           return formModel;
         }),
