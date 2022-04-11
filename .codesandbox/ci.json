@@ -3,6 +3,9 @@
   "packages": [
     "packages/*"
   ],
+  "publishDirectory": {
+    "ng-resource-form-util": "packages/ng-resource-form-util/release"
+  },
   "buildCommand": "build:lib",
   "sandboxes": []
 }
