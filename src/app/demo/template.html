@@ -1,18 +1,1 @@
-<div
-  *ngIf="contents"
-  class="hint"
-  [innerHTML]="contents"
-></div>
-<form [formGroup]="form">
-  <x-form-section>
-    <x-deployment formControlName="ui"></x-deployment>
-  </x-form-section>
-  <x-form-section [noPathIntelligence]="true">
-    <ng-monaco-editor
-      (editorChange)="onEditorChange($event)"
-      [options]="EDITOR_OPTIONS"
-      formControlName="yaml"
-    ></ng-monaco-editor>
-  </x-form-section>
-  <button type="submit"></button>
-</form>
+<x-v-form></x-v-form>

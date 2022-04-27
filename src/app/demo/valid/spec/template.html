@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <x-form-section label="name">
+    <input formControlName="name" />
+  </x-form-section>
+  <x-form-section label="step">
+    <x-v-spec-step-form
+      *ngIf="show"
+      formControlName="step"
+    ></x-v-spec-step-form>
+  </x-form-section>
+</form>
+
+<button (click)="close()">close</button>
+<button (click)="show1()">show</button>
