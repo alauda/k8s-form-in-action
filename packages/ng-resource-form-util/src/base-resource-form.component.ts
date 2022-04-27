@@ -16,7 +16,6 @@ import {
 } from '@angular/core';
 import {
   AbstractControl,
-  AsyncValidatorFn,
   ControlValueAccessor,
   FormArray,
   FormBuilder,
@@ -25,7 +24,6 @@ import {
   FormGroupDirective,
   NgControl,
   NgForm,
-  ValidatorFn,
 } from '@angular/forms';
 import { cloneDeep } from 'lodash-es';
 import {
@@ -68,8 +66,19 @@ export abstract class BaseResourceFormComponent<
 
   private readonly _destroy$$ = new Subject<void>();
 
-  private _validator!: ValidatorFn;
-  private _asyncValidator!: AsyncValidatorFn;
+  private readonly _validator = () => {
+    if (this.form?.invalid) {
+      return { [this.constructor.name]: true };
+    }
+    return null;
+  };
+
+  private readonly _asyncValidator = () =>
+    this.form.statusChanges.pipe(
+      startWith(this.form.status),
+      first(status => status !== PENDING),
+      map(() => this._validator()),
+    );
 
   readonly cdr: ChangeDetectorRef;
   readonly fb: FormBuilder;
@@ -249,7 +258,7 @@ export abstract class BaseResourceFormComponent<
     try {
       return this.injector.get(token, otherwise, flags);
     } catch {
-      return null;
+      return otherwise;
     }
   }
 
@@ -300,7 +309,7 @@ export abstract class BaseResourceFormComponent<
     }
   }
 
-  protected resetValidators() {
+  private resetValidators() {
     const ngControl = this.ngControl;
     if (ngControl?.control) {
       ngControl.control.removeValidators(this._validator);
@@ -333,30 +342,9 @@ export abstract class BaseResourceFormComponent<
    */
   private setupValidators() {
     const ngControl = this.ngControl;
-
-    if (!ngControl?.control) {
-      return;
-    }
-
-    // Attach nested validation status to the interface:
-
-    if (!this._validator) {
-      this._validator = () => {
-        if (this.form?.invalid) {
-          return { [this.constructor.name]: true };
-        }
-        return null;
-      };
+    if (ngControl?.control) {
+      // Attach nested validation status to the interface:
       ngControl.control.addValidators(this._validator);
-    }
-
-    if (!this._asyncValidator) {
-      this._asyncValidator = ctrl =>
-        this.form.statusChanges.pipe(
-          startWith(this.form.status),
-          first(status => status !== PENDING),
-          map(() => this._validator(ctrl)),
-        );
       ngControl.control.addAsyncValidators(this._asyncValidator);
     }
   }
