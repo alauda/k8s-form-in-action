@@ -1,6 +1,6 @@
 {
   "name": "ng-resource-form-util",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "repository": "git+https://github.com/alauda/k8s-form-in-action",
   "homepage": "https://github.com/alauda/k8s-form-in-action/tree/master/packages/ng-resource-form-util",
   "peerDependencies": {

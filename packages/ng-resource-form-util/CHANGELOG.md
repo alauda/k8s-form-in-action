@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.3
+
+### Patch Changes
+
+- [#52](https://github.com/alauda/k8s-form-in-action/pull/52) [`49e4778`](https://github.com/alauda/k8s-form-in-action/commit/49e4778904f4ae849af819aa4bb5f06deed20b72) Thanks [@JounQin](https://github.com/JounQin)! - fix: use add(Async)Validators and remove(Async)Validators
+
 ## 5.1.2
 
 ### Patch Changes
