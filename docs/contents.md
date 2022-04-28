@@ -1,5 +1,7 @@
 class: left, middle
 
+<!-- lint disable heading-increment no-multiple-toplevel-headings no-duplicate-headings-in-section -->
+
 # Angular 响应式表单
 
 ## Kubernetes 对象实战
@@ -26,7 +28,9 @@ class: left, middle
 
 ### YAML 是 Kubernetes 对象最常见的展现和修改形式。
 
-### Kuberntes 对象通常有如下字段:
+<!-- lint ignore no-heading-punctuation -->
+
+### Kubernetes 对象通常有如下字段:
 
 - 类型信息：TypeMeta
 - 基本信息：ObjectMeta
@@ -77,6 +81,8 @@ spec:
 ---
 
 class: start, middle
+
+<!-- lint ignore no-heading-punctuation -->
 
 # 静下心来...
 
@@ -173,7 +179,8 @@ class: split
 ### 先看一个例子 🌰：部署表单
 
 .column[
-https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#deployment-v1-apps
+
+<https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#deployment-v1-apps>
 
 ```yaml
 apiVersion: apps/v1beta1
@@ -197,7 +204,7 @@ spec:
 .column[
 
 ```ts
-interface Deployment {
+export interface Deployment {
   apiVersion: string;
   kind: string;
   metadata?: ObjectMeta;
@@ -256,7 +263,7 @@ export interface Container {
 +--------------------------------------+
 ```
 
-art: http://asciiflow.com/
+art: <http://asciiflow.com/>
 
 ---
 
@@ -407,8 +414,7 @@ Link 里设计了 `setFormByResource` 函数解决这个问题，方法是通过
 
 #### 单项数据流：
 
-```
-
+```plaintext
  +--------+
  |Resource|<<<-----+
  +---+----+        |
@@ -432,7 +438,7 @@ adaptResource  adaptForm
 
 #### K8S 资源对象表单控件组件 - `BaseResourceFormComponent`
 
-```typescript
+```ts
 // 核心代码片段, 因为 Slides 长度原因删改了部分内容
 export abstract class BaseResourceFormComponent<R, F> implements ControlValueAccessor, Validator {
   form: FormControl | FormGroup | FormArray;
@@ -473,6 +479,6 @@ export abstract class BaseResourceFormComponent<R, F> implements ControlValueAcc
 - 实现总结过程中基本是我自己闭门造车，希望得到大家的反馈
 - 实现方案依需打磨，在成文过程中依然返厂了多次，修改了不少实践
 - 缺少用例分析。目前有一些简单的测试用例覆盖，但还不完整。
-- 源码：https://github.com/alauda/k8s-form-in-action
+- 源码：<https://github.com/alauda/k8s-form-in-action>
 
 ## 谢谢大家

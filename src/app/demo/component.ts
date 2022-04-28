@@ -197,7 +197,6 @@ export class DemoComponent implements OnInit {
 
     this.monacoReadyResolve(result);
 
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     editor.onDidChangeCursorSelection(async ({ selection }) => {
       const model = editor.getModel()!;
       const position = selection.getPosition();
