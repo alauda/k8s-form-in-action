@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.2.0
+
+### Minor Changes
+
+- [#55](https://github.com/alauda/k8s-form-in-action/pull/55) [`18b67e5`](https://github.com/alauda/k8s-form-in-action/commit/18b67e57449e92019899e65c7f72016d5f6ad136) Thanks [@JounQin](https://github.com/JounQin)! - feat: add default impls for base component
+
+### Patch Changes
+
+- [#55](https://github.com/alauda/k8s-form-in-action/pull/55) [`18b67e5`](https://github.com/alauda/k8s-form-in-action/commit/18b67e57449e92019899e65c7f72016d5f6ad136) Thanks [@JounQin](https://github.com/JounQin)! - fix: use `has` to check whether path available
+
 ## 5.1.3
 
 ### Patch Changes
