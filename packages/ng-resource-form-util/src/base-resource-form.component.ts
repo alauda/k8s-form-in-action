@@ -110,14 +110,18 @@ export abstract class BaseResourceFormComponent<
   /**
    * The default form model
    */
-  abstract getDefaultFormModel(): F;
+  getDefaultFormModel(): F | void {
+    // empty
+  }
 
   /**
    * Whether or not to merge the form
    * - When merge with the default model upon form initializing
    * - When with the adapted input resource upon onChange
    */
-  abstract getResourceMergeStrategy(): boolean;
+  getResourceMergeStrategy(): boolean {
+    return false;
+  }
 
   /**
    * Returns the incoming resource value

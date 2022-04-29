@@ -69,14 +69,6 @@ export class TestResourceFormComponent extends BaseResourceFormGroupComponent<
     super(injector);
   }
 
-  override getResourceMergeStrategy() {
-    return true;
-  }
-
-  getDefaultFormModel() {
-    return {};
-  }
-
   createForm() {
     return this.fb.group({
       simple: ['', Validators.required],

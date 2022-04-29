@@ -56,7 +56,7 @@ export function setFormByResource<R>(
       item.controls.forEach((control, index) => {
         setFormValueByPath(control, [...pathToOrigin, index]);
       });
-    } else {
+    } else if (newValueAtPath !== undefined) {
       set(newFormValue, pathToOrigin, newValueAtPath);
     }
   };

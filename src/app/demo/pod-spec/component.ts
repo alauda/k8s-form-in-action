@@ -45,7 +45,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
     return resource;
   }
 
-  getDefaultFormModel(): PodSpec {
+  override getDefaultFormModel(): PodSpec {
     return {
       containers: [{ name: '', image: '' }],
       volumes: [],
