@@ -8,7 +8,7 @@ export abstract class BaseResourceFormGroupComponent<
   R = Record<string, unknown>,
   F = R,
 > extends BaseResourceFormComponent<R, F, FormGroup> {
-  getResourceMergeStrategy() {
+  override getResourceMergeStrategy() {
     return true;
   }
 }

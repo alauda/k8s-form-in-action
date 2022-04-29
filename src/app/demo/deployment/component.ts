@@ -49,7 +49,7 @@ export class DeploymentFormComponent extends BaseResourceFormGroupComponent<Depl
     });
   }
 
-  getDefaultFormModel() {
+  override getDefaultFormModel() {
     return DeploymentTypeMeta;
   }
 }

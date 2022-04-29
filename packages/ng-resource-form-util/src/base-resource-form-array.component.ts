@@ -19,12 +19,8 @@ export abstract class BaseResourceFormArrayComponent<
     return new FormArray([]);
   }
 
-  getDefaultFormModel(): F[] {
+  override getDefaultFormModel(): F[] {
     return [];
-  }
-
-  getResourceMergeStrategy() {
-    return false;
   }
 
   add(index = this.length) {

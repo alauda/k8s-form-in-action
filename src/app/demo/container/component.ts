@@ -5,11 +5,6 @@ import { Container } from '../types';
 
 import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
 
-const DEFAULT_CONTAINER: Container = {
-  name: '',
-  image: '',
-};
-
 @Component({
   selector: 'x-container-form',
   templateUrl: 'template.html',
@@ -22,11 +17,7 @@ export class ContainerFormComponent extends BaseResourceFormGroupComponent<Conta
         '',
         [Validators.required, Validators.pattern(/^[\da-z][\da-z-]*[\da-z]$/)],
       ],
-      image: [],
+      image: [''],
     });
-  }
-
-  getDefaultFormModel() {
-    return DEFAULT_CONTAINER;
   }
 }

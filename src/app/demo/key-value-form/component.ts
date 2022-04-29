@@ -20,10 +20,6 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
   KeyValue[],
   FormArray
 > {
-  getResourceMergeStrategy() {
-    return false;
-  }
-
   createForm() {
     const duplicateKeyValidator = (fArray: AbstractControl) => {
       const names: string[] = [];
@@ -41,7 +37,7 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
     return this.fb.array([], duplicateKeyValidator);
   }
 
-  getDefaultFormModel(): KeyValue[] {
+  override getDefaultFormModel(): KeyValue[] {
     return [['', '']];
   }
 
@@ -50,7 +46,6 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
     if (newFormModel.length === 0) {
       newFormModel = this.getDefaultFormModel();
     }
-
     return newFormModel;
   }
 

@@ -1,10 +1,5 @@
-import {
-  AbstractControl,
-  FormArray,
-  FormControl,
-  FormGroup,
-} from '@angular/forms';
-import { cloneDeep, get, isEqual, set, unset } from 'lodash-es';
+import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
+import { cloneDeep, get, has, isEqual, set, unset } from 'lodash-es';
 
 export type OnFormArrayResizeFn = (path: PathParam) => AbstractControl;
 export type PathParam = Array<string | number>;
@@ -29,12 +24,15 @@ export function setFormByResource<R>(
   onFormArrayResize: OnFormArrayResizeFn,
 ): void {
   let newFormValue = cloneDeep(form.value);
+
   const setFormValueByPath = (
     item: AbstractControl,
     pathToOrigin: PathParam = [],
   ) => {
-    const newValueAtPath =
-      pathToOrigin.length > 0 ? get(resource, pathToOrigin) : resource;
+    const emptyPath = pathToOrigin.length === 0;
+
+    const newValueAtPath = emptyPath ? resource : get(resource, pathToOrigin);
+
     if (item instanceof FormGroup) {
       Object.entries(item.controls).forEach(
         ([key, control]: [string, AbstractControl]) => {
@@ -56,16 +54,14 @@ export function setFormByResource<R>(
       item.controls.forEach((control, index) => {
         setFormValueByPath(control, [...pathToOrigin, index]);
       });
-    } else {
+    } else if (emptyPath) {
+      newFormValue = resource;
+    } else if (has(resource, pathToOrigin)) {
       set(newFormValue, pathToOrigin, newValueAtPath);
     }
   };
 
-  if (form instanceof FormControl) {
-    newFormValue = resource;
-  } else {
-    setFormValueByPath(form);
-  }
+  setFormValueByPath(form);
 
   if (!isEqual(form.value, newFormValue)) {
     // We use patchValue here since not all values in resource has associated
@@ -97,8 +93,10 @@ export function setResourceByForm<R extends object>(
     item: AbstractControl = form,
     path: PathParam = [],
   ) => {
-    let newValueAtPath = get(formValue, path);
-    const resourceAtPath = get(newResource, path);
+    const emptyPath = path.length === 0;
+
+    let newValueAtPath = emptyPath ? formValue : get(formValue, path);
+    const resourceAtPath = emptyPath ? newResource : get(newResource, path);
 
     if (typeof newValueAtPath === 'string') {
       newValueAtPath = newValueAtPath.trim();
@@ -120,8 +118,8 @@ export function setResourceByForm<R extends object>(
       item.controls.forEach((control, index) => {
         setResourceValueByPath(control, [...path, index]);
       });
-    } else {
-      if (newValueAtPath !== undefined) {
+    } else if (!emptyPath) {
+      if (has(formValue, path)) {
         set(newResource, path, newValueAtPath);
       } else {
         unset(newResource, path);
@@ -129,9 +127,7 @@ export function setResourceByForm<R extends object>(
     }
   };
 
-  if (!(form instanceof FormControl)) {
-    setResourceValueByPath();
-  }
+  setResourceValueByPath();
 
   return newResource;
 }
