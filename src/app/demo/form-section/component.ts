@@ -61,6 +61,7 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
       ];
       return partials.filter(s => !!s).join(', ');
     }
+    return null;
   }
 
   @HostBinding('attr.title')

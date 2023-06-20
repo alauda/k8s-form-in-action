@@ -17,7 +17,7 @@ declare module 'monaco-editor/esm/vs/editor/contrib/hover/getHover' {
     languages,
   } from 'monaco-editor';
 
-  export function getHover(
+  export function getHoverPromise(
     model: editor.ITextModel,
     position: Position,
     token: CancellationToken,

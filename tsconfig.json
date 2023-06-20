@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "ng-resource-form-util": ["packages/ng-resource-form-util/src/public-api"]
-    }
+    },
+    "target": "ES2022"
   },
   "ts-node": {
     "compilerOptions": {

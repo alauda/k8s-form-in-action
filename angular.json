@@ -14,7 +14,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.js"
+              "path": "webpack.config.mjs"
             },
             "allowedCommonJsDependencies": ["monaco-editor"],
             "outputPath": "docs/demo",
@@ -99,12 +99,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "k8s-form-in-action",
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false
     }
   }
 }

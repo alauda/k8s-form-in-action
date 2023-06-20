@@ -25,11 +25,10 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
       const names: string[] = [];
       for (const control of (fArray as FormArray).controls) {
         const [name] = control.value as string[];
-        if (!names.includes(name)) {
-          names.push(name);
-        } else {
+        if (names.includes(name)) {
           return { duplicatedContainerName: true };
         }
+        names.push(name);
       }
       return null;
     };

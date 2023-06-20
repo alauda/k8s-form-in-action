@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { FormArray } from '@angular/forms';
+import { AbstractControl, FormArray } from '@angular/forms';
 
 import { BaseResourceFormComponent } from './base-resource-form.component';
 
@@ -16,7 +16,7 @@ export abstract class BaseResourceFormArrayComponent<
    * Method to create the default form
    */
   createForm() {
-    return new FormArray([]);
+    return new FormArray<AbstractControl<F>>([]);
   }
 
   override getDefaultFormModel(): F[] {
