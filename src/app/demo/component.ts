@@ -41,7 +41,7 @@ export interface MonacoReadyResult {
   monaco: Monaco;
   editor: MonacoEditor;
   getDocumentSymbols: typeof import('monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols').getDocumentSymbols;
-  getHover: typeof import('monaco-editor/esm/vs/editor/contrib/hover/getHover').getHover;
+  getHover: typeof import('monaco-editor/esm/vs/editor/contrib/hover/getHover').getHoverPromise;
 }
 
 const EDITOR_OPTIONS: MonacoEditorOptions = {
@@ -181,7 +181,7 @@ export class DemoComponent implements OnInit {
   }
 
   async onEditorChange(editor: MonacoEditor) {
-    const [{ getDocumentSymbols }, { getHover }] = await Promise.all([
+    const [{ getDocumentSymbols }, { getHoverPromise }] = await Promise.all([
       import(
         'monaco-editor/esm/vs/editor/contrib/documentSymbols/documentSymbols'
       ),
@@ -192,7 +192,7 @@ export class DemoComponent implements OnInit {
       monaco: this.monacoProvider.monaco,
       editor,
       getDocumentSymbols,
-      getHover,
+      getHover: getHoverPromise,
     };
 
     this.monacoReadyResolve(result);

@@ -1,10 +1,14 @@
 docs/demo
 node_modules
 release
+*.ico
+*.iml
+*.js
 *.json
 *.lock
 *.log
-*.ico
+*.mjs
+*.ts
 *.yml
 *.yaml
 *.d.ts

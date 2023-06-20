@@ -4,8 +4,8 @@ import {
   ChangeDetectorRef,
   Directive,
   EventEmitter,
-  InjectFlags,
   InjectionToken,
+  InjectOptions,
   Injector,
   Input,
   OnDestroy,
@@ -55,7 +55,7 @@ export const PENDING = 'PENDING';
 export abstract class BaseResourceFormComponent<
   R = unknown,
   F = R,
-  Control extends AbstractControl = FormControl,
+  Control extends AbstractControl = FormControl<F>,
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit
 {
   private formValueSub?: Subscription;
@@ -221,10 +221,7 @@ export abstract class BaseResourceFormComponent<
     const defaultModel = this.getDefaultFormModel();
 
     if (defaultModel && typeof defaultModel === 'object') {
-      formModel = Object.assign(
-        cloneDeep(defaultModel as F & object),
-        formModel,
-      );
+      formModel = Object.assign(cloneDeep(defaultModel), formModel);
     }
 
     setFormByResource(this.form, formModel, this.getOnFormArrayResizeFn());
@@ -257,10 +254,10 @@ export abstract class BaseResourceFormComponent<
   private getInjectable<T>(
     token: Type<T> | AbstractType<T> | InjectionToken<T>,
     otherwise?: T | null,
-    flags?: InjectFlags,
+    options?: InjectOptions,
   ) {
     try {
-      return this.injector.get(token, otherwise, flags);
+      return this.injector.get(token, otherwise, options);
     } catch {
       return otherwise;
     }
@@ -283,10 +280,7 @@ export abstract class BaseResourceFormComponent<
             this.adaptedResource &&
             typeof this.adaptedResource === 'object'
           ) {
-            formModel = setResourceByForm(
-              this.form,
-              this.adaptedResource as F & object,
-            );
+            formModel = setResourceByForm(this.form, this.adaptedResource);
           }
           return formModel;
         }),
@@ -368,11 +362,9 @@ export abstract class BaseResourceFormComponent<
     this.fb = this.getInjectable(FormBuilder)!;
 
     // We should only consider fetching the NgControl at the current element:
-    this.ngControl = this.getInjectable<NgControl>(
-      NgControl,
-      null,
-      InjectFlags.Self,
-    )!;
+    this.ngControl = this.getInjectable<NgControl>(NgControl, null, {
+      self: true,
+    })!;
 
     this.setupValueAccessor();
   }

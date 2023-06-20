@@ -15,6 +15,7 @@
         "prefix": "x",
         "style": "camelCase"
       }
-    ]
+    ],
+    "unicorn/prefer-top-level-await": "off"
   }
 }

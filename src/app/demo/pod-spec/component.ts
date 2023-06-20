@@ -20,11 +20,10 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
       const names: string[] = [];
       for (const control of (fArray as FormArray).controls) {
         const { name } = control.value as { name: string };
-        if (!names.includes(name)) {
-          names.push(name);
-        } else {
+        if (names.includes(name)) {
           return { duplicatedContainerName: true };
         }
+        names.push(name);
       }
       return null;
     };
@@ -68,7 +67,7 @@ export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec
   getNewContainerFormControl(path?: PathParam) {
     let index = this.containersForm.length;
     if (path) {
-      index = +path[path.length - 1];
+      index = +path.at(-1)!;
     }
     return this.fb.control({ name: `container-${index}`, image: '' });
   }

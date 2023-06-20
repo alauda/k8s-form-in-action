@@ -1,8 +1,5 @@
 {
   "extends": "../tsconfig",
-  "compilerOptions": {
-    "target": "ES2019"
-  },
   "files": ["main.ts", "shim.d.ts"],
   // Only enable strict checks on development
   "angularCompilerOptions": {

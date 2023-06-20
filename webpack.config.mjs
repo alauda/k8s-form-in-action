@@ -1,17 +1,34 @@
 // @ts-check
 
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+import path from 'node:path';
+
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 
 /**
- * @typedef {import('webpack').Configuration} Configuration
+ * @typedef {import("webpack").Configuration} Configuration
  * @param {Configuration} config
  * @returns {Configuration} mutated webpack config
  */
-module.exports = config => {
+export default config => {
   console.assert(
     !config.node,
     'Please make sure do not override original `config.node` unexpectedly',
   );
+
+  config.module.rules.push({
+    test: /node_modules[/\\]monaco-editor[/\\]esm[/\\].+\.css$/i,
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          // https://github.com/webpack/webpack-dev-server/issues/1815#issuecomment-1181720815
+          url: false,
+        },
+      },
+    ],
+  });
 
   config.node = {
     global: true,
@@ -22,9 +39,8 @@ module.exports = config => {
   }
 
   Object.assign(config.resolve.alias, {
-    'js-yaml$': require.resolve('./src/js-yaml.shim'),
-    // https://github.com/webpack/webpack/issues/13413
-    'original-js-yaml$': require.resolve(
+    'js-yaml$': path.resolve('./src/js-yaml.shim.js'), // https://github.com/webpack/webpack/issues/13413
+    'original-js-yaml$': path.resolve(
       './node_modules/js-yaml/dist/js-yaml.mjs',
     ),
   });

@@ -20,6 +20,12 @@
           }
         ]
       }
+    },
+    {
+      "files": "*.ts",
+      "rules": {
+        "unicorn/prefer-event-target": "off"
+      }
     }
   ]
 }
