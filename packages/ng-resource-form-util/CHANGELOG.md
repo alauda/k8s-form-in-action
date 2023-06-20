@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.0
+
+### Major Changes
+
+- [#65](https://github.com/alauda/k8s-form-in-action/pull/65) [`7b1843c`](https://github.com/alauda/k8s-form-in-action/commit/7b1843c69e419734f87528910664e4db7ede3eee) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump angular versions
+
 ## 5.2.0
 
 ### Minor Changes
