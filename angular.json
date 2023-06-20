@@ -101,7 +101,6 @@
       }
     }
   },
-  "defaultProject": "k8s-form-in-action",
   "cli": {
     "warnings": {
       "typescriptMismatch": false
