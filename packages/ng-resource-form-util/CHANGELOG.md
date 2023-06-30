@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.1
+
+### Patch Changes
+
+- [#67](https://github.com/alauda/k8s-form-in-action/pull/67) [`a9fa534`](https://github.com/alauda/k8s-form-in-action/commit/a9fa5340ebf02927b77f0fb2dfaf1a0522a284f8) Thanks [@JounQin](https://github.com/JounQin)! - fix: typings issue
+
 ## 6.0.0
 
 ### Major Changes
