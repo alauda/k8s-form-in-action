@@ -24,6 +24,7 @@ import {
   FormGroupDirective,
   NgControl,
   NgForm,
+  ValidationErrors,
 } from '@angular/forms';
 import { cloneDeep } from 'lodash-es';
 import {
@@ -58,6 +59,8 @@ export abstract class BaseResourceFormComponent<
   Control extends AbstractControl = FormControl<F>,
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit
 {
+  protected errorsInDetail = false;
+
   private formValueSub?: Subscription;
   private adaptedResource!: F;
   private _formModel$?: Observable<F>;
@@ -68,7 +71,9 @@ export abstract class BaseResourceFormComponent<
 
   private readonly _validator = () => {
     if (this.form?.invalid) {
-      return { [this.constructor.name]: true };
+      return this.errorsInDetail
+        ? this.getControlErrors(this.form)
+        : { [this.constructor.name]: true };
     }
     return null;
   };
@@ -355,6 +360,32 @@ export abstract class BaseResourceFormComponent<
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;
     }
+  }
+
+  private getControlErrors(
+    control: AbstractControl,
+  ):
+    | ValidationErrors
+    | null
+    | Array<ValidationErrors | null>
+    | Record<string, ValidationErrors | null> {
+    if (control instanceof FormArray) {
+      return control.controls.map(control => this.getControlErrors(control));
+    }
+    if (control instanceof FormGroup) {
+      return Object.entries(control.controls).reduce(
+        (errors, [key, control]) => {
+          const controlErrors = this.getControlErrors(control);
+          return controlErrors == null
+            ? errors
+            : Object.assign(errors, {
+                [key]: this.getControlErrors(control),
+              });
+        },
+        {},
+      );
+    }
+    return control.errors;
   }
 
   constructor(public injector: Injector) {
