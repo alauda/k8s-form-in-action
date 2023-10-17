@@ -370,19 +370,24 @@ export abstract class BaseResourceFormComponent<
     | Array<ValidationErrors | null>
     | Record<string, ValidationErrors | null> {
     if (control instanceof FormArray) {
-      return control.controls.map(control => this.getControlErrors(control));
+      const controlErrors = control.controls.map(control =>
+        this.getControlErrors(control),
+      );
+      return controlErrors.every(errors => errors == null)
+        ? null
+        : controlErrors;
     }
     if (control instanceof FormGroup) {
-      return Object.entries(control.controls).reduce(
+      return Object.entries(control.controls).reduce<ValidationErrors | null>(
         (errors, [key, control]) => {
           const controlErrors = this.getControlErrors(control);
           return controlErrors == null
             ? errors
-            : Object.assign(errors, {
+            : Object.assign(errors || {}, {
                 [key]: this.getControlErrors(control),
               });
         },
-        {},
+        null,
       );
     }
     return control.errors;
