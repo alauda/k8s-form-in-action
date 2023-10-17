@@ -362,13 +362,7 @@ export abstract class BaseResourceFormComponent<
     }
   }
 
-  private getControlErrors(
-    control: AbstractControl,
-  ):
-    | ValidationErrors
-    | null
-    | Array<ValidationErrors | null>
-    | Record<string, ValidationErrors | null> {
+  private getControlErrors(control: AbstractControl): ValidationErrors | null {
     if (control instanceof FormArray) {
       const controlErrors = control.controls.map(control =>
         this.getControlErrors(control),
