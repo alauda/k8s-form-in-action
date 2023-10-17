@@ -383,9 +383,7 @@ export abstract class BaseResourceFormComponent<
           const controlErrors = this.getControlErrors(control);
           return controlErrors == null
             ? errors
-            : Object.assign(errors || {}, {
-                [key]: this.getControlErrors(control),
-              });
+            : Object.assign(errors || {}, { [key]: controlErrors });
         },
         null,
       );
