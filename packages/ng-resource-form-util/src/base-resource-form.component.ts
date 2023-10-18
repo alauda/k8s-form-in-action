@@ -24,7 +24,6 @@ import {
   FormGroupDirective,
   NgControl,
   NgForm,
-  ValidationErrors,
 } from '@angular/forms';
 import { cloneDeep } from 'lodash-es';
 import {
@@ -39,6 +38,7 @@ import {
 } from 'rxjs';
 
 import {
+  getControlErrors,
   OnFormArrayResizeFn,
   setFormByResource,
   setResourceByForm,
@@ -72,7 +72,7 @@ export abstract class BaseResourceFormComponent<
   private readonly _validator = () => {
     if (this.form?.invalid) {
       return this.errorsInDetail
-        ? this.getControlErrors(this.form)
+        ? getControlErrors(this.form)
         : { [this.constructor.name]: true };
     }
     return null;
@@ -360,29 +360,6 @@ export abstract class BaseResourceFormComponent<
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;
     }
-  }
-
-  private getControlErrors(control: AbstractControl): ValidationErrors | null {
-    if (control instanceof FormArray) {
-      const controlErrors = control.controls.map(control =>
-        this.getControlErrors(control),
-      );
-      return controlErrors.every(errors => errors == null)
-        ? null
-        : controlErrors;
-    }
-    if (control instanceof FormGroup) {
-      return Object.entries(control.controls).reduce<ValidationErrors | null>(
-        (errors, [key, control]) => {
-          const controlErrors = this.getControlErrors(control);
-          return controlErrors == null
-            ? errors
-            : Object.assign(errors || {}, { [key]: controlErrors });
-        },
-        null,
-      );
-    }
-    return control.errors;
   }
 
   constructor(public injector: Injector) {
