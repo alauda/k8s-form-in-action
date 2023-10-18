@@ -143,22 +143,25 @@ export function setResourceByForm<R extends object>(
 export function getControlErrors(
   control: AbstractControl,
 ): ValidationErrors | null {
-  if (control instanceof FormArray) {
-    const controlErrors = control.controls.map(control =>
-      getControlErrors(control),
-    );
-    return controlErrors.every(errors => errors == null) ? null : controlErrors;
+  let nestedControlErrors: ValidationErrors | null = null;
+
+  if (control instanceof FormArray || control instanceof FormGroup) {
+    nestedControlErrors = Object.entries(
+      control.controls,
+    ).reduce<ValidationErrors | null>((errors, [key, control]) => {
+      const controlErrors = getControlErrors(control);
+      return controlErrors == null
+        ? errors
+        : Object.assign(errors || {}, { [key]: controlErrors });
+    }, null);
   }
-  if (control instanceof FormGroup) {
-    return Object.entries(control.controls).reduce<ValidationErrors | null>(
-      (errors, [key, control]) => {
-        const controlErrors = getControlErrors(control);
-        return controlErrors == null
-          ? errors
-          : Object.assign(errors || {}, { [key]: controlErrors });
-      },
-      null,
-    );
-  }
-  return control.errors;
+
+  const controlErrors = control.errors;
+
+  return (
+    (controlErrors || nestedControlErrors) && {
+      ...controlErrors,
+      ...nestedControlErrors,
+    }
+  );
 }
