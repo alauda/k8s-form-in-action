@@ -1,4 +1,9 @@
-import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormArray,
+  FormGroup,
+  ValidationErrors,
+} from '@angular/forms';
 import { cloneDeep, get, has, isEqual, set, unset } from 'lodash-es';
 
 export type OnFormArrayResizeFn = (path: PathParam) => AbstractControl;
@@ -130,4 +135,33 @@ export function setResourceByForm<R extends object>(
   setResourceValueByPath();
 
   return newResource;
+}
+
+/**
+ * Utility function to get all errors from a given control recursively.
+ */
+export function getControlErrors(
+  control: AbstractControl,
+): ValidationErrors | null {
+  let nestedControlErrors: ValidationErrors | null = null;
+
+  if (control instanceof FormArray || control instanceof FormGroup) {
+    nestedControlErrors = Object.entries(
+      control.controls,
+    ).reduce<ValidationErrors | null>((errors, [key, control]) => {
+      const controlErrors = getControlErrors(control);
+      return controlErrors == null
+        ? errors
+        : Object.assign(errors || {}, { [key]: controlErrors });
+    }, null);
+  }
+
+  const controlErrors = control.errors;
+
+  return (
+    (controlErrors || nestedControlErrors) && {
+      ...controlErrors,
+      ...nestedControlErrors,
+    }
+  );
 }

@@ -38,6 +38,7 @@ import {
 } from 'rxjs';
 
 import {
+  getControlErrors,
   OnFormArrayResizeFn,
   setFormByResource,
   setResourceByForm,
@@ -58,6 +59,8 @@ export abstract class BaseResourceFormComponent<
   Control extends AbstractControl = FormControl<F>,
 > implements OnInit, ControlValueAccessor, OnDestroy, AfterViewInit
 {
+  protected errorsInDetail = false;
+
   private formValueSub?: Subscription;
   private adaptedResource!: F;
   private _formModel$?: Observable<F>;
@@ -68,7 +71,9 @@ export abstract class BaseResourceFormComponent<
 
   private readonly _validator = () => {
     if (this.form?.invalid) {
-      return { [this.constructor.name]: true };
+      return this.errorsInDetail
+        ? getControlErrors(this.form)
+        : { [this.constructor.name]: true };
     }
     return null;
   };
