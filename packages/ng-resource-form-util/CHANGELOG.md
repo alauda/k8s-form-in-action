@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.1.0
+
+### Minor Changes
+
+- [#74](https://github.com/alauda/k8s-form-in-action/pull/74) [`519d1f4`](https://github.com/alauda/k8s-form-in-action/commit/519d1f431b6b18da60d40672bb07da4c50938f59) Thanks [@JounQin](https://github.com/JounQin)! - feat: support errorsInDetail mode
+
 ## 6.0.1
 
 ### Patch Changes
