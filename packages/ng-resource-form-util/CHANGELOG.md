@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.0
+
+### Major Changes
+
+- [#77](https://github.com/alauda/k8s-form-in-action/pull/77) [`677eb7708396964b687070f296de4cb0023654fa`](https://github.com/alauda/k8s-form-in-action/commit/677eb7708396964b687070f296de4cb0023654fa) Thanks [@frozenwings](https://github.com/frozenwings)! - update angular 21
+
 ## 6.1.0
 
 ### Minor Changes
