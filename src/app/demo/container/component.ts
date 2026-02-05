@@ -1,14 +1,18 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ReactiveFormsModule, Validators } from '@angular/forms'
 
-import { Container } from '../types';
+import { FormSectionComponent } from '../form-section/component'
+import { Container } from '../types'
 
-import { BaseResourceFormGroupComponent } from 'ng-resource-form-util';
+import { BaseResourceFormGroupComponent } from 'ng-resource-form-util'
 
 @Component({
   selector: 'x-container-form',
   templateUrl: 'template.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, FormSectionComponent],
 })
 export class ContainerFormComponent extends BaseResourceFormGroupComponent<Container> {
   createForm() {
@@ -18,6 +22,6 @@ export class ContainerFormComponent extends BaseResourceFormGroupComponent<Conta
         [Validators.required, Validators.pattern(/^[\da-z][\da-z-]*[\da-z]$/)],
       ],
       image: [''],
-    });
+    })
   }
 }

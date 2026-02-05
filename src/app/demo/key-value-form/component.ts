@@ -1,11 +1,21 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AbstractControl, FormArray, ValidatorFn } from '@angular/forms';
+import { CommonModule } from '@angular/common'
+import { ChangeDetectionStrategy, Component, forwardRef } from '@angular/core'
+import {
+  AbstractControl,
+  FormArray,
+  ReactiveFormsModule,
+  ValidatorFn,
+} from '@angular/forms'
 
-import { StringMap } from '../types';
+import { ButtonDirective } from '../button.directive'
+import { FormSectionComponent } from '../form-section/component'
+import { StringMap } from '../types'
 
-import { BaseResourceFormComponent } from 'ng-resource-form-util';
+import { KEY_VALUE_FORM } from './token'
 
-export type KeyValue = [string, string];
+import { BaseResourceFormComponent } from 'ng-resource-form-util'
+
+export type KeyValue = [string, string]
 
 // 用以Form级别的键值映射对象的修改.
 // 这个表单有些特别. 内部实现是以FormArray实现, 但对外暴露的是一个key->value对象.
@@ -14,6 +24,19 @@ export type KeyValue = [string, string];
   templateUrl: 'template.html',
   styleUrls: ['styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: KEY_VALUE_FORM,
+      useExisting: forwardRef(() => KeyValueFormComponent),
+    },
+  ],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonDirective,
+    FormSectionComponent,
+  ],
 })
 export class KeyValueFormComponent extends BaseResourceFormComponent<
   StringMap,
@@ -22,61 +45,61 @@ export class KeyValueFormComponent extends BaseResourceFormComponent<
 > {
   createForm() {
     const duplicateKeyValidator = (fArray: AbstractControl) => {
-      const names: string[] = [];
+      const names: string[] = []
       for (const control of (fArray as FormArray).controls) {
-        const [name] = control.value as string[];
+        const [name] = control.value as string[]
         if (names.includes(name)) {
-          return { duplicatedContainerName: true };
+          return { duplicatedContainerName: true }
         }
-        names.push(name);
+        names.push(name)
       }
-      return null;
-    };
+      return null
+    }
 
-    return this.fb.array([], duplicateKeyValidator);
+    return this.fb.array([], duplicateKeyValidator)
   }
 
   override getDefaultFormModel(): KeyValue[] {
-    return [['', '']];
+    return [['', '']]
   }
 
   override adaptResourceModel(resource: { [key: string]: string }) {
-    let newFormModel = Object.entries(resource || {});
+    let newFormModel = Object.entries(resource || {})
     if (newFormModel.length === 0) {
-      newFormModel = this.getDefaultFormModel();
+      newFormModel = this.getDefaultFormModel()
     }
-    return newFormModel;
+    return newFormModel
   }
 
   override adaptFormModel(formModel: KeyValue[]) {
     return formModel
       .filter(row => !!row[0])
-      .reduce((obj, [k, v]) => ({ ...obj, [k]: v }), {});
+      .reduce((obj, [k, v]) => ({ ...obj, [k]: v }), {})
   }
 
   override getOnFormArrayResizeFn() {
-    return () => this.createNewControl();
+    return () => this.createNewControl()
   }
 
   add(index = this.form.length) {
-    this.form.insert(index, this.getOnFormArrayResizeFn()());
-    this.cdr.markForCheck();
+    this.form.insert(index, this.getOnFormArrayResizeFn()())
+    this.cdr.markForCheck()
   }
 
   remove(index: number) {
-    this.form.removeAt(index);
-    this.cdr.markForCheck();
+    this.form.removeAt(index)
+    this.cdr.markForCheck()
   }
 
   protected createNewControl() {
     const missingKeyValidator: ValidatorFn = control => {
-      const [key, value] = control.value;
+      const [key, value] = control.value
       if (value && !key) {
-        return { keyIsMissing: true };
+        return { keyIsMissing: true }
       }
-      return null;
-    };
+      return null
+    }
 
-    return this.fb.array([[], []], [missingKeyValidator]);
+    return this.fb.array([[], []], [missingKeyValidator])
   }
 }

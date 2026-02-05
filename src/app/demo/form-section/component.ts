@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common'
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   ContentChild,
+  Inject,
   HostBinding,
   HostListener,
   Input,
@@ -11,19 +13,20 @@ import {
   Optional,
   Self,
   SkipSelf,
-} from '@angular/core';
+} from '@angular/core'
 import {
   AbstractControlDirective,
   ControlContainer,
   FormGroupDirective,
   NgControl,
-} from '@angular/forms';
-import { isEqual } from 'lodash-es';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+} from '@angular/forms'
+import { isEqual } from 'lodash-es'
+import { Subject } from 'rxjs'
+import { takeUntil } from 'rxjs/operators'
 
-import { KeyValue, KeyValueFormComponent } from '../key-value-form/component';
-import { PathProviderService } from '../path.service';
+import { KeyValue } from '../key-value-form/component'
+import { KEY_VALUE_FORM, KeyValueFormLike } from '../key-value-form/token'
+import { PathProviderService } from '../path.service'
 
 @Component({
   selector: 'x-form-section',
@@ -31,23 +34,25 @@ import { PathProviderService } from '../path.service';
   styleUrls: ['styles.scss'],
   // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
   changeDetection: ChangeDetectionStrategy.Default,
+  standalone: true,
+  imports: [CommonModule],
 })
 export class FormSectionComponent implements AfterViewInit, OnDestroy {
   get label() {
-    let label: string | undefined;
+    let label: string | undefined
     if (this.cc) {
-      label = String(this.cc.name);
+      label = String(this.cc.name)
     } else if (this.nc) {
-      label = String(this.nc.name);
+      label = String(this.nc.name)
     }
-    return label!;
+    return label!
   }
 
-  @Input() noPathIntelligence = false;
+  @Input() noPathIntelligence = false
 
   @HostBinding('class.invalid')
   get invalid() {
-    return this.control?.invalid;
+    return this.control?.invalid
   }
 
   @HostBinding('attr.status')
@@ -58,15 +63,15 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
         this.control.dirty ? 'dirty' : 'pristine',
         this.control.touched ? 'touched' : 'untouched',
         this.formGroupDirective.submitted ? 'submitted' : '',
-      ];
-      return partials.filter(s => !!s).join(', ');
+      ]
+      return partials.filter(s => !!s).join(', ')
     }
-    return null;
+    return null
   }
 
   @HostBinding('attr.title')
   get title() {
-    return this.path.length > 0 ? `[${this.path.join(', ')}]` : undefined;
+    return this.path.length > 0 ? `[${this.path.join(', ')}]` : undefined
   }
 
   get path(): string[] {
@@ -78,43 +83,46 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
             ? (this.keyValueForm.form.get(this.label)?.value as KeyValue)[0]
             : this.label,
         ]
-      : [];
+      : []
   }
 
   get control(): AbstractControlDirective {
-    return this.cc || this.nc;
+    return this.cc || this.nc
   }
 
   get formGroupDirective(): FormGroupDirective {
-    return this.fgd || this.parent?.formGroupDirective;
+    return this.fgd || this.parent?.formGroupDirective
   }
 
-  destroy$$ = new Subject<void>();
+  destroy$$ = new Subject<void>()
 
   constructor(
     @Optional() @SkipSelf() private readonly parent: FormSectionComponent,
     @Optional() @Self() private readonly cc: ControlContainer,
     @Optional() private readonly fgd: FormGroupDirective,
-    @Optional() private readonly keyValueForm: KeyValueFormComponent,
+    @Optional()
+    @Self()
+    @Inject(KEY_VALUE_FORM)
+    private readonly keyValueForm: KeyValueFormLike | null,
     private readonly cdr: ChangeDetectorRef,
     private readonly pathProvider: PathProviderService,
   ) {}
 
   @ContentChild(NgControl, { static: false })
-  nc?: NgControl;
+  nc?: NgControl
 
-  @HostBinding('class.active') active = false;
+  @HostBinding('class.active') active = false
 
   @HostBinding('attr.label')
   get labelRendered() {
-    return (/^\d+$/.test(this.label) ? '#' : '') + this.label;
+    return (/^\d+$/.test(this.label) ? '#' : '') + this.label
   }
 
   @HostListener('click', ['$event'])
   onClick(event: Event) {
     if (!this.noPathIntelligence) {
-      event.stopPropagation();
-      this.pathProvider.subject.next(this.path);
+      event.stopPropagation()
+      this.pathProvider.subject.next(this.path)
     }
   }
 
@@ -122,19 +130,19 @@ export class FormSectionComponent implements AfterViewInit, OnDestroy {
     this.pathProvider.subject
       .pipe(takeUntil(this.destroy$$))
       .subscribe(path => {
-        this.active = !this.noPathIntelligence && isEqual(path, this.path);
-        this.cdr.markForCheck();
-      });
+        this.active = !this.noPathIntelligence && isEqual(path, this.path)
+        this.cdr.markForCheck()
+      })
 
     this.control?.statusChanges
       ?.pipe(takeUntil(this.destroy$$))
       .subscribe(() => {
-        this.cdr.markForCheck();
-      });
+        this.cdr.markForCheck()
+      })
   }
 
   ngOnDestroy() {
-    this.destroy$$.next();
-    this.destroy$$.complete();
+    this.destroy$$.next()
+    this.destroy$$.complete()
   }
 }

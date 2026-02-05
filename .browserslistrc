@@ -1,1 +1,2 @@
-extends @1stg/browserslist-config/modern
+Chrome >= 111
+Firefox >= 112
