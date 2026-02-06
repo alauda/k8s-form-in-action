@@ -6,3 +6,5 @@ release
 node_modules
 *.log
 ng-package.debug.json
+.*cache
+
