@@ -20,6 +20,7 @@
             "outputPath": "docs/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "polyfills": ["zone.js"],
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -74,11 +75,11 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "k8s-form-in-action:build"
+            "buildTarget": "k8s-form-in-action:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "k8s-form-in-action:build:production"
+              "buildTarget": "k8s-form-in-action:build:production"
             }
           }
         }
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

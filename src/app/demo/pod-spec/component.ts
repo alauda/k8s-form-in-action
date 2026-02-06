@@ -1,86 +1,98 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AbstractControl, FormArray } from '@angular/forms';
+import { CommonModule } from '@angular/common'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { AbstractControl, FormArray, ReactiveFormsModule } from '@angular/forms'
 
-import { PodSpec } from '../types';
+import { ButtonDirective } from '../button.directive'
+import { ContainerFormComponent } from '../container/component'
+import { FormSectionComponent } from '../form-section/component'
+import { PodSpec } from '../types'
 
 import {
   BaseResourceFormGroupComponent,
   PathParam,
-} from 'ng-resource-form-util';
+} from 'ng-resource-form-util'
 
 @Component({
   selector: 'x-pod-spec-form',
   templateUrl: 'template.html',
   styleUrls: ['styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonDirective,
+    ContainerFormComponent,
+    FormSectionComponent,
+  ],
 })
 export class PodSpecFormComponent extends BaseResourceFormGroupComponent<PodSpec> {
   createForm() {
     const validator = (fArray: AbstractControl) => {
-      const names: string[] = [];
+      const names: string[] = []
       for (const control of (fArray as FormArray).controls) {
-        const { name } = control.value as { name: string };
+        const { name } = control.value as { name: string }
         if (names.includes(name)) {
-          return { duplicatedContainerName: true };
+          return { duplicatedContainerName: true }
         }
-        names.push(name);
+        names.push(name)
       }
-      return null;
-    };
+      return null
+    }
     return this.fb.group({
       containers: this.fb.array([], validator),
-    });
+    })
   }
 
   pullSecretTrackFn(secret: { name: string }) {
-    return secret.name;
+    return secret.name
   }
 
   override adaptResourceModel(resource: PodSpec) {
     // Makes sure user will not accidentally remove the last container:
     if (resource && !resource.containers) {
-      resource = { ...resource, containers: [{ name: '', image: '' }] };
+      resource = { ...resource, containers: [{ name: '', image: '' }] }
     }
-    return resource;
+    return resource
   }
 
   override getDefaultFormModel(): PodSpec {
     return {
       containers: [{ name: '', image: '' }],
       volumes: [],
-    };
+    }
   }
 
   addContainer() {
-    this.containersForm.push(this.getNewContainerFormControl());
-    this.cdr.markForCheck();
+    this.containersForm.push(this.getNewContainerFormControl())
+    this.cdr.markForCheck()
   }
 
   removeContainer(index: number) {
-    this.containersForm.removeAt(index);
+    this.containersForm.removeAt(index)
   }
 
   override getOnFormArrayResizeFn() {
-    return (path: PathParam) => this.getNewContainerFormControl(path);
+    return (path: PathParam) => this.getNewContainerFormControl(path)
   }
 
   getNewContainerFormControl(path?: PathParam) {
-    let index = this.containersForm.length;
+    let index = this.containersForm.length
     if (path) {
-      index = +path.at(-1)!;
+      index = +path.at(-1)!
     }
-    return this.fb.control({ name: `container-${index}`, image: '' });
+    return this.fb.control({ name: `container-${index}`, image: '' })
   }
 
   get containersForm(): FormArray {
-    return this.form.get('containers') as FormArray;
+    return this.form.get('containers') as FormArray
   }
 
   get volumesForm(): FormArray {
-    return this.form.get('volumes') as FormArray;
+    return this.form.get('volumes') as FormArray
   }
 
   trackByFn(index: number) {
-    return index;
+    return index
   }
 }

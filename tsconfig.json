@@ -5,6 +5,7 @@
     "paths": {
       "ng-resource-form-util": ["packages/ng-resource-form-util/src/public-api"]
     },
+    "moduleResolution": "bundler",
     "target": "ES2022"
   },
   "ts-node": {
