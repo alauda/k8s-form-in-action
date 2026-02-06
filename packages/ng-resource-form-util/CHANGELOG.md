@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.1
+
+### Patch Changes
+
+- [`808c33d1d6612a58154c7850609a440bdcfcec9e`](https://github.com/alauda/k8s-form-in-action/commit/808c33d1d6612a58154c7850609a440bdcfcec9e) - optimize repo config
+
 ## 7.0.0
 
 ### Major Changes
