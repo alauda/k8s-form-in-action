@@ -7,4 +7,6 @@ node_modules
 *.log
 ng-package.debug.json
 .*cache
-
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
